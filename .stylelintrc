@@ -33,7 +33,7 @@
 		"images/broken": true,
 		"at-rule-no-unknown": null,
 		"plugin/no-unsupported-browser-features": [true, {
-			"browsers": ["> 1%", "Last 2 versions"],
+			"browsers": ["> 1%", "Last 2 versions", "not Operamini all"],
 			"ignore": ["rem", "flexbox"]
 		}],
 		"at-rule-empty-line-before": [
