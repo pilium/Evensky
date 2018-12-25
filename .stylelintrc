@@ -1,11 +1,41 @@
 {
-	"extends": "stylelint-config-standard",
+	"extends": [
+		"stylelint-config-standard",
+    	"stylelint-8-point-grid"
+  	],
 	"plugins": [
 		"stylelint-scss",
-		"stylelint-order"
+		"stylelint-order",
+		"stylelint-no-unsupported-browser-features",
+		"stylelint-images",
+		"stylelint-high-performance-animation",
+		"stylelint-declaration-block-no-ignored-properties",
+		"stylelint-a11y"
 	],
 	"rules": {
+		"plugin/8-point-grid": {
+			"base": 8,
+			"whitelist": ["2px", "1px", "-1px","-2px"],
+			"ignore": ["width", "height"]
+		},
+		"a11y/no-outline-none": true,
+		"a11y/selector-pseudo-class-focus": true,
+		"a11y/content-property-no-static-value": [true, { "severity": "warning" }],
+		"a11y/font-size-is-readable": [true, { "severity": "warning" }],
+		"a11y/line-height-is-vertical-rhythmed": [true, { "severity": "warning" }],
+		"a11y/no-display-none": [true, { "severity": "warning" }],
+		"a11y/no-spread-text": [true, { "severity": "warning" }],
+		"a11y/no-obsolete-attribute": [true, { "severity": "warning" }],
+		"a11y/no-obsolete-element": [true, { "severity": "warning" }],
+		"a11y/no-text-align-justify": [true, { "severity": "warning" }],
+		"plugin/declaration-block-no-ignored-properties": true,
+		"plugin/no-low-performance-animation-properties": [true, { "ignoreProperties": ["top", "bottom"]}],
+		"images/broken": true,
 		"at-rule-no-unknown": null,
+		"plugin/no-unsupported-browser-features": [true, {
+			"browsers": ["> 1%", "Last 2 versions"],
+			"ignore": ["rem", "flexbox"]
+		}],
 		"at-rule-empty-line-before": [
 			"always",
 			{
