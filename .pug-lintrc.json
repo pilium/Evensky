@@ -27,6 +27,6 @@
 	"validateAttributeSeparator": " ",
 	"validateDivTags": true,
 	"validateIndentation": "\t",
-	"validateLineBreaks": "LF",
+	"validateLineBreaks": "CRLF",
 	"validateSelfClosingTags": true
 }
