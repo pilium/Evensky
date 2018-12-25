@@ -9,5 +9,22 @@ html {
 }
 
 body {
+	height: 100%;
 	font-family: $font-family-main;
+	color: $color-base-text;
+	background-color: $color-main-bg;
 }
+
+ul,
+li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $color-base-text;
+}
+
+p { margin: 0; }
