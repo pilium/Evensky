@@ -1,1 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+/* cyrillic */
+@font-face {
+	src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lqDY.woff2") format("woff2");
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* latin */
+@font-face {
+	src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2") format("woff2");
+	font-family: "Source Sans Pro";
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* cyrillic */
+@font-face {
+	src: local("Source Sans Pro SemiBold"), local("SourceSansPro-SemiBold"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxduz8A.woff2") format("woff2");
+	font-family: "Source Sans Pro";
+	font-weight: 600;
+	font-style: normal;
+}
+
+/* cyrillic */
+@font-face {
+	src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url("https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwkxduz8A.woff2") format("woff2");
+	font-family: "Source Sans Pro";
+	font-weight: 700;
+	font-style: normal;
+}
