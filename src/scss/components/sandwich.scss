@@ -1,9 +1,9 @@
 .sandwich {
-	position: relative;
-	display: none;
-	width: 32px;
-	height: 20px;
-	cursor: pointer;
+	position: absolute;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	width: 1px;
+	height: 1px;
 
 	&__line {
 		position: absolute;
@@ -11,8 +11,8 @@
 		display: block;
 		width: 100%;
 		height: 2px;
-		background-color: $white;
-		transition: all linear 0.4s;
+		background-color: #fff;
+		transition: top linear 0.4s, transform linear 0.4s, opacity linear 0.4s;
 		&--top { top: 0; }
 
 		&--middle { top: 9px; }
@@ -21,6 +21,11 @@
 	}
 
 	&--active {
+		position: relative;
+		width: 32px;
+		height: 20px;
+		cursor: pointer;
+
 		.sandwich__line {
 			&--top {
 				top: 10px;

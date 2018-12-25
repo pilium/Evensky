@@ -5,13 +5,21 @@
 @import "mixins";
 @import "sprites";
 @import "fonts";
-@import "vendor";
+
+// @import "vendor";
 @import "base";
 @import "container";
 
 // component
-@import "button";
+@import "components/button";
+@import "components/location";
+@import "components/main-nav";
+@import "components/sandwich";
 
 // blocks
-// @import "header";
+@import "modules/header";
+
 // @import "footer";
+
+// hidden
+// @import "components/hidden";

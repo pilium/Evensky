@@ -1,0 +1,23 @@
+.header {
+	.container {
+		display: flex;
+		align-items: center;
+	}
+
+	&-top {
+		padding: 16px 0; // TODO: 12px (stylint)
+
+		&__user-nav {
+			margin-left: auto;
+		}
+
+		&__location {
+			margin-right: 80px;
+		}
+	}
+
+	&-main {
+		padding: 24px 0;  // TODO: 20px (stylint)
+		background-color: $color-dark-bg;
+	}
+}
