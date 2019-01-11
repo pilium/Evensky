@@ -1,0 +1,36 @@
+.location {
+	flex: 0 0 176px;
+	width: 176px;
+	max-width: 176px;
+
+	&-header {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		&__current {
+			display: flex;
+			align-items: center;
+
+			&::after {
+				content: "";
+				margin-left: 8px;
+				border-style: solid;
+				border-width: 4px 4.5px 0 4.5px;
+				border-color: #000 transparent transparent transparent;
+				width: 0;
+				height: 0;
+			}
+		}
+
+		&__icon {
+			width: 16px;
+			height: 16px;
+			fill: $color-base-text;
+		}
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+}
