@@ -1,4 +1,4 @@
-// stylelint-disable at-rule-empty-line-before
+// stylelint-disable scss/dollar-variable-empty-line-before
 
 @import "variables";
 @import "functions";
@@ -7,16 +7,23 @@
 @import "fonts";
 @import "vendor";
 @import "base";
+@import "forms";
 @import "container";
 
 // component
 @import "components/button";
-@import "components/location";
-@import "components/main-nav";
 @import "components/sandwich";
 
 // blocks
+// // Header
 @import "modules/header";
+@import "components/header/busket";
+@import "components/header/order-callback.scss";
+@import "components/header/logo.scss";
+@import "components/header/search.scss";
+@import "components/header/location.scss";
+@import "components/header/main-nav.scss";
+@import "components/header/catalog-nav.scss";
 
 // @import "footer";
 

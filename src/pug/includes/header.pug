@@ -1,25 +1,13 @@
 header.header
 	.header-top
 		.container
-			.location.header-top__location
-				.location-header
-				span.location__current Нижний Новгород
-				.location-body
-			include ../components/main-nav
-			.user-nav.header-top__user-nav
-				a.user-nav__link(href="#") Войти
+			include ../components/header/location
+			include ../components/header/main-nav
+			include ../components/header/user-nav			
 	.header-main
 		.container
-			.catalog.header-main__catalog
-				.sandwich.visually-hidden
-					.sandwich__line.sandwich__line--top
-					.sandwich__line.sandwich__line--middle
-					.sandwich__line.sandwich__line--bottom
-				span.catalog__title Каталог стройматериалов
-			.search.header-main__search
-				input.input-field(type="text" placeholder="Артикул или название товара")
-			.order-callback
-				span.order-callback__description Звоните круглосуточно
-				a.order-callback__phone(href="tel:+74904563434") +7 490 456-34-34
-				a.order-callback__link(href="#") Заказать звонок
-			include ../components/basket
+			include ../components/header/header-logo
+			include ../components/header/catalog-nav
+			include ../components/header/search
+			include ../components/header/order-callback
+			include ../components/header/basket

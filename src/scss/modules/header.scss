@@ -5,7 +5,7 @@
 	}
 
 	&-top {
-		padding: 16px 0; // TODO: 12px (stylint)
+		padding: 8px 0; // TODO: 12px (stylint)
 
 		&__user-nav {
 			margin-left: auto;
@@ -17,7 +17,14 @@
 	}
 
 	&-main {
-		padding: 24px 0;  // TODO: 20px (stylint)
+		padding: 16px 0;  // TODO: 20px (stylint)
+		color: #fff;
 		background-color: $color-dark-bg;
+
+		.container {
+			> * {
+				&:not(:last-child) { margin-right: 48px; }
+			}
+		}
 	}
 }
