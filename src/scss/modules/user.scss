@@ -1,10 +1,7 @@
 .user-nav {
 	&__link {
-		font-size: 16px;// TODO: 12px for readable
+		font-size: 12px;
 		letter-spacing: 0.65px;
-
-		// BUG: stylint
-		/* stylelint-disable plugin/no-unsupported-browser-features */
 		text-transform: uppercase;
 		color: $color-link;
 	}
