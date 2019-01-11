@@ -2,19 +2,20 @@
 	border: none;
 	padding: 16px 72px 16px;
 	font-weight: 700;
-	font-size: 13.5px;
+	font-size: 16px;
 	letter-spacing: 0.5px;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
-	background-color: $color-salmon;
-	transition: background 0.1s ease;
+	background-color: $color-link;
+	transition: background-color 0.1s ease;
 
+	&:focus,
 	&:hover {
-		background-color: $color-malibu;
+		background-color: $color-link;
 	}
 
 	&--small {
-		padding: 13px 31px 13px;
+		padding: 16px 32px 16px; // 13px 31px 13px
 	}
 }
