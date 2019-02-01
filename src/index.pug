@@ -2,7 +2,7 @@ extends pug/base
 
 append vars
 	- html.classList.push('page-index')
-
+	- var title = 'Evensky'
 block content
-	include pug/includes/header
-	include pug/includes/footer
+	include pug/sections/banner
+
