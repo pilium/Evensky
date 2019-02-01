@@ -189,7 +189,7 @@ export function jsMain() {
 			],
 		}))
 		.pipe($.if(argv.minify, $.uglify()))
-		.pipe($.if(!argv.minify, $.replace(/\/\* global .+\n?/g, '')))
+		// .pipe($.if(!argv.minify, $.replace(/\/\* global .+\n?/g, '')))
 		.pipe($.if(!argv.minify, $.replace(/\/[*|/] eslint-disable.+\n?/g, '')))
 		.pipe($.if(!argv.minify, $.replace(/\/\/ no default\n?/g, '')))
 		.pipe($.if(!argv.minify, $.jsbeautifier({
