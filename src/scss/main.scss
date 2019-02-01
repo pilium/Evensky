@@ -1,13 +1,14 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
-
-@import "variables";
 @import "functions/functions";
 @import "mixins/mixins";
 @import "sprites";
-@import "fonts";
 @import "vendor";
-@import "base";
-@import "container";
+
+// utils
+@import "utils/variables";
+@import "utils/fonts";
+@import "utils/base";
+@import "utils/container";
 
 // component
 @import "components/button";
@@ -18,18 +19,21 @@
 // blocks
 // // Header
 @import "modules/header";
-@import "components/header/busket";
-@import "components/header/order-callback.scss";
-@import "components/header/logo.scss";
-@import "components/header/search.scss";
 @import "components/header/location.scss";
 @import "components/header/main-nav.scss";
+@import "components/header/user.scss";
+@import "components/header/logo.scss";
 @import "components/header/catalog-nav.scss";
+@import "components/header/search.scss";
+@import "components/header/order-callback.scss";
+@import "components/header/busket";
 
+// Index-sections
 // Banner
 @import "sections/banner";
 
-// @import "footer";
+// Footer
+@import "modules/footer";
 
 // hidden
 // @import "components/hidden";
