@@ -1,18 +1,19 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
 @import "variables";
-@import "functions";
-@import "mixins";
+@import "functions/functions";
+@import "mixins/mixins";
 @import "sprites";
 @import "fonts";
 @import "vendor";
 @import "base";
-@import "forms";
 @import "container";
 
 // component
 @import "components/button";
 @import "components/sandwich";
+@import "components/title";
+@import "components/forms";
 
 // blocks
 // // Header
@@ -24,6 +25,9 @@
 @import "components/header/location.scss";
 @import "components/header/main-nav.scss";
 @import "components/header/catalog-nav.scss";
+
+// Banner
+@import "sections/banner";
 
 // @import "footer";
 
