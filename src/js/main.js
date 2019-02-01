@@ -6,12 +6,9 @@ svg4everybody();
 // SANDWICh
 // ------------------------------------------------//
 
-let sandwich = document.querySelector('.sandwich');
-
-sandwich.addEventListener('click', () => {
-	sandwich.classList.toggle('sandwich--active');
+$('.sandwich').on('click', function cb() {
+	$(this).toggleClass('sandwich--active');
 });
-
 // ------------------------------------------------//
 // SANDWICh END
 // ------------------------------------------------//
