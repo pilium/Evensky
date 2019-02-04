@@ -1,13 +1,12 @@
 {
 	"disallowAttributeInterpolation": true,
+	"disallowBlockExpansion": true,
 	"disallowClassAttributeWithStaticValue": true,
 	"disallowDuplicateAttributes": true,
 	"disallowIdAttributeWithStaticValue": true,
 	"disallowLegacyMixinCall": true,
 	"disallowMultipleLineBreaks": true,
 	"disallowSpacesInsideAttributeBrackets": true,
-	"disallowSpecificAttributes": [],
-	"disallowSpecificTags": [],
 	"requireClassLiteralsBeforeAttributes": true,
 	"requireClassLiteralsBeforeIdLiterals": true,
 	"requireIdLiteralsBeforeAttributes": true,
@@ -27,6 +26,6 @@
 	"validateAttributeSeparator": " ",
 	"validateDivTags": true,
 	"validateIndentation": "\t",
-	"validateLineBreaks": "CRLF",
+	"validateLineBreaks": "LF",
 	"validateSelfClosingTags": true
 }
