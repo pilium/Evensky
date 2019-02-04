@@ -1,0 +1,11 @@
+.popular-cat__prev {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	> * {
+		margin-bottom: 32px;
+		width: calc(25% - 15px);
+		max-width: calc(25% - 15px);
+	}
+}
