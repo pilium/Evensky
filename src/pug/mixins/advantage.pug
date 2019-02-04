@@ -1,0 +1,9 @@
+mixin advantage(icon, title, text, link)
+	.advantage
+		.advantage__aside
+			+icon(icon, 'advantage__icon')
+		.advantage__body
+			span.advantage__title= title
+			p.advantage__text= text
+			if(link)
+				a.advantage__link(href="#")= link
