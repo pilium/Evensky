@@ -1,0 +1,26 @@
+section {
+	position: relative;
+	padding: 40px 0;
+}
+
+.section {
+	&-header {
+		display: flex;
+		align-items: center;
+
+		&__right {
+			margin-left: auto;
+		}
+
+		&__link {
+			font-family: $font-family-semibold;
+			font-weight: 600;
+			text-decoration: underline;
+			color: $color-link;
+		}
+	}
+
+	&.s-bg-white {
+		background-color: #fff;
+	}
+}
