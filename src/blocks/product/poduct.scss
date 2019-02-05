@@ -61,14 +61,12 @@
 		font-size: 14px;
 		line-height: 24px;
 
-		&.product-prev__mark {
-			&--bg {
-				&-yellow { background-color: $color-main-action; }
+		&--bg {
+			&-yellow { background-color: $color-main-action; }
 
-				&-green {
-					color: #fff;
-					background-color: #1fa349;
-				}
+			&-green {
+				color: #fff;
+				background-color: #1fa349;
 			}
 		}
 	}
@@ -109,6 +107,13 @@
 		font-family: $font-family-boldest;
 		font-weight: bold;
 		font-size: 18px;
+	}
+
+	&__icon {
+		margin-right: 8px;
+		width: 24px;
+		height: 24px;
+		fill: #fff;
 	}
 
 	&:hover,

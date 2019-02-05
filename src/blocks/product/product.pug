@@ -3,7 +3,8 @@ mixin product(link, sale, badge, name, count, articul, timeFor, priceOld, priceN
 		a.product-prev__header(href= link)
 			.product-prev__marks
 				.product-prev__mark.product-prev__mark--bg-yellow= sale
-				.product-prev__mark.product-prev__mark--bg-green= badge
+				if(badge !== '')
+					.product-prev__mark.product-prev__mark--bg-green= badge
 			img(src="https://source.unsplash.com/MYlCex1M7Ok/266x136" alt="product")
 		a.product-prev__body(href= link)
 			.product-prev__title
@@ -24,5 +25,6 @@ mixin product(link, sale, badge, name, count, articul, timeFor, priceOld, priceN
 				href: '#',
 				text: btnText,
 				mods: 'fill',
-				icon: 'cart'
+				icon: 'cart',
+				iconClass: 'product-prev__icon'
 			})
