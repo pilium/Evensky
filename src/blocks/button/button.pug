@@ -11,5 +11,5 @@ mixin btn(props)
 		a.btn(class=allMods href=props.href)= props.text
 	if(props.tag === 'button')
 		button.btn.btn--fill
-			+icon(props.icon, 'basket__icon')
+			+icon(props.icon, props.iconClass)
 			span= props.text
