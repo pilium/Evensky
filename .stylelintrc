@@ -8,7 +8,6 @@
 		"stylelint-order",
 		"stylelint-no-unsupported-browser-features",
 		"stylelint-images",
-		"stylelint-high-performance-animation",
 		"stylelint-declaration-block-no-ignored-properties",
 		"stylelint-a11y"
 	],
@@ -27,7 +26,6 @@
 		"a11y/no-obsolete-element": [true, { "severity": "warning" }],
 		"a11y/no-text-align-justify": [true, { "severity": "warning" }],
 		"plugin/declaration-block-no-ignored-properties": true,
-		"plugin/no-low-performance-animation-properties": [true, { "ignoreProperties": ["top", "bottom","color","background-color"]}],
 		"images/broken": true,
 		"at-rule-no-unknown": null,
 		"at-rule-empty-line-before": [
