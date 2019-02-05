@@ -15,6 +15,22 @@
 	cursor: pointer;
 	user-select: none;
 
+	&:hover,
+	&:focus {
+		background-color: #f0de01;
+		transition: background-color linear 0.3s;
+	}
+
+	&--disabled,
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+
+		@at-root a.btn--disabled {
+			pointer-events: none;
+		}
+	}
+
 	&--fill {
 		border-radius: 0;
 		width: 100%;
