@@ -1,0 +1,28 @@
+mixin product(link, sale, badge, name, count, articul, timeFor, priceOld, priceNow, btnText)
+	.product-prev
+		a.product-prev__header(href= link)
+			.product-prev__marks
+				.product-prev__mark.product-prev__mark--bg-yellow= sale
+				.product-prev__mark.product-prev__mark--bg-green= badge
+			img(src="https://source.unsplash.com/MYlCex1M7Ok/266x136" alt="product")
+		a.product-prev__body(href= link)
+			.product-prev__title
+				span.product-prev__name= name
+				span.text-count= count
+			.product-prev__info
+				span.product-prev__label Артикул
+				span.product-prev__value= articul
+			.product-prev__info
+				span.product-prev__label Срок изготовления
+				span.product-prev__value= timeFor
+			.product-prev__price
+				span.product-prev__price-old= priceOld
+				span.product-prev__price-current= priceNow
+		.product-prev__footer
+			+btn({
+				tag: 'button',
+				href: '#',
+				text: btnText,
+				mods: 'fill',
+				icon: 'cart'
+			})

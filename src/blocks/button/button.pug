@@ -7,4 +7,9 @@ mixin btn(props)
 				allMods = allMods + ' btn--' + modsList[i].trim();
 			}
 		}
-	a.btn(class=allMods href=props.href)= props.text
+	if(props.tag === 'a')
+		a.btn(class=allMods href=props.href)= props.text
+	if(props.tag === 'button')
+		button.btn.btn--fill
+			+icon(props.icon, 'basket__icon')
+			span= props.text

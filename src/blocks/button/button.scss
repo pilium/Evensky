@@ -1,4 +1,6 @@
 .btn {
+	display: flex;
+	align-items: center;
 	border: 0;
 	border-radius: 8px;
 	padding: 8px 16px;
@@ -11,4 +13,9 @@
 	background-color: $color-main-action;
 	cursor: pointer;
 	user-select: none;
+
+	&--fill {
+		border-radius: 0;
+		width: 100%;
+	}
 }

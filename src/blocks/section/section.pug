@@ -16,11 +16,11 @@ mixin section(props)
 			.container
 				block
 
-mixin section-header(link, count)
+mixin section-header(link, count, text)
 	.section-header
 		+title({
 			mods: 'section',
-			text: 'Акции и спецпредложения'
+			text: (text) ? text : null
 		}, 'h2')
 		.section-header__right
 			a.section-header__link= link
