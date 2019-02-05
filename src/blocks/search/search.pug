@@ -1,0 +1,11 @@
+mixin search(ph, icon)
+	.search
+		+field-text({
+			mods: 'size-small',
+			attrs: {
+				type: 'search',
+				name: 's',
+				placeholder: ph
+			}
+			})
+		+icon(icon,'search-icon')

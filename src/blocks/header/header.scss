@@ -1,0 +1,30 @@
+.header {
+	.container {
+		display: flex;
+		align-items: center;
+	}
+
+	&__top {
+		padding: 8px 0; // TODO: 12px (stylint)
+	}
+
+	&__main {
+		padding: 16px 0;  // TODO: 20px (stylint)
+		color: #fff;
+		background-color: $color-dark-bg;
+
+		.container {
+			> * {
+				&:not(:last-child) { margin-right: 48px; }
+			}
+		}
+	}
+
+	&__user-nav {
+		margin-left: auto;
+	}
+
+	&__location {
+		margin-right: 80px;
+	}
+}

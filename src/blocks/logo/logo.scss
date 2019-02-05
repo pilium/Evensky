@@ -1,0 +1,13 @@
+.logo {
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+
+	&__img {
+		width: 80px;
+	}
+
+	&__text {
+		white-space: nowrap;
+	}
+}

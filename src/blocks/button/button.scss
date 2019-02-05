@@ -1,0 +1,14 @@
+.btn {
+	border: 0;
+	border-radius: 8px;
+	padding: 8px 16px;
+	font-family: $font-family-semibold;
+	font-weight: 600;
+	line-height: 24px;
+	white-space: nowrap;
+	text-align: center;
+	text-overflow: ellipsis;
+	background-color: $color-main-action;
+	cursor: pointer;
+	user-select: none;
+}

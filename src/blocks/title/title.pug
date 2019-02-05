@@ -1,0 +1,10 @@
+mixin title(props, tag)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' title--' + modsList[i].trim();
+			}
+		}
+	#{tag}(class='title' + allMods)= props.text

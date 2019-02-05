@@ -1,0 +1,27 @@
+mixin section(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' section--' + modsList[i].trim();
+			}
+		}
+	if props.bg
+		section(class='section' + allMods + ' ' + props.mainClass style="background-image: url('https://source.unsplash.com/MYlCex1M7Ok/1920x200')")
+			.container
+				block
+	else
+		section(class='section' + allMods + ' ' + props.mainClass)
+			.container
+				block
+
+mixin section-header(link, count)
+	.section-header
+		+title({
+			mods: 'section',
+			text: 'Акции и спецпредложения'
+		}, 'h2')
+		.section-header__right
+			a.section-header__link= link
+			span.section-header__count.text-count= count

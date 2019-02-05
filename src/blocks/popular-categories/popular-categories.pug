@@ -1,0 +1,12 @@
+mixin popular-categories()
+	+section({
+		mods: 'popular-cat',
+		mainClass: 'popular-cat'
+	})
+		.popular-cat__header
+			+title({
+				mods: 'section',
+				text: 'Популярные категории товаров',
+			}, 'h2')
+		.popular-cat__body
+			block

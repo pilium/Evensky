@@ -1,0 +1,23 @@
+.basket {
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+
+	&__icon {
+		margin-bottom: 8px;
+		width: 24px;
+		height: 24px;
+		fill: #fff;
+	}
+
+	&__title {
+		font-family: $font-family-semibold;
+		font-size: 16px;
+		white-space: nowrap;
+	}
+
+	&__count {
+		font-size: 14px;
+		white-space: nowrap;
+	}
+}

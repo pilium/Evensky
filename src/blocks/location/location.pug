@@ -1,0 +1,6 @@
+mixin location(icon, text)
+	.header__location.location
+		.location__header
+			+icon(icon,'location__icon')
+			span.location__current= text
+		.location__body

@@ -1,0 +1,12 @@
+mixin banner()
+	+section({
+		bg: true,
+		mods: "banner",
+		mainClass: "banner"
+	})
+		.banner__composition
+			+title({
+				mods: 'page',
+				text: 'Продажа строительных материалов от производителя'
+			}, 'h1')
+			p.banner-text Текст о компании, который может пригодиться для первичного знакомства с посетителем сайта, а также для целей поискового продвижения

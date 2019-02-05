@@ -1,0 +1,19 @@
+.search {
+	display: flex;
+	align-items: center;
+
+	.input-field__input {
+		flex: 0 0 220px;
+		width: 220px;
+	}
+
+	.search-icon {
+		width: 22px;
+		height: 22px;
+		fill: #fff;
+	}
+
+	> * {
+		&:not(:last-child) { margin-right: 8px; }
+	}
+}

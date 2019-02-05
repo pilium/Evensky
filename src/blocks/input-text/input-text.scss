@@ -1,0 +1,21 @@
+.input-field {
+	&__input {
+		border: 1px solid $color-input-border;
+		border-radius: 4px;
+		padding: 8px 16px;
+		height: 50px;
+		box-shadow: none;
+		background-color: #fff;
+	}
+
+	&--size-small input {
+		padding: 0 16px;
+		height: 40px;
+		font-size: 14px;
+		line-height: 24px;
+	}
+
+	@include placeholder {
+		color: $color-text-info;
+	}
+}

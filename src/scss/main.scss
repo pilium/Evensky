@@ -7,40 +7,39 @@
 // utils
 @import "utils/variables";
 @import "utils/fonts";
-@import "utils/base";
-@import "utils/container";
 
-// component
-@import "components/button";
-@import "components/sandwich";
-@import "components/title";
-@import "components/forms";
-@import "components/counts";
-@import "components/sections";
-@import "components/btn";
+// base
+@import "base";
+@import "container";
+
+// small-blocks
+@import "../blocks/button/button";
+@import "../blocks/title/title";
+@import "../blocks/input-text/input-text";
+@import "../blocks/section/section";
+@import "../blocks/text-count/text-count";
 
 // blocks
 // // Header
-@import "modules/header";
-@import "components/header/location.scss";
-@import "components/header/main-nav.scss";
-@import "components/header/user.scss";
-@import "components/header/logo.scss";
-@import "components/header/catalog-nav.scss";
-@import "components/header/search.scss";
-@import "components/header/order-callback.scss";
-@import "components/header/busket";
+@import "../blocks/header/header";
+@import "../blocks/location/location";
+@import "../blocks/main-nav/main-nav";
+@import "../blocks/user-nav/user-nav";
+@import "../blocks/logo/logo";
+@import "../blocks/order-callback/order-callback";
+@import "../blocks/search/search";
+@import "../blocks/catalog-nav/catalog-nav";
+@import "../blocks/sandwich/sandwich";
+@import "../blocks/busket/busket";
 
 // Index-sections
-@import "sections/banner";
-@import "sections/popular-cat";
-@import "components/category-prev";
-@import "sections/advantages";
-@import "components/advantage";
-@import "sections/promo";
-
-// Footer
-@import "modules/footer";
+@import "../blocks/banner/banner";
+@import "../blocks/popular-categories-preview/popular-cat-prev";
+@import "../blocks/category-preview/category-prev";
+@import "../blocks/advantages/advantages";
+@import "../blocks/advantage/advantage";
+@import "../blocks/promo/promo";
+@import "../blocks/promo-preview/promo-prev";
 
 // hidden
 // @import "components/hidden";

@@ -94,7 +94,7 @@ export function copy() {
 }
 
 export function images() {
-	return gulp.src('src/images/**/*.*')
+	return gulp.src(['src/images/**/*.*', 'src/blocks/*.{jpg,png,svg,gif,tiff}'])
 		.pipe($.plumber({
 			errorHandler,
 		}))
@@ -355,6 +355,7 @@ export function watch() {
 	gulp.watch([
 		'src/*.pug',
 		'src/pug/**/*.pug',
+		'src/blocks/**/*.pug',
 	], {
 		delay: 0,
 	}, pug)
@@ -366,7 +367,10 @@ export function watch() {
 			}
 		});
 
-	gulp.watch('src/scss/**/*.scss', scss);
+	gulp.watch([
+		'src/scss/main.scss',
+		'src/blocks/**/*.scss',
+	], scss);
 }
 
 export function serve() {

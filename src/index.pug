@@ -3,8 +3,17 @@ extends pug/base
 append vars
 	- html.classList.push('page-index')
 	- var title = 'Evensky'
+block header
+	+header()
 block content
-	include pug/sections/banner
-	include pug/sections/popular-cat
-	include pug/sections/advantages
-	include pug/sections/promo
+	+banner()
+	+popular-categories()
+		+popular-cat-prev()
+	+advantages()
+		+advantage('warranty', '30-дневная гарантия возврата денег', 'Поэтому вы можете делать покупки с уверенностью', 'Узнать о гарантии')
+		+advantage('support', 'Специалисты по товарам на связи', 'Мы ответим на любые вопросы о  товарах в течение 10 минут', 'Получить консультацию')
+		+advantage('sample', 'Бесплатные образцы', 'Некоторые товары вы можете изучить внимательнее перед покупкой')
+	+promo()
+		+promoPrev('Купить листы оцинкованные', 'Специальное предложение', 'на листы оцинкованные')
+		+promoPrev('Купить доборные элементы кровли', 'Распродажа', 'доборных элементов кровли')
+		+promoPrev('Купить профнастил со скидкой', 'Скидки до 50%', 'на профнастил')

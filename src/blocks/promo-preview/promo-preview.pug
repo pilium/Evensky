@@ -1,0 +1,11 @@
+mixin promoPrev(link, descr, title)
+	.promo__prev
+		.promo__header(style="background-image: url('https://source.unsplash.com/MYlCex1M7Ok/1920x200')")
+			+btn({
+				href: '#',
+				text: link
+			})
+		.promo__body
+			.promo__text
+				span.promo__descr= descr
+				span.promo__title= title
