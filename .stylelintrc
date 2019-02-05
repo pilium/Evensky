@@ -27,7 +27,6 @@
 		"a11y/no-obsolete-element": [true, { "severity": "warning" }],
 		"a11y/no-text-align-justify": [true, { "severity": "warning" }],
 		"plugin/declaration-block-no-ignored-properties": true,
-		"plugin/no-low-performance-animation-properties": [true, { "ignoreProperties": ["top", "bottom","color","background-color"]}],
 		"images/broken": true,
 		"at-rule-no-unknown": null,
 		"at-rule-empty-line-before": [
