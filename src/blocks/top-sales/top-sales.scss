@@ -1,0 +1,12 @@
+.sales {
+	padding: 16px 0;
+
+	.top-sales {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-areas:
+			"first first second third"
+			"first first sixes sixes"
+			"fourth fives sixes sixes";
+	}
+}
