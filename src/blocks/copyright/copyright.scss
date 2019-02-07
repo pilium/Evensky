@@ -1,0 +1,20 @@
+.copyright {
+	font-size: 12px;
+	color: rgba(#fff, 0.6);
+
+	> * {
+		margin: 8px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__line {
+		> * {
+			&:not(:last-child) { margin-right: 32px; }
+		}
+	}
+
+	&__link {
+		text-decoration: underline;
+	}
+}
