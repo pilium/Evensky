@@ -10,9 +10,7 @@
 		transition: opacity linear 0.3s;
 
 		&:hover,
-		&:focus {
-			opacity: 1;
-		}
+		&:focus { opacity: 1; }
 
 		&.slick-disabled {
 			cursor: default;
@@ -23,13 +21,9 @@
 			}
 		}
 
-		&--prev {
-			left: -55px;
-		}
+		&--prev { left: -55px; }
 
-		&--next {
-			right: -55px;
-		}
+		&--next { right: -55px; }
 	}
 
 	&__icon {
