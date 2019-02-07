@@ -1,0 +1,13 @@
+mixin footer-column-pay(title, href, link, titleBottom)
+	.footer-column
+		.footer-column-payment__block
+			+footer-column-title(title, 'payment')
+			.footer-column-payment__types
+				ul.footer-column-payment__list
+					li.footer-column-payment__item
+					li.footer-column-payment__item
+					li.footer-column-payment__item
+				a.footer-column-payment__link(href= href)= link
+		if (titlebottom !== 'undefined')
+			.footer-column-payment__block
+				+footer-column-title(titleBottom, 'payment')

@@ -1,0 +1,27 @@
+mixin footer()
+	footer.footer
+		.footer__top
+			.container
+				+order-callback('Звоните круглосуточно','+7 490 456-34-34', '#', 'Заказать звонок', 'footer')
+		.footer__main
+			.container
+				.footer__columns
+					+footer-column-nav('О нас',[
+						{link: '#', text: 'Оплата и доставка'},
+						{link: '#', text: 'Гарантия'},
+						{link: '#', text: 'Услуги по обработке металла'},
+						{link: '#', text: 'Компания'},
+						{link: '#', text: 'Контакты', descr: 'Связь с директором'}
+					])
+					+footer-column-nav('Каталог',[
+						{link: '#', text: 'Все для кровли'},
+						{link: '#', text: 'Фасад'},
+						{link: '#', text: 'Профнастил'},
+						{link: '#', text: 'Листовой прокат'},
+						{link: '#', text: 'Рулонная сталь'}
+					])
+					+footer-column-pay('Принимаем к оплате', '#', 'Оплата заказа онлайн', 'Акции и спецпредложения')
+					+footer-column-contacts('Контакты')
+		.footer__bottom
+			.container
+				+copyright('#', '#')

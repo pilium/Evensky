@@ -1,0 +1,10 @@
+mixin footer-column-title(title, mods)
+	-
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + 'footer-column-title--' + modsList[i].trim();
+			}
+		}
+	span.footer-column-title(class=`${allMods}`)= title

@@ -1,0 +1,30 @@
+.footer-column-payment {
+	&__types {
+		> * {
+			margin: 16px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&__block {
+		margin-bottom: 40px;
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__list {
+		display: flex;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&__link {
+		font-family: $font-family-semibold;
+		font-weight: 600;
+		color: $color-main-action;
+	}
+
+	&__logo { height: 15px; }
+}

@@ -1,0 +1,37 @@
+.footer-column-contacts {
+	&__address {
+		position: relative;
+		padding-left: 24px;
+		color: #fff;
+	}
+
+	&__icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 16px;
+		height: 16px;
+		fill: #fff;
+	}
+
+	&__location {
+		display: block;
+		margin-bottom: 8px;
+		font-family: $font-family-semibold;
+		font-weight: 600;
+		font-size: 14px;
+	}
+
+	&__block {
+		margin-bottom: 40px;
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__text { font-size: 12px; }
+
+	&__map {
+		margin-left: 8px;
+		text-decoration: underline;
+		color: #fff;
+	}
+}

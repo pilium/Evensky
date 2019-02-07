@@ -1,0 +1,10 @@
+mixin footer-column-nav(title, listItems)
+	.footer-column.footer-column-nav
+		+footer-column-title(title, 'nav')
+		ul.footer-column-nav__list
+			each item in listItems
+				li.footer-column-nav__item
+					a.footer-column-nav__link(href= item.link)
+						span.footer-column-nav__text= item.text
+					if item.descr
+						span.footer-column-nav__descr= item.descr
