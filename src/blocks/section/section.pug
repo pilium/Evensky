@@ -24,5 +24,8 @@ mixin section-header(text, link, count, right)
 		}, 'h2')
 		if right
 			.section-header__right
-				a.section-header__link(href="#")= link
-				span.section-header__count.text-count= count
+				if (count !== '')
+					a.section-header__link(href="#")= link
+					span.section-header__count.text-count= count
+				else
+					span.js-section-header__text
