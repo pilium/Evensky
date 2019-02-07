@@ -1,0 +1,40 @@
+.slider {
+	position: relative;
+
+	&__nav {
+		position: absolute;
+		top: 50%;
+		opacity: 0.5;
+		cursor: pointer;
+		transform: translateY(-50%);
+		transition: opacity linear 0.3s;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+
+		&.slick-disabled {
+			cursor: default;
+
+			&:hover,
+			&:focus {
+				opacity: 0.3;
+			}
+		}
+
+		&--prev {
+			left: -55px;
+		}
+
+		&--next {
+			right: -55px;
+		}
+	}
+
+	&__icon {
+		width: 30px;
+		height: 30px;
+		fill: $color-base-text;
+	}
+}

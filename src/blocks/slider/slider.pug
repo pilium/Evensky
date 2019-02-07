@@ -1,0 +1,16 @@
+mixin slider(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + 'slider--' + modsList[i].trim();
+			}
+		}
+	.slider(class=allMods)
+		.slider__nav.slider__nav--prev
+			+icon('arrow-left', 'slider__icon')
+		.slider__nav.slider__nav--next
+			+icon('arrow-right', 'slider__icon')
+		.js-slider(class=`${props.jsMod}`)
+			block
