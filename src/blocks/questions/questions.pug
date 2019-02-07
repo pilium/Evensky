@@ -1,0 +1,11 @@
+mixin questions(icon)
+	+section({
+		mods: "questions,s-small",
+		mainClass: "questions"
+	})
+		.questions__wrapper
+			.questions__upgrade
+				.questions__icon-wrapper
+					+icon(icon, 'questions__icon')
+				a.questions__link(href="#") Что можно улучшить на этой странице?
+			block

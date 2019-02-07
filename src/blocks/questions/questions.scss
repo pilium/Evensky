@@ -1,0 +1,32 @@
+.questions {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__upgrade {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&__icon-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		width: 16px;
+		height: 16px;
+	}
+
+	&__icon {
+		width: 15px;
+		height: 15px;
+		fill: #fff;
+	}
+}
