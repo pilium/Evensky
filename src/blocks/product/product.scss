@@ -1,9 +1,6 @@
-.product-wrapper {
-	display: flex;
-}
-
 .product-prev {
 	border: 2px solid transparent;
+	border-radius: 4px;
 	max-width: 272px;
 	transition: border-color linear 0.3s;
 
