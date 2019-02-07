@@ -1,6 +1,8 @@
 .order-callback {
-	display: flex;
-	flex-direction: column;
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
 
 	&__description { font-size: 14px; }
 
@@ -18,5 +20,19 @@
 		font-size: 14px;
 		text-decoration: underline;
 		color: #fff;
+	}
+
+	&__img {
+		width: 78px;
+		height: 64px;
+	}
+
+	&--footer {
+		display: flex;
+		align-items: center;
+
+		> * {
+			&:not(:last-child) { margin-right: 16px; }
+		}
 	}
 }

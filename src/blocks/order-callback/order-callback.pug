@@ -1,5 +1,14 @@
-mixin order-callback(descr, tel, link, linkText)
-	.order-callback
-		span.order-callback__description= descr
-		a.order-callback__phone(href="tel:+74904563434")= tel
-		a.order-callback__link(href=link)= linkText
+mixin order-callback(descr, tel, link, linkText, position)
+	if (position === 'footer')
+		.order-callback.order-callback--footer
+			img.order-callback__img(src="images/wiki.png" alt="Wikipedia logo")
+			.order-callback__info
+				span.order-callback__description= descr
+				a.order-callback__phone(href="tel:+74904563434")= tel
+				a.order-callback__link(href=link)= linkText
+	else
+		.order-callback
+			.order-callback__info
+				span.order-callback__description= descr
+				a.order-callback__phone(href="tel:+74904563434")= tel
+				a.order-callback__link(href=link)= linkText
