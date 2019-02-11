@@ -8,8 +8,12 @@ $(document).ready(() => {
 	// ------------------------------------------------//
 	// eslint-disable-next-line func-names
 	let sandwich = function () {
-		$('.sandwich').on('click', function cb() {
-			$(this).toggleClass('sandwich--active');
+		$(document).on('click', '.js-catalog-nav__header', function cb() {
+			const sandwichElem = $(this).find('.sandwich');
+			const catalog = $(this).parent();
+
+			sandwichElem.toggleClass('sandwich--active');
+			catalog.toggleClass('catalog-nav--active');
 		});
 	};
 	// ------------------------------------------------//
@@ -57,7 +61,30 @@ $(document).ready(() => {
 	// You-seen product slider END
 	// ------------------------------------------------//
 
+	// ------------------------------------------------//
+	// Catalog
+	// ------------------------------------------------//
+	// eslint-disable-next-line func-names
+	let catalogNav = () => {
+		// eslint-disable-next-line func-names
+		$('.js-catalog-list__item').hover(function () {
+			let catalogBody = $(this).closest('.js-catalog-nav__body');
+
+			catalogBody.css('width', 925);
+		// eslint-disable-next-line func-names
+		}, function () {
+			let catalogBody = $(this).closest('.js-catalog-nav__body');
+
+			catalogBody.css('width', 'auto');
+		}
+		);
+	};
+	// ------------------------------------------------//
+	// Catalog END
+	// ------------------------------------------------//
+
 	sandwich();
+	catalogNav();
 	popularCategoriesSlider();
 	productSeenSlider();
 });

@@ -1,0 +1,34 @@
+mixin catalog-list__item(title, count)
+	li.catalog-list__item.js-catalog-list__item
+		.catalog-list__label
+			span.catalog-list__label-text= title
+			if (count)
+				span.text-count.catalog-list__count= count
+		block
+
+mixin catalog-list()
+	ul.catalog-list
+		+catalog-list__item('Рулонная сталь')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Профнастил')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Листовой прокат', 23)
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Фасад')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Распродажа')
+			+catalog-subnav('Рулонная сталь', 9)
+		+catalog-list__item('Специальное предложение')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Фасад')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Распродажа')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Специальное предложение')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Фасад')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Распродажа')
+			+catalog-subnav('Прямоугольный водосток', 9)
+		+catalog-list__item('Специальное предложение')
+			+catalog-subnav('Прямоугольный водосток', 9)

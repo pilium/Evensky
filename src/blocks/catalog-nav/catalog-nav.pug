@@ -1,6 +1,7 @@
 mixin catalog-nav(title)
 	.catalog-nav
-		.catalog-nav__header
+		.catalog-nav__header.js-catalog-nav__header
 			+sandwich()
 			span.catalog__title= title
-		.catalog-nav__body
+		.catalog-nav__body.js-catalog-nav__body
+			+catalog-list()

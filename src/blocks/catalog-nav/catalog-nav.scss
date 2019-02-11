@@ -10,4 +10,34 @@
 			&:not(:last-child) { margin-right: 8px; }
 		}
 	}
+
+	&__body {
+		position: absolute;
+		left: 80px;
+		top: calc(100% - 1px);
+		z-index: 1;
+		display: none;
+		overflow: hidden;
+		border: 0.1px solid transparent;
+		border-radius: 10px;
+		box-shadow: 0 0 5px 0 rgba(159, 197, 178, 0.5);
+		color: $color-base-text;
+		background-color: #fff;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 194px;
+			top: -10px;
+			border-style: solid;
+			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent #fff transparent;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	&--active {
+		.catalog-nav__body { display: block; }
+	}
 }
