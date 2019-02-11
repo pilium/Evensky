@@ -5,8 +5,11 @@ mixin footer-column-pay(title, href, link, titleBottom)
 			.footer-column-payment__types
 				ul.footer-column-payment__list
 					li.footer-column-payment__item
+						+icon('visa', 'footer-column-payment__icon')
 					li.footer-column-payment__item
+						+icon('mastercard', 'footer-column-payment__icon')
 					li.footer-column-payment__item
+						+icon('mir', 'footer-column-payment__icon')
 				a.footer-column-payment__link(href= href)= link
 		if (titlebottom !== 'undefined')
 			.footer-column-payment__block
