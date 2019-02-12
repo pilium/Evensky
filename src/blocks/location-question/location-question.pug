@@ -1,0 +1,14 @@
+mixin location-question()
+	.location-question.js-location-question
+		span.location-question__text Ваш  регион доставки Нижний Новгород?
+		.location-question__buttons
+			+btn({
+				tag: 'button',
+				text: 'Да, верно',
+				mods: 'bg-green,size-s,js-location'
+			})(data-location= true)
+			+btn({
+				tag: 'button',
+				text: 'Нет, уточнить регион',
+				mods: 'border-green,size-s,js-location'
+			})(data-location= false)

@@ -1,0 +1,21 @@
+mixin location-select(ph)
+	.location-select
+		.location-select__header
+			+field-text({
+			mods: 'size-small',
+			attrs: {
+				type: 'text',
+				name: 'location-select',
+				placeholder: 'Поиск по городу или индексу'
+			}
+			})
+		.location-select__body.js-location-select__body
+			ul.location-select__list
+				li.location-select__item(data-city="Москва") Москва
+				li.location-select__item(data-city="Санкт-Петербург") Санкт-Петербург
+				li.location-select__item(data-city="Екатеринбург") Екатеринбург
+				li.location-select__item(data-city="Нижний Новгород") Нижний Новгород
+				li.location-select__item(data-city="Пермь") Пермь
+				li.location-select__item(data-city="Казань") Казань
+				li.location-select__item(data-city="Челябинск") Челябинск
+				li.location-select__item(data-city="Новосибирск") Новосибирск

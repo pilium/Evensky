@@ -1,6 +1,8 @@
 mixin location(icon, text)
 	.header__location.location
-		.location__header
+		.location__header.js-location__header
 			+icon(icon,'location__icon')
-			span.location__current= text
-		.location__body
+			span.location__current.js-location__current= text
+		.location__body.js-location__body
+			+location-question()
+			+location-select()

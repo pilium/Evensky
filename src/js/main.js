@@ -82,11 +82,53 @@ $(document).ready(() => {
 	// ------------------------------------------------//
 	// Catalog END
 	// ------------------------------------------------//
+	// ------------------------------------------------//
+	// Location
+	// ------------------------------------------------//
+	// eslint-disable-next-line func-names
+	let locationSelect = () => {
+		// eslint-disable-next-line func-names
+		$(document).on('click', '.btn--js-location', function () {
+			const val = $(this).data('location');
+
+			$(this).closest('.js-location-question').hide();
+			if (!val) {
+				$(this).closest('.js-location__body').addClass('is-location-selected');
+			}
+		});
+
+		// eslint-disable-next-line func-names
+		$(document).on('click', '.js-location__header', function () {
+			$(this).siblings('.js-location__body').toggleClass('is-location-selected');
+		});
+	};
+	// ------------------------------------------------//
+	// Location END
+	// ------------------------------------------------//
+
+	// ------------------------------------------------//
+	// citySelect
+	// ------------------------------------------------//
+	// eslint-disable-next-line func-names
+	let citySelect = () => {
+		// eslint-disable-next-line func-names
+		$(document).on('click', '.location-select__item', function () {
+			let cityVal = $(this).data('city');
+
+			$(this).closest('.js-location__body').removeClass('is-location-selected');
+			$('.js-location__current').text(cityVal);
+		});
+	};
+	// ------------------------------------------------//
+	// citySelect END
+	// ------------------------------------------------//
 
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
 	productSeenSlider();
+	locationSelect();
+	citySelect();
 });
 
 let popularCategoriesSlider = () => {

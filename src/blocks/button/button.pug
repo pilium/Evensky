@@ -8,8 +8,9 @@ mixin btn(props)
 			}
 		}
 	if(props.tag === 'a')
-		a.btn(class=allMods href=props.href)= props.text
+		a.btn(class=allMods href=props.href)&attributes(attributes)= props.text
 	if(props.tag === 'button')
-		button.btn.btn--fill
-			+icon(props.icon, props.iconClass)
+		button.btn(class=allMods)&attributes(attributes)
+			if (props.icon)
+				+icon(props.icon, props.iconClass)
 			span= props.text

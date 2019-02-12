@@ -2,11 +2,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 0;
+	border: 2px solid transparent;
 	border-radius: 8px;
 	padding: 8px 16px;
 	font-family: $font-family-semibold;
-	font-weight: 600;
+	font-size: 14px;
 	line-height: 24px;
 	white-space: nowrap;
 	text-align: center;
@@ -34,5 +34,34 @@
 	&--fill {
 		border-radius: 0;
 		width: 100%;
+	}
+
+	&--bg {
+		&-green {
+			color: #fff;
+			background-color: $color-link;
+		}
+	}
+
+	&--border {
+		&-green {
+			border-color: $color-link;
+			color: $color-link;
+			background-color: #fff;
+			transition: border-color linear 0.3s, background-color linear 0.3s, color linear 0.3s;
+
+			&:hover,
+			&:focus {
+				border-color: $color-main-action;
+				color: #fff;
+				background-color: $color-main-action;
+			}
+		}
+	}
+
+	&--size {
+		&-s {
+			padding: 2px 16px;
+		}
 	}
 }
