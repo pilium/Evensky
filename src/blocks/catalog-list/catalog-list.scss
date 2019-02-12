@@ -53,8 +53,7 @@
 	&__item {
 		&:hover,
 		&:focus {
-			.catalog-subnav { display: flex; }
-			.catolog-nav__body { width: 75%; }
+			.catalog-subnav { display: block; }
 		}
 
 		&:first-child {

@@ -3,3 +3,5 @@
 // @include('../../node_modules/bowser/bowser.js')
 // @include('../../node_modules/svg4everybody/dist/svg4everybody.js')
 // @include('../../node_modules/slick-carousel/slick/slick.js')
+// @include('../../node_modules/simplebar/dist/simplebar.js');
+// @include('../../node_modules/magnific-popup/dist/jquery.magnific-popup.js');
