@@ -370,6 +370,7 @@ export function watch() {
 	gulp.watch([
 		'src/scss/main.scss',
 		'src/blocks/**/*.scss',
+		'src/scss/**/*.scss',
 	], scss);
 }
 
