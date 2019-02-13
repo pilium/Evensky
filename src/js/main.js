@@ -2,10 +2,6 @@ $(document).ready(() => {
 	svg4everybody();
 
 	// @include('detect.js')
-
-	// ------------------------------------------------//
-	// SANDWICh
-	// ------------------------------------------------//
 	// eslint-disable-next-line func-names
 	let sandwich = function () {
 		$(document).on('click', '.js-catalog-nav__header', function cb() {
@@ -16,12 +12,7 @@ $(document).ready(() => {
 			catalog.toggleClass('catalog-nav--active');
 		});
 	};
-	// ------------------------------------------------//
-	// SANDWICh END
-	// ------------------------------------------------//
-	// ------------------------------------------------//
-	// Popular-cat-slider
-	// ------------------------------------------------//
+
 	// eslint-disable-next-line func-names
 	let popularCategoriesSlider = function () {
 		if ($(window).width() < 768) {
@@ -31,12 +22,7 @@ $(document).ready(() => {
 			});
 		}
 	};
-	// ------------------------------------------------//
-	// Popular-cat-slider END
-	// ------------------------------------------------//
-	// ------------------------------------------------//
-	// You-seen product slider
-	// ------------------------------------------------//
+
 	// eslint-disable-next-line func-names
 	let productSeenSlider = function () {
 		const sliderCount = $('.js-section-header__text');
@@ -57,13 +43,7 @@ $(document).ready(() => {
 			nextArrow: '.slider__nav--next',
 		});
 	};
-	// ------------------------------------------------//
-	// You-seen product slider END
-	// ------------------------------------------------//
 
-	// ------------------------------------------------//
-	// Catalog
-	// ------------------------------------------------//
 	// eslint-disable-next-line func-names
 	let catalogNav = () => {
 		// eslint-disable-next-line func-names
@@ -79,12 +59,7 @@ $(document).ready(() => {
 		}
 		);
 	};
-	// ------------------------------------------------//
-	// Catalog END
-	// ------------------------------------------------//
-	// ------------------------------------------------//
-	// Location
-	// ------------------------------------------------//
+
 	// eslint-disable-next-line func-names
 	let locationSelect = () => {
 		// eslint-disable-next-line func-names
@@ -102,13 +77,7 @@ $(document).ready(() => {
 			$(this).siblings('.js-location__body').toggleClass('is-location-selected');
 		});
 	};
-	// ------------------------------------------------//
-	// Location END
-	// ------------------------------------------------//
 
-	// ------------------------------------------------//
-	// citySelect
-	// ------------------------------------------------//
 	// eslint-disable-next-line func-names
 	let citySelect = () => {
 		// eslint-disable-next-line func-names
