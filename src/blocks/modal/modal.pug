@@ -1,0 +1,17 @@
+mixin modal(id, title, mods)
+	-
+		var allMods = "";
+		if(typeof(mods) !== "undefined" && mods)
+			var modsList = mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " modal--" + modsList[i].trim();
+			}
+
+	.modal.mfp-hide(id=id class=allMods tabindex="-1" role="dialog")&attributes(attributes)
+		.modal__dialog.hide-on-success(role="document")
+			.modal__header
+				h3.modal__title= title
+				+close('Закрыть','modal')
+			.modal__body
+				block
+		.show-on-success

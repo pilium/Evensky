@@ -1,0 +1,35 @@
+.modal {
+	position: relative;
+	margin: 48px auto;
+	border-radius: 8px;
+	max-width: 520px;
+
+	.close--modal {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		width: 24px;
+		height: 24px;
+		opacity: 0.2;
+
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+			transition: opacity linear 0.3s;
+		}
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		padding: 8px 24px 8px 40px;
+		background-color: $color-light-bg;
+	}
+
+	&__body { background-color: #fff; }
+
+	&__title {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
