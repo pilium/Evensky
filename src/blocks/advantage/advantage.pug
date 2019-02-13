@@ -1,4 +1,4 @@
-mixin advantage(icon, title, text, link)
+mixin advantage(icon, title, text, href, link, modal)
 	.advantage
 		.advantage__aside
 			+icon(icon, 'advantage__icon')
@@ -6,4 +6,7 @@ mixin advantage(icon, title, text, link)
 			span.advantage__title= title
 			p.advantage__text= text
 			if(link)
-				a.advantage__link(href="#")= link
+				if (modal)
+					a.advantage__link.js-modal-link(href= href)= link
+				else
+					a.advantage__link(href= href)= link
