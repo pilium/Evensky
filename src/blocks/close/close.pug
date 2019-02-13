@@ -1,0 +1,10 @@
+mixin close(id, mods)
+	-
+		var allMods = "";
+		if(typeof(mods) !== "undefined" && mods)
+			var modsList = mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " close--" + modsList[i].trim();
+			}
+	button.close(class=allMods aria-label=label title=label)&attributes(attributes)
+		span= label

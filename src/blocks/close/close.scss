@@ -1,0 +1,43 @@
+.close {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	border: none;
+	padding: 0;
+	width: 30px;
+	line-height: 24px;
+	background: transparent;
+	cursor: pointer;
+	user-select: none;
+
+	span {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		height: 3px;
+		font-size: 0;
+		color: transparent;
+		background: transparent;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 3px;
+			background: #000;
+			transform-origin: 50% 50%;
+		}
+
+		&::before {
+			transform: rotate3d(0, 0, 1, 45deg);
+		}
+
+		&::after {
+			transform: rotate3d(0, 0, 1, -45deg);
+		}
+	}
+}
