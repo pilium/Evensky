@@ -88,9 +88,17 @@ $(document).ready(() => {
 			$('.js-location__current').text(cityVal);
 		});
 	};
-	// ------------------------------------------------//
-	// citySelect END
-	// ------------------------------------------------//
+
+	// eslint-disable-next-line func-names
+	let modalLink = () => {
+		$('.js-modal-link').magnificPopup({
+			showCloseBtn: false,
+		});
+
+		$(document).on('click', '.close--modal', () => {
+			$.magnificPopup.close();
+		});
+	};
 
 	sandwich();
 	catalogNav();
@@ -98,6 +106,7 @@ $(document).ready(() => {
 	productSeenSlider();
 	locationSelect();
 	citySelect();
+	modalLink();
 });
 
 let popularCategoriesSlider = () => {

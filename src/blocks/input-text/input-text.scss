@@ -1,4 +1,22 @@
 .input-field {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	> * {
+		margin: 8px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__label {
+		position: relative;
+		font-size: 12px;
+		letter-spacing: 0.65px;
+		text-transform: uppercase;
+		color: $color-label;
+	}
+
 	&__input {
 		border: 1px solid $color-input-border;
 		border-radius: 4px;
@@ -9,11 +27,33 @@
 		background-color: #fff;
 	}
 
-	&--size-small input {
-		padding: 0 16px;
-		height: 40px;
-		font-size: 14px;
-		line-height: 24px;
+	&--size-small {
+		input {
+			padding: 0 16px;
+			height: 40px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	&--width-s {
+		input {
+			max-width: 248px;
+		}
+	}
+
+	&--require {
+		label {
+			/* stylelint-disable-next-line a11y/content-property-no-static-value */
+			&::after {
+				content: "*";
+				position: absolute;
+				right: -10px;
+				top: -7px;
+				font-size: 18px;
+				color: $color-warning;
+			}
+		}
 	}
 
 	@include placeholder {

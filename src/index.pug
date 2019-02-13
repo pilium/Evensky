@@ -10,8 +10,8 @@ block content
 	+popular-categories()
 		+popular-cat-prev()
 	+advantages()
-		+advantage('warranty', '30-дневная гарантия возврата денег', 'Поэтому вы можете делать покупки с уверенностью', 'Узнать о гарантии')
-		+advantage('support', 'Специалисты по товарам на связи', 'Мы ответим на любые вопросы о  товарах в течение 10 минут', 'Получить консультацию')
+		+advantage('warranty', '30-дневная гарантия возврата денег', 'Поэтому вы можете делать покупки с уверенностью', '#', 'Узнать о гарантии')
+		+advantage('support', 'Специалисты по товарам на связи', 'Мы ответим на любые вопросы о  товарах в течение 10 минут', '#popup-consultation', 'Получить консультацию', true)
 		+advantage('sample', 'Бесплатные образцы', 'Некоторые товары вы можете изучить внимательнее перед покупкой')
 	+promo()
 		+promoPrev('Купить листы оцинкованные', 'Специальное предложение', 'на листы оцинкованные')
@@ -46,3 +46,33 @@ block content
 		+question-social()
 block footer
 	+footer()
+	+modal('popup-consultation', 'Получить консультацию', 'modal-consult')
+		+form('consultation')
+			.form__body
+				+fieldset('Контактный телефон')
+					+field-text({
+						mods: 'width-s,require',
+						id: 'consult-phone',
+						labelText: "Контактный телефон",
+						attrs: {
+							type: 'phone',
+							name: 'consult-phone',
+							placeholder: "+7(912)123-34-45"
+						}
+					})
+				+fieldset('Вопрос или кооментарий')
+					+field-textarea({
+						mods: '',
+						id: 'consult-textarea',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, меня интересует...",
+						attrs: {
+							rows: 10,
+							cols: 5
+						}
+					})
+				+fieldset('Прикрепите файл')
+					+field-file({
+						icon: 'paper-holder'
+					})
+			+form-footer('#')

@@ -1,0 +1,17 @@
+mixin field-file(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' input-field--' + modsList[i].trim();
+			}
+		}
+
+	.file-upload(class= allMods)
+		label.file-upload__label
+			input.file-upload__input.js-file-upload__input(type="file")
+			.file-upload__inner
+				+icon(props.icon, 'file-upload__icon')
+				span.file-upload__text Прикрепить файл
+				span.file-upload__file.js-file-upload__file

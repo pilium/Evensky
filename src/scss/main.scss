@@ -15,8 +15,11 @@
 // small-blocks
 @import "../blocks/button/button";
 @import "../blocks/title/title";
-@import "../blocks/input-text/input-text";
 @import "../blocks/section/section";
+@import "../blocks/input-text/input-text";
+@import "../blocks/input-textarea/input-textarea";
+@import "../blocks/input-file/input-file";
+@import "../blocks/close/close";
 @import "../blocks/text-count/text-count";
 @import "../blocks/product/product";
 
@@ -61,5 +64,6 @@
 @import "../blocks/footer-column-pay/footer-column-pay";
 @import "../blocks/footer-column-contacts/footer-column-contacts";
 
-// hidden
-// @import "components/hidden";
+// Common
+@import "../blocks/form/form";
+@import "../blocks/modal/modal";

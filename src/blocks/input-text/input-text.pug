@@ -1,19 +1,4 @@
 mixin field-text(props)
-
-	//- Принимает:
-	//-   props {
-	//-     mods: ''          {string} - модификаторы блока
-	//-     attrs:            {object} - любые атрибуты для input/textarea
-	//-       type:           {string}
-	//-       placeholder:    {string}
-	//- Вызов:
-			+field-text({
-			mods: '',
-			attrs: {
-				name: 'comment',
-			}
-			})
-
 	-
 		var allMods = '';
 		if(typeof(props.mods) !== 'undefined' && props.mods) {
@@ -22,6 +7,10 @@ mixin field-text(props)
 				allMods = allMods + ' input-field--' + modsList[i].trim();
 			}
 		}
-
-	label.input-field(class=allMods)
-		input.input-field__input(type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val)&attributes(props.attrs)
+	.input-field(class=allMods)
+		if (props.attrs.type === 'search')
+			label.input-field__label= props.labelText
+				input.input-field__input(type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val)&attributes(props.attrs)
+		else
+			label.input-field__label(for=props.id)= props.labelText
+			input.input-field__input(id=props.id type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val)&attributes(props.attrs)

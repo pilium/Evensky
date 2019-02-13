@@ -1,0 +1,41 @@
+
+mixin form(mods)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' form--' + modsList[i].trim();
+			}
+		}
+
+	form.form(class=allMods)&attributes(attributes)
+		block
+
+mixin fieldset(legend, mods)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' form__fieldset--' + modsList[i].trim();
+			}
+		}
+
+	fieldset.form__fieldset(class=allMods)&attributes(attributes)
+		legend.form__legend= legend
+		block
+
+mixin form-footer(href)
+	.form__footer
+		.form__footer-btn
+			+btn({
+				mods: 'size-l',
+				tag: 'input',
+				text: 'Получить консультацию',
+			})
+			span.form__footer-text.form__footer-text--green Ответим в течение 10 минут
+		p.form__footer-info Задавая вопрос, вы соглашаетесь с
+			a.form__footer-link(href=href)  политикой конфиденциальности
