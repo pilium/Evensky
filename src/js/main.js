@@ -100,6 +100,25 @@ $(document).ready(() => {
 		});
 	};
 
+	// eslint-disable-next-line func-names
+	let inputFile = () => {
+		const input = document.querySelector('.js-file-upload__input');
+		const result = document.querySelector('.js-file-upload__file');
+
+		input.addEventListener('change', () => {
+			let files = input.files;
+
+			for (let i = 0; i < files.length; i++) {
+				let sizeNum = files[i].size;
+
+				sizeNum = (sizeNum / 1000000).toFixed(2);
+				result.innerHTML += `${files[i].name.toUpperCase()}(${sizeNum}МБ)\n`;
+			}
+		}
+
+		);
+	};
+
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -107,6 +126,7 @@ $(document).ready(() => {
 	locationSelect();
 	citySelect();
 	modalLink();
+	inputFile();
 });
 
 let popularCategoriesSlider = () => {

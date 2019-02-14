@@ -21,8 +21,15 @@
 	}
 
 	&__icon {
+		flex-shrink: 0;
 		width: 20px;
 		height: 20px;
 		fill: $color-link;
+	}
+
+	&__file,
+	&__size {
+		font-style: italic;
+		color: $color-label;
 	}
 }
