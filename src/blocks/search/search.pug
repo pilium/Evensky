@@ -1,12 +1,13 @@
 mixin search(ph, icon)
 	.search
-		+field-text({
-			mods: 'search,size-small',
-			id: 'search',
-			attrs: {
-				type: 'search',
-				name: 's',
-				placeholder: ph
-			}
-			})
+		+form('search')
+			+field-text({
+				mods: 'search,size-small',
+				id: 'search',
+				attrs: {
+					type: 'search',
+					name: 's',
+					placeholder: ph
+				}
+				})
 		+icon(icon,'search-icon')

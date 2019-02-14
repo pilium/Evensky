@@ -58,4 +58,9 @@
 			color: $color-text-info;
 		}
 	}
+
+	&--search {
+		padding: 0;
+		background-color: transparent;
+	}
 }
