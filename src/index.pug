@@ -61,12 +61,13 @@ block footer
 						}
 					})
 				+fieldset('Вопрос или кооментарий')
-					+field-textarea({
-						mods: '',
+					+field-text({
+						mods: 'textarea',
 						id: 'consult-textarea',
 						labelText: "Вопрос или кооментарий",
 						placeholder: "Здравствуйте, меня интересует...",
 						attrs: {
+							type: 'textarea',
 							rows: 10,
 							cols: 5
 						}
