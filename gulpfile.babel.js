@@ -144,7 +144,7 @@ export function pngSprites() {
 }
 
 export function svgSprites() {
-	return gulp.src('src/images/sprites/svg/*.svg')
+	return gulp.src('src/blocks/**/images/sprite/*.svg')
 		.pipe($.plumber({
 			errorHandler,
 		}))
@@ -163,7 +163,7 @@ export function svgSprites() {
 }
 
 export function svgOptimize() {
-	return gulp.src('src/images/**/*.svg', {
+	return gulp.src('src/blocks/**/images/sprite/*.svg', {
 		base: 'src/images',
 	})
 		.pipe($.plumber({
