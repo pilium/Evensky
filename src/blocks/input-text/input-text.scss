@@ -25,6 +25,14 @@
 		height: 50px;
 		box-shadow: none;
 		background-color: #fff;
+
+		&.error {
+			border-color: $color-warning;
+
+			&::placeholder {
+				color: $color-warning;
+			}
+		}
 	}
 
 	&--textarea {

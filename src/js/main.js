@@ -119,6 +119,40 @@ $(document).ready(() => {
 		);
 	};
 
+	// eslint-disable-next-line func-names
+	let validateForm = function () {
+		// eslint-disable-next-line func-names
+		$('form').each(function () {
+			// eslint-disable-next-line func-names
+			$(this).on('submit', function () {
+				$(this).validate({
+					rules: {
+						s: 'required',
+						phone: 'required',
+					},
+					messages: {
+						s: 'Введите поисковый запрос',
+						phone: 'Введите корректный номер',
+					},
+					errorPlacement(error, element) {
+						element.attr('placeholder', error[0].outerText);
+					},
+				});
+
+				if ($(this).valid()) {
+					let wrap = $(this)[0].closest('.hide-on-success');
+
+					if (wrap) {
+						$(wrap).siblings('.show-on-success').show();
+						$(wrap).hide();
+					}
+				}
+
+				return false;
+			});
+		});
+	};
+
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -127,6 +161,7 @@ $(document).ready(() => {
 	citySelect();
 	modalLink();
 	inputFile();
+	validateForm();
 });
 
 let popularCategoriesSlider = () => {

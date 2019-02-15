@@ -10,10 +10,10 @@ mixin field-text(props)
 	.input-field(class=allMods)
 		if (props.attrs.type === 'search')
 			label.input-field__label= props.labelText
-				input.input-field__input(type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val)&attributes(props.attrs)
+				input.input-field__input(type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val name=props.attrs.name)&attributes(props.attrs)
 		else if (props.attrs.type === 'textarea')
 			label.input-field__label(for=props.id)= props.labelText
-			textarea.input-field__input.input-field__textarea(id=props.id placeholder= props.placeholder)&attributes(props.attrs)
+			textarea.input-field__input.input-field__textarea(id=props.id placeholder= props.placeholder name=props.attrs.name)&attributes(props.attrs)
 		else
 			label.input-field__label(for=props.id)= props.labelText
-			input.input-field__input(id=props.id type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val)&attributes(props.attrs)
+			input.input-field__input(id=props.id type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val name=props.attrs.name)&attributes(props.attrs)
