@@ -1,3 +1,9 @@
+mixin questionSocialListItem(icon, text, link)
+	li.question-social__item
+		a.question-social__link(href= link)
+			+icon(icon, 'question-social__icon')
+			span.question-social__text= text
+
 mixin question-social()
 	.question-social
 		span.question-social__title Задайте вопрос
