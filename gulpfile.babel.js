@@ -338,7 +338,7 @@ export function watch() {
 
 	gulp.watch('src/images/**/*.*', images);
 
-	gulp.watch('src/images/sprites/svg/*.svg', svgSprites);
+	gulp.watch('src/blocks/**/images/sprite*.svg', svgSprites);
 
 	gulp.watch([
 		'src/images/sprites/png/*.png',
