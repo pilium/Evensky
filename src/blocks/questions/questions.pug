@@ -7,5 +7,5 @@ mixin questions(icon)
 			.questions__upgrade
 				.questions__icon-wrapper
 					+icon(icon, 'questions__icon')
-				a.questions__link(href="#") Что можно улучшить на этой странице?
+				a.questions__link.js-modal-link(href="#popup-questions") Что можно улучшить на этой странице?
 			block

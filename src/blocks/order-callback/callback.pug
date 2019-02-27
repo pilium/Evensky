@@ -1,0 +1,25 @@
+mixin order-callback(descr, tel, link, linkText, position, icon, mail)
+	if (position === 'form')
+		.order-callback.order-callback--form.form-success-contacts
+			+icon(icon,'order-callback__icon')
+			.order-callback__info
+				span.order-callback__description= descr
+				if (mail !== 'undefined' && mail)
+					a.order-callback__link.order-callback__link--mail(href="mailto:question@evensky.ru")= mail
+				else
+					a.order-callback__link.order-callback__link--phone(href="tel:+74904563434")= tel
+					a.order-callback__qr(href=link)= linkText
+
+	else if (position === 'footer')
+		.order-callback.order-callback--footer
+			img.order-callback__img(src="images/wiki.png" alt="Wikipedia logo")
+			.order-callback__info
+				span.order-callback__description= descr
+				a.order-callback__phone(href="tel:+74904563434")= tel
+				a.order-callback__link(href=link)= linkText
+	else
+		.order-callback
+			.order-callback__info
+				span.order-callback__description= descr
+				a.order-callback__phone(href="tel:+74904563434")= tel
+				a.order-callback__link(href=link)= linkText

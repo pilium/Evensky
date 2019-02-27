@@ -1,0 +1,43 @@
+mixin fast-review(title, mods)
+	-
+		var allMods = "";
+		if(typeof(mods) !== "undefined" && mods)
+			var modsList = mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " modal-success--" + modsList[i].trim();
+			}
+
+	.fast-review(class=allMods)
+		+form('review')
+			span.fast-review__label.form-success__label= title
+			//- NOTE: .form-success__label mix from other block
+			.fast-review__wrapper
+				.fast-review__line.js-fast-review__line
+				.fast-review__inner
+					.fast-review__item.fast-review__item--active.fast-review__item--pos-left(data-fast-review="очень долго")
+						span.fast-review__number.js-fast-review__number 1
+					.fast-review__item.fast-review__item--pos-left(data-fast-review="долго")
+						span.fast-review__number.js-fast-review__number 2
+					.fast-review__item.fast-review__item--pos-center(data-fast-review="нормально")
+						span.fast-review__number.js-fast-review__number 3
+					.fast-review__item.fast-review__item--pos-right(data-fast-review="быстро")
+						span.fast-review__number.js-fast-review__number 4
+					.fast-review__item.fast-review__item--pos-right(data-fast-review="очень быстро")
+						span.fast-review__number.js-fast-review__number 5
+			+fieldset('Комментарий', 'flex')
+				+field-text({
+					mods: 'width-l,no-label',
+					id: 'consult-phone',
+					labelText: '',
+					attrs: {
+						type: 'text',
+						name: 'fast-review-comment',
+						placeholder: "Комментарий (необязательно)"
+					}
+				})
+				+btn({
+					tag: 'input',
+					href: '#',
+					text: 'Отправить',
+					mods: 'size-m'
+				})

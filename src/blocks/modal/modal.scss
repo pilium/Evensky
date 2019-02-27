@@ -4,6 +4,10 @@
 	border-radius: 8px;
 	max-width: 520px;
 
+	.show-on-success {
+		display: none;
+	}
+
 	.close--modal {
 		display: flex;
 		align-items: center;

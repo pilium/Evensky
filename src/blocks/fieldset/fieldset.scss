@@ -8,4 +8,11 @@
 		width: 1px;
 		height: 1px;
 	}
+
+	&--flex {
+		.fieldset__inner {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 }

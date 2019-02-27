@@ -1,0 +1,46 @@
+.form-success {
+	background-color: $color-light-bg;
+
+	> * {
+		margin: 8px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__block {
+		padding: 32px 40px;
+		background-color: #fff;
+	}
+
+	&__row {
+		display: flex;
+
+		> * {
+			&:not(:last-child) { margin-right: 24px; }
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+		font-size: 24px;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&__number {
+		font-family: $font-family-boldest;
+		font-weight: bold;
+	}
+
+	&__callback { font-size: 14px; }
+
+	&__label {
+		display: block;
+		margin-bottom: 16px;
+		font-size: 18px;
+	}
+}

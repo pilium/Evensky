@@ -48,9 +48,21 @@
 		}
 	}
 
-	&--width-s {
-		input {
+	&--width {
+		&-s {
+			input {
+				max-width: 100%;
+			}
+		}
+
+		&-m {
+			flex: 0 0 248px;
 			max-width: 248px;
+		}
+
+		&-l {
+			flex: 0 0 288px;
+			max-width: 288px;
 		}
 	}
 
@@ -65,6 +77,12 @@
 				font-size: 18px;
 				color: $color-warning;
 			}
+		}
+	}
+
+	&--no-label {
+		> * {
+			margin: 0;
 		}
 	}
 

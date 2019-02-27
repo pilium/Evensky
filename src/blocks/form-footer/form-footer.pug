@@ -1,11 +1,12 @@
-mixin form-footer(href)
+mixin form-footer(href, btnText, isText)
 	.form-footer.form__footer
 		.form-footer__btn
 			+btn({
 				mods: 'size-l',
 				tag: 'input',
-				text: 'Получить консультацию',
+				text: btnText,
 			})
-			span.form-footer__text.form-footer__text--green Ответим в течение 10 минут
+			if (isText !== 'undefined' && isText)
+				span.form-footer__text.form-footer__text--green Ответим в течение 10 минут
 		p.form-footer__info Задавая вопрос, вы соглашаетесь с
 			a.form-footer__link(href=href)  политикой конфиденциальности

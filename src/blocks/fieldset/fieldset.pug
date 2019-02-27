@@ -5,10 +5,11 @@ mixin fieldset(legend, mods)
 		if(typeof(mods) !== 'undefined' && mods) {
 			var modsList = mods.split(',');
 			for (var i = 0; i < modsList.length; i++) {
-				allMods = allMods + ' form__fieldset--' + modsList[i].trim();
+				allMods = allMods + ' fieldset--' + modsList[i].trim();
 			}
 		}
 
 	fieldset.fieldset.form__fieldset(class=allMods)&attributes(attributes)
-		legend.fiedset__legend= legend
-		block
+		legend.fieldset__legend= legend
+		.fieldset__inner
+			block

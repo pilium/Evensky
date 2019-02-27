@@ -46,7 +46,7 @@ block content
 		+question-social()
 block footer
 	+footer()
-	+modal('popup-consultation', 'Получить консультацию', 'modal-consult')
+	+modal('popup-consultation', 'Получить консультацию', 'Мы Вам перезвоним', true ,'consult')
 		+form('consultation')
 			.form__body
 				+fieldset('Контактный телефон')
@@ -60,7 +60,7 @@ block footer
 							placeholder: "+7(912)123-34-45"
 						}
 					})
-				+fieldset('Вопрос или кооментарий')
+				+fieldset('Вопрос или комментарий')
 					+field-text({
 						mods: 'textarea',
 						id: 'consult-textarea',
@@ -76,4 +76,47 @@ block footer
 					+field-file({
 						icon: 'paper-holder'
 					})
-			+form-footer('#')
+			+form-footer('#', 'Получить консультацию', true)
+	+modal('popup-questions', 'Что можно улучшить на этой странице?', 'Что можно улучшить на этой странице', '', 'questions')
+		+form('questions')
+			.form__body
+				+fieldset('Вопрос или кооментарий')
+					+field-text({
+						mods: 'textarea,require',
+						id: 'questions-ask',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, на этой странице можно...",
+						attrs: {
+							type: 'textarea',
+							name: 'textarea',
+							rows: 10,
+							cols: 5
+						}
+					})
+				.form__columns
+					.form__column
+						+fieldset('Электронная почта')
+							+field-text({
+								mods: 'width-m',
+								id: 'questions-mail',
+								labelText: "Электронная почта",
+								attrs: {
+									type: 'email',
+									name: 'mail',
+									placeholder: "Введите свой email"
+								}
+							})
+						+fieldset('Контактный телефон')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'consult-phone',
+								labelText: "Контактный телефон",
+								attrs: {
+									type: 'phone',
+									name: 'phone',
+									placeholder: "+7(912)123-34-45"
+								}
+							})
+					.form__column.form__column--text
+						span.form-line__info Мы быстрее исправим ошибку , если сможем связаться с вами для уточнения информации
+			+form-footer('#', 'Предложить улучшение')

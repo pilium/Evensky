@@ -1,8 +1,9 @@
+/* eslint-disable func-names */
 $(document).ready(() => {
 	svg4everybody();
 
 	// @include('detect.js')
-	// eslint-disable-next-line func-names
+
 	let sandwich = function () {
 		$(document).on('click', '.js-catalog-nav__header', function cb() {
 			const sandwichElem = $(this).find('.sandwich');
@@ -13,7 +14,6 @@ $(document).ready(() => {
 		});
 	};
 
-	// eslint-disable-next-line func-names
 	let popularCategoriesSlider = function () {
 		if ($(window).width() < 768) {
 			$('.js-categories-prev').slick({
@@ -23,7 +23,6 @@ $(document).ready(() => {
 		}
 	};
 
-	// eslint-disable-next-line func-names
 	let productSeenSlider = function () {
 		const sliderCount = $('.js-section-header__text');
 		const slider = $('.js-slider--you-seen');
@@ -44,7 +43,6 @@ $(document).ready(() => {
 		});
 	};
 
-	// eslint-disable-next-line func-names
 	let catalogNav = () => {
 		// eslint-disable-next-line func-names
 		$('.js-catalog-list__item').hover(function () {
@@ -60,7 +58,6 @@ $(document).ready(() => {
 		);
 	};
 
-	// eslint-disable-next-line func-names
 	let locationSelect = () => {
 		// eslint-disable-next-line func-names
 		$(document).on('click', '.btn--js-location', function () {
@@ -78,7 +75,6 @@ $(document).ready(() => {
 		});
 	};
 
-	// eslint-disable-next-line func-names
 	let citySelect = () => {
 		// eslint-disable-next-line func-names
 		$(document).on('click', '.location-select__item', function () {
@@ -89,7 +85,6 @@ $(document).ready(() => {
 		});
 	};
 
-	// eslint-disable-next-line func-names
 	let modalLink = () => {
 		$('.js-modal-link').magnificPopup({
 			showCloseBtn: false,
@@ -100,7 +95,6 @@ $(document).ready(() => {
 		});
 	};
 
-	// eslint-disable-next-line func-names
 	let inputFile = () => {
 		const input = document.querySelector('.js-file-upload__input');
 		const result = document.querySelector('.js-file-upload__file');
@@ -119,7 +113,6 @@ $(document).ready(() => {
 		);
 	};
 
-	// eslint-disable-next-line func-names
 	let validateForm = function () {
 		// eslint-disable-next-line func-names
 		$('form').each(function () {
@@ -129,10 +122,12 @@ $(document).ready(() => {
 					rules: {
 						s: 'required',
 						phone: 'required',
+						textarea: 'required',
 					},
 					messages: {
 						s: 'Введите поисковый запрос',
 						phone: 'Введите корректный номер',
+						textarea: 'Заполните поле',
 					},
 					errorPlacement(error, element) {
 						element.attr('placeholder', error[0].outerText);
@@ -153,6 +148,16 @@ $(document).ready(() => {
 		});
 	};
 
+	let fastReview = () => {
+		$(document).on('click', '.js-fast-review__number', function () {
+			let left = $(this).parent().position().left;
+
+			$(this).parent().siblings().removeClass('fast-review__item--active');
+			$(this).parent().addClass('fast-review__item--active');
+			$('.js-fast-review__line').css('width', left);
+		});
+	};
+
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -162,6 +167,7 @@ $(document).ready(() => {
 	modalLink();
 	inputFile();
 	validateForm();
+	fastReview();
 });
 
 let popularCategoriesSlider = () => {
