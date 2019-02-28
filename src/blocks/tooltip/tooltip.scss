@@ -1,0 +1,35 @@
+.tooltip {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: calc(100% + 10px);
+	border-radius: 4px;
+	padding: 8px 8px 8px 32px;
+	background-color: #fff;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 15px;
+		top: -5px;
+		border-style: solid;
+		border-width: 0 5px 5px 5px;
+		border-color: transparent transparent #fff transparent;
+		width: 0;
+		height: 0;
+	}
+
+	&__icon {
+		position: absolute;
+		left: 8px;
+		top: 15px;
+		width: 16px;
+		height: 16px;
+		fill: #1fa349;
+	}
+
+	&__text {
+		font-size: 12px;
+		color: $color-base-text;
+	}
+}

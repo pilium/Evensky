@@ -4,4 +4,8 @@
 	font-family: $font-family-boldest;
 	font-weight: bold;
 	color: #fff;
+
+	&--promo {
+		margin-bottom: 0;
+	}
 }
