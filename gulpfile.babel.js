@@ -94,7 +94,7 @@ export function copy() {
 }
 
 export function images() {
-	return gulp.src(['src/images/**/*.*', 'src/blocks/*.{jpg,png,svg,gif,tiff}'])
+	return gulp.src(['src/images/**/*.*', '!src/blocks/images/sprite/*.svg', 'src/blocks/**/*.{jpg,png,svg}'])
 		.pipe($.plumber({
 			errorHandler,
 		}))
