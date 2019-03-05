@@ -1,0 +1,55 @@
+.tooltip-map {
+	&__body {
+		display: flex;
+		border-radius: 10px;
+		width: 690px;
+		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+		background-color: #fff;
+	}
+
+	&__info {
+		flex: 0 0 264px;
+		padding: 40px 16px;
+		width: 264px;
+		max-width: 264px;
+	}
+
+	&__map {
+		flex: 1;
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	&__text,
+	&__qr-text {
+		display: block;
+		margin-bottom: 16px;
+		font-size: 14px;
+	}
+
+	&__label {
+		font-family: $font-family-boldest;
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 16px;
+	}
+
+	&__qr-img {
+		width: 230px;
+		height: 230px;
+	}
+
+	&--active {
+		display: block;
+	}
+}

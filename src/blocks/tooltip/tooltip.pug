@@ -1,13 +1,15 @@
-mixin tooltip(icon, text, mods)
+mixin tooltip(props)
 	-
 		var allMods = '';
-		if(typeof(mods) !== 'undefined' && mods) {
-			var modsList = mods.split(',');
+		if(typeof(props.mods) !== 'undefined' && props. mods) {
+			var modsList = props.mods.split(',');
 			for (var i = 0; i < modsList.length; i++) {
-				allMods = allMods + ' section--' + modsList[i].trim();
+				allMods = allMods + ' tooltip--' + modsList[i].trim();
 			}
 		}
 	.tooltip(class=allMods)
-		if (icon !== 'undefined' && icon)
-			+icon(icon, 'tooltip__icon')
-		span.tooltip__text= text
+		if (props.icon !== 'undefined' && props.icon)
+			+icon(props.icon, 'tooltip__icon')
+		if (props.text !== 'undefined' && props.text)
+			span.tooltip__text= props.text
+		block

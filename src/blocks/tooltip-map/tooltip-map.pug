@@ -1,0 +1,22 @@
+mixin tooltip-map(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props. mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' tooltip--' + modsList[i].trim();
+			}
+		}
+	.tooltip-map(class=allMods)
+		.tooltip-map__body
+			.tooltip-map__map(id=props.id)
+			.tooltip-map__info
+				+close('Закрыть','map')
+				span.tooltip-map__title= props.title
+				span.tooltip-map__text= props.text
+				.tooltip-map__block
+					span.tooltip-map__label Время работы:
+					span.tooltip-map__time= props.time
+				.tooltip-map__qr
+					span.tooltip-map__qr-text Для построения маршрута наведите камеру телефона на QR-код
+					img.tooltip-map__qr-img(src="images/tooltip-map/images/QRCode.png" alt="QR код")

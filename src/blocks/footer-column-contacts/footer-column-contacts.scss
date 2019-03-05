@@ -23,15 +23,21 @@
 	}
 
 	&__block {
+		position: relative;
 		margin-bottom: 24px;
 		&:last-child { margin-bottom: 0; }
 	}
 
-	&__text { font-size: 12px; }
+	&__text {
+		font-style: normal;
+		font-size: 12px;
+	}
 
-	&__map {
+	&__office,
+	&__stock {
 		margin-left: 8px;
 		text-decoration: underline;
 		color: #fff;
+		cursor: pointer;
 	}
 }

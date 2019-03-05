@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable func-names */
 $(document).ready(() => {
 	svg4everybody();
@@ -113,10 +114,8 @@ $(document).ready(() => {
 		);
 	};
 
-	let validateForm = function () {
-		// eslint-disable-next-line func-names
+	let validateForm = () => {
 		$('form').each(function () {
-			// eslint-disable-next-line func-names
 			$(this).on('submit', function () {
 				$(this).validate({
 					rules: {
@@ -158,6 +157,15 @@ $(document).ready(() => {
 		});
 	};
 
+	let tooltipMap = (pos) => {
+		$(document).on('click', `.footer-column-contacts__${pos}`, () => {
+			$(`.tooltip--map-${pos}`).addClass('tooltip-map--active');
+		});
+		$(document).on('click', '.close--map', () => {
+			$(`.tooltip--map-${pos}`).removeClass('tooltip-map--active');
+		});
+	};
+
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -168,6 +176,8 @@ $(document).ready(() => {
 	inputFile();
 	validateForm();
 	fastReview();
+	tooltipMap('office');
+	tooltipMap('stock');
 });
 
 let popularCategoriesSlider = () => {
@@ -181,3 +191,72 @@ let popularCategoriesSlider = () => {
 $(window).on('resize', () => {
 	popularCategoriesSlider();
 });
+
+// map
+if ($('div').is('.tooltip-map__map')) {
+	ymaps.ready(() => {
+		// eslint-disable-next-line one-var
+		let mapOffice = new ymaps.Map('tooltip-map-office', {
+				center: [55.751574, 37.573856],
+				zoom: 13,
+			}, {
+				searchControlProvider: 'yandex#search',
+			}),
+
+			MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+				'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			),
+
+			myPlacemark = new ymaps.Placemark(mapOffice.getCenter(), {
+				hintContent: 'Собственный значок метки',
+				balloonContent: 'Это красивая метка',
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: '../images/tooltip-map/images/map.png',
+				iconImageSize: [20, 32],
+				iconImageOffset: [-5, -38],
+				iconContentLayout: MyIconContentLayout,
+			});
+
+		mapOffice.geoObjects
+			.add(myPlacemark);
+		mapOffice.controls.remove('trafficControl')
+			.remove('searchControl')
+			.remove('typeSelector')
+			.remove('geolocationControl')
+			.remove('fullscreenControl')
+			.remove('rulerControl');
+
+		// Stock
+		// eslint-disable-next-line one-var
+		let mapStock = new ymaps.Map('tooltip-map-stock', {
+				center: [55.751574, 37.573856],
+				zoom: 13,
+			}, {
+				searchControlProvider: 'yandex#search',
+			}),
+			MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
+				'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			),
+
+			myPlacemark2 = new ymaps.Placemark(mapStock.getCenter(), {
+				hintContent: 'Собственный значок метки',
+				balloonContent: 'Это красивая метка',
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: '../images/tooltip-map/images/map.png',
+				iconImageSize: [20, 32],
+				iconImageOffset: [-5, -38],
+				iconContentLayout: MyIconContentLayout2,
+			});
+
+		mapStock.geoObjects
+			.add(myPlacemark2);
+		mapStock.controls.remove('trafficControl')
+			.remove('searchControl')
+			.remove('typeSelector')
+			.remove('geolocationControl')
+			.remove('fullscreenControl')
+			.remove('rulerControl');
+	});
+}

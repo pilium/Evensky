@@ -6,10 +6,28 @@ mixin footer-column-contacts(title)
 				+icon('contacts', 'footer-column-contacts__icon')
 				span.footer-column-contacts__location Офис
 				p.footer-column-contacts__text 111033, Москва, ул.Золоторожский вал, д. 11, стр. 9
-					a.footer-column-contacts__map(href="#") на карте
+					span.footer-column-contacts__office на карте
+			+tooltip({
+				mods: 'map,map-office'
+			})
+				+tooltip-map({
+					title: 'Центральный офис в Москве',
+					text: '111111, Москва, ул. Золоторожский вал, дом 11, строение 9',
+					time: 'пн-пт 9:00-18:00',
+					id: 'tooltip-map-office'
+				})
 		.footer-column-contacts__block
 			address.footer-column-contacts__address
 				+icon('contacts', 'footer-column-contacts__icon')
 				span.footer-column-contacts__location Производство и склад
 				p.footer-column-contacts__text Московская обл., Ленинский р-н, г. Видное, Северная видновская промзона, ФГУП "Комплекс"
-					a.footer-column-contacts__map(href="#") на карте
+					span.footer-column-contacts__stock на карте
+			+tooltip({
+				mods: 'map,map-stock'
+			})
+				+tooltip-map({
+					title: 'Производство и склад',
+					text: 'Московская обл., Ленинский р-н, г. Видное, Северная видновская промзона, ФГУП "Комплекс"',
+					time: 'пн-пт 9:00-18:00',
+						id: 'tooltip-map-stock'
+				})

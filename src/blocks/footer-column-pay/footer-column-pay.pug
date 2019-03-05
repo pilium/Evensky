@@ -14,4 +14,8 @@ mixin footer-column-pay(title, href, link, titleBottom)
 		if (titlebottom !== 'undefined')
 			.footer-column-payment__block.footer-column-payment__block--relative
 				+footer-column-title(titleBottom, 'promo')
-				+tooltip('gift','Мультиварка в подарок до 31 декабря','footer-promo')
+				+tooltip({
+					icon: 'gift',
+					text: 'Мультиварка в подарок до 31 декабря',
+					mods: 'promo'
+				})
