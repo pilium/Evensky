@@ -28,6 +28,7 @@
 		"plugin/declaration-block-no-ignored-properties": true,
 		"images/broken": true,
 		"at-rule-no-unknown": null,
+		"no-descending-specificity": null,
 		"at-rule-empty-line-before": [
 			"always",
 			{
