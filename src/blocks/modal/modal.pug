@@ -1,24 +1,24 @@
-mixin modal(id, title, successText, long, mods)
+mixin modal(props)
 	-
 		var allMods = "";
-		if(typeof(mods) !== "undefined" && mods)
-			var modsList = mods.split(",");
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
 			for (var i = 0; i < modsList.length; i++) {
 				allMods = allMods + " modal--" + modsList[i].trim();
 			}
 
-	.modal.mfp-hide(id=id class=allMods tabindex="-1" role="dialog")&attributes(attributes)
+	.modal.mfp-hide(id=props.id class=allMods tabindex="-1" role="dialog")&attributes(attributes)
 		.hide-on-success
 			.modal__dialog(role="document")
 				.modal__header
-					h3.modal__title= title
+					h3.modal__title= props.title
 					+close('Закрыть','modal')
 				.modal__body
 					block
 		+modal-on-success({
 			mods: 'consult',
-			success: successText,
-			long: long
+			success: props.successText,
+			long: props.long
 		})
 
 mixin modal-on-success(props)

@@ -38,4 +38,8 @@
 			.category-prev__link { color: $color-link; }
 		}
 	}
+
+	&--hide {
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
 }

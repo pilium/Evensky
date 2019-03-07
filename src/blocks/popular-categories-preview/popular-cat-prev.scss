@@ -7,5 +7,16 @@
 		margin-bottom: 32px;
 		width: calc(25% - 15px);
 		max-width: calc(25% - 15px);
+
+		@media screen and (max-width: $tablet-size) {
+			margin-right: 24px;
+			margin-bottom: 24px;
+			width: calc(33% - 25px);
+			max-width: 33%;
+
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+		}
 	}
 }

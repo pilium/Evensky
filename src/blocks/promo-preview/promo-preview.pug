@@ -1,12 +1,20 @@
-mixin promoPrev(link, descr, title)
-	.promo__prev
-		.promo__header(style="background-image: url('https://source.unsplash.com/MYlCex1M7Ok/1920x200')")
+mixin promoPrev(props)
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " promo-prev--" + modsList[i].trim();
+			}
+
+	.promo-prev(class=allMods)
+		.promo-prev__header(style="background-image: url('../images/promo-preview/images/prof.png')")
 			+btn({
 				tag: 'a',
 				href: '#',
-				text: link
+				text: props.link
 			})
-		.promo__body
-			.promo__text
-				span.promo__descr= descr
-				span.promo__title= title
+		.promo-prev__body
+			.promo-prev__text
+				span.promo-prev__descr= props.descr
+				span.promo-prev__title= props.title

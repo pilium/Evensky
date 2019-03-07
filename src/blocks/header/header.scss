@@ -17,9 +17,17 @@
 			position: relative;
 
 			> * {
-				&:not(:last-child) { margin-right: 48px; }
+				&:not(:last-child) {
+					margin-right: 48px;
+
+					@media screen and (max-width: $tablet-size) {
+						margin-right: 40px;
+					}
+				}
 			}
 		}
+
+		@media screen and (max-width: $tablet-size) { padding: 24px 0; }
 	}
 
 	&__user-nav {
@@ -28,5 +36,36 @@
 
 	&__location {
 		margin-right: 80px;
+
+		@media screen and (max-width: $tablet-size) {
+			margin-right: 40px;
+		}
+	}
+
+	.logo {
+		@media screen and (max-width: $tablet-size) { order: 1; }
+	}
+
+	.catalog-nav {
+		@media screen and (max-width: $tablet-size) { order: 2; }
+	}
+
+	.search {
+		@media screen and (max-width: $tablet-size) { order: 3; }
+	}
+
+	.order-callback {
+		@media screen and (max-width: $tablet-size) {
+			order: 5;
+			margin-right: 0;
+		}
+	}
+
+	.basket {
+		@media screen and (max-width: $tablet-size) {
+			order: 4;
+			margin-right: 32px;
+			margin-left: 0;
+		}
 	}
 }

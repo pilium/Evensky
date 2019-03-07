@@ -3,5 +3,9 @@
 	margin: 0 auto;
 	padding: 0 80px;
 	min-width: 320px;
-	max-width: 1240px;
+	max-width: $content-size;
+
+	@media screen and (max-width: $tablet-size) {
+		padding: 0 16px;
+	}
 }

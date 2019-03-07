@@ -1,7 +1,4 @@
-.promo {
-	overflow: hidden;
-	border-radius: 8px;
-
+.promo-prev {
 	&__header {
 		display: flex;
 		align-items: flex-end;
@@ -26,5 +23,9 @@
 		font-family: $font-family-semibold;
 		font-weight: 600;
 		font-size: 21px;
+	}
+
+	&--hide {
+		@media screen and (max-width: $tablet-size) { display: none; }
 	}
 }

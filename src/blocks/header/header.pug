@@ -7,8 +7,22 @@ mixin header()
 				+user-nav('#', 'Войти')
 		.header__main
 			.container
-				+logo('images/logo/images/logo.svg', 'Логотип', 'Продажа стройматериалов')
+				+logo({
+					src: 'images/logo/images/logo.svg',
+					alt: 'Логотип',
+					text: 'Продажа стройматериалов'
+				})
 				+catalog-nav('Каталог стройматериалов')
 				+search('Артикул или название товара','search')
-				+order-callback('Звоните круглосуточно','+7 490 456-34-34', '#', 'Заказать звонок', 'header')
-				+busket('cart','Ваш заказ','здесь пока пусто')
+				+order-callback({
+					descr: 'Звоните круглосуточно',
+					tel: '+7 490 456-34-34',
+					link: '#',
+					linkText: 'Заказать звонок',
+					position: 'header'
+				})
+				+busket({
+					icon: 'cart',
+					title: 'Ваш заказ',
+					count: 'здесь пока пусто'
+				})

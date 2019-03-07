@@ -1,12 +1,13 @@
-mixin advantage(icon, title, text, href, link, modal)
+
+mixin advantage(props)
 	.advantage
 		.advantage__aside
-			+icon(icon, 'advantage__icon')
+			+icon(props.icon, 'advantage__icon')
 		.advantage__body
-			span.advantage__title= title
-			p.advantage__text= text
-			if(link)
-				if (modal)
-					a.advantage__link.js-modal-link(href= href)= link
+			span.advantage__title= props.title
+			p.advantage__text= props.text
+			if(props.link)
+				if (props.modal)
+					a.advantage__link.js-modal-link(href= props.href)= props.link
 				else
-					a.advantage__link(href= href)= link
+					a.advantage__link(href= props.href)= props.link

@@ -1,23 +1,48 @@
 .basket {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	margin-left: auto;
+	cursor: pointer;
 
 	&__icon {
 		margin-bottom: 8px;
 		width: 24px;
 		height: 24px;
 		fill: #fff;
+
+		@media screen and (max-width: $tablet-size) { margin-bottom: 0; }
 	}
 
 	&__title {
 		font-family: $font-family-semibold;
 		font-size: 16px;
 		white-space: nowrap;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
 	}
 
 	&__count {
 		font-size: 14px;
 		white-space: nowrap;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
+
+	&__number {
+		position: absolute;
+		right: -12px;
+		top: -12px;
+		display: none;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		font-size: 12px;
+		line-height: 24px;
+		text-align: center;
+		color: $color-base-text;
+		background-color: $color-main-action;
+
+		@media screen and (max-width: $tablet-size) { display: block; }
 	}
 }

@@ -1,29 +1,39 @@
-mixin product(link, sale, badge, name, count, articul, timeFor, priceOld, priceNow, btnText)
-	.product-prev
-		a.product-prev__header(href= link)
+mixin product(props)
+
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " product-prev--" + modsList[i].trim();
+			}
+
+	.product-prev(class= allMods)
+		a.product-prev__header(href= props.link)
 			.product-prev__marks
-				.product-prev__mark.product-prev__mark--bg-yellow= sale
-				if(badge !== '')
-					.product-prev__mark.product-prev__mark--bg-green= badge
-			img(src="https://source.unsplash.com/MYlCex1M7Ok/266x136" alt="product")
-		a.product-prev__body(href= link)
+				.product-prev__mark.product-prev__mark--bg-yellow= props.sale
+				if(props.badge !== '')
+					.product-prev__mark.product-prev__mark--bg-green= props.badge
+			img.product-prev__img(src="../images/product/images/plank.png" alt="product")
+		a.product-prev__body(href= props.link)
 			.product-prev__title
-				span.product-prev__name= name
-				span.text-count= count
-			.product-prev__info
-				span.product-prev__label Артикул
-				span.product-prev__value= articul
-			.product-prev__info
-				span.product-prev__label Срок изготовления
-				span.product-prev__value= timeFor
+				span.product-prev__name= props.name
+				span.text-count= props.count
+			.product-prev__info-wrapper
+				.product-prev__info
+					span.product-prev__label Артикул
+					span.product-prev__value= props.articul
+				.product-prev__info.product-prev__info--wide
+					span.product-prev__label Срок изготовления
+					span.product-prev__value= props.timeFor
 			.product-prev__price
-				span.product-prev__price-old= priceOld
-				span.product-prev__price-current= priceNow
+				span.product-prev__price-old= props.priceOld
+				span.product-prev__price-current= props.priceNow
 		.product-prev__footer
 			+btn({
 				tag: 'button',
 				href: '#',
-				text: btnText,
+				text: props.btnText,
 				mods: 'fill',
 				icon: 'cart',
 				iconClass: 'product-prev__icon'

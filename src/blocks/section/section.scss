@@ -27,4 +27,6 @@
 	&--bg-white { background-color: #fff; }
 
 	&--s-small { padding: 8px 0; }
+
+	@media screen and (max-width: $tablet-size) { padding: 16px 0; }
 }

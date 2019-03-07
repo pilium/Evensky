@@ -4,7 +4,12 @@
 
 		> * {
 			flex: 1;
-			&:not(:last-child) { margin-right: 32px; }
+
+			&:not(:last-child) {
+				margin-right: 32px;
+
+				@media screen and (max-width: $tablet-size) { margin-right: 8px; }
+			}
 		}
 	}
 }

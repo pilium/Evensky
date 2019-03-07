@@ -24,16 +24,9 @@
 		color: $color-base-text;
 		background-color: #fff;
 
-		&::before {
-			content: "";
-			position: absolute;
-			left: 194px;
-			top: -10px;
-			border-style: solid;
-			border-width: 0 10px 10px 10px;
-			border-color: transparent transparent #fff transparent;
-			width: 0;
-			height: 0;
+		@media screen and (max-width: $tablet-size) {
+			left: 20px;
+			max-width: 728px;
 		}
 	}
 

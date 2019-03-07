@@ -6,7 +6,32 @@
 			flex: 1;
 
 			&:not(:last-child) { margin-right: 16px; }
+
+			&.footer__nav {
+				flex: 2;
+
+				@media screen and (max-width: $tablet-size) { flex: 1; }
+			}
 		}
+	}
+
+	&__nav {
+		display: flex;
+
+		> * {
+			flex: 1;
+
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $tablet-size) {
+					margin-right: 0;
+					margin-bottom: 24px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $tablet-size) { flex-direction: column; }
 	}
 
 	&__top {

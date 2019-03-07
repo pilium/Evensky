@@ -1,25 +1,26 @@
-mixin order-callback(descr, tel, link, linkText, position, icon, mail)
-	if (position === 'form')
+mixin order-callback(props)
+
+	if (props.position === 'form')
 		.order-callback.order-callback--form.form-success-contacts
-			+icon(icon,'order-callback__icon')
+			+icon(props.icon,'order-callback__icon')
 			.order-callback__info
-				span.order-callback__description= descr
-				if (mail !== 'undefined' && mail)
-					a.order-callback__link.order-callback__link--mail(href="mailto:question@evensky.ru")= mail
+				span.order-callback__description= props.descr
+				if (props.mail !== 'undefined' && props.mail)
+					a.order-callback__link.order-callback__link--mail(href="mailto:question@evensky.ru")= props.mail
 				else
-					a.order-callback__link.order-callback__link--phone(href="tel:+74904563434")= tel
-					a.order-callback__qr(href=link)= linkText
+					a.order-callback__link.order-callback__link--phone(href="tel:+74904563434")= props.tel
+					a.order-callback__qr(href=link)= props.linkText
 
 	else if (position === 'footer')
 		.order-callback.order-callback--footer
 			img.order-callback__img(src="images/order-callback/images/wiki.png" alt="Wikipedia logo")
 			.order-callback__info
-				span.order-callback__description= descr
-				a.order-callback__phone(href="tel:+74904563434")= tel
-				a.order-callback__link(href=link)= linkText
+				span.order-callback__description= props.descr
+				a.order-callback__phone(href="tel:+74904563434")= props.tel
+				a.order-callback__link(href=link)= props.linkText
 	else
 		.order-callback
 			.order-callback__info
-				span.order-callback__description= descr
-				a.order-callback__phone(href="tel:+74904563434")= tel
-				a.order-callback__link(href=link)= linkText
+				span.order-callback__description= props.descr
+				a.order-callback__phone(href="tel:+74904563434")= props.tel
+				a.order-callback__link(href=link)= props.linkText

@@ -36,11 +36,23 @@ $(document).ready(() => {
 		});
 
 		slider.slick({
-			infinite: false,
+			infinite: true,
 			slidesToShow: 4,
 			slidesToScroll: 1,
 			prevArrow: '.slider__nav--prev',
 			nextArrow: '.slider__nav--next',
+			autoplay: true,
+			edgeFriction: 0.56,
+			responsive: [
+				{
+					breakpoint: 1239,
+					settings: {
+						slidesToShow: 3,
+						arrows: false,
+						dots: true,
+					},
+				},
+			],
 		});
 	};
 

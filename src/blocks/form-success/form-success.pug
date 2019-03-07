@@ -11,8 +11,20 @@ mixin form-success(type)
 			span.form-success__label Не готовы ждать?
 			.form-success__row
 				.form-success__col
-					+order-callback('Звоните круглосуточно','+7 490 456-34-34', '#', 'Набрать номер по QR коду', 'form', 'phone')
+					+order-callback({
+						descr: 'Звоните круглосуточно',
+						tel: '+7 490 456-34-34',
+						link: '#',
+						linkText: 'Набрать номер по QR коду',
+						position: 'form',
+						icon: 'phone'
+					})
 				.form-success__col
-					+order-callback('Напишите нам email','', '', '', 'form', 'mail', 'question@evensky.ru')
+					+order-callback({
+						descr: 'Напишите нам email',
+						position: 'form',
+						icon: 'mail',
+						mail: 'question@evensky.ru'
+					})
 	if ( type === 'long')
 		+fast-review('Насколько быстро вы нашли нужный товар ?', 'modal')

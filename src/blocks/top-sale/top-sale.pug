@@ -1,11 +1,12 @@
-mixin top-sale(href, title, grid, big)
-	if big
-		a.top-sale.top-sale--big(href=href class=`top-sale__grid-${grid}`)
+mixin top-sale(props)
+
+	if props.big
+		a.top-sale.top-sale--big(href=href class=`top-sale__grid-${props.grid}`)
 			.top-sale__img-wrapper
-				img.top-sale__img(src="https://source.unsplash.com/MYlCex1M7Ok/600x400" alt="Фото товара")
-			span.top-sale__title= title
+				img.top-sale__img(src="images/top-sale/images/top-sale--big.png" alt="Фото товара")
+			span.top-sale__title= props.title
 	else
-		a.top-sale(href=href class=`top-sale__grid-${grid}`)
+		a.top-sale(href=href class=`top-sale__grid-${props.grid}`)
 			.top-sale__img-wrapper
-				img.top-sale__img(src="https://source.unsplash.com/MYlCex1M7Ok/600x400" alt="Фото товара")
-			span.top-sale__title= title
+				img.top-sale__img(src="images/top-sale/images/top-sale.png" alt="Фото товара")
+			span.top-sale__title= props.title

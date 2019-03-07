@@ -1,7 +1,7 @@
-mixin footer-column-pay(title, href, link, titleBottom)
+mixin footer-column-pay(props)
 	.footer-column
 		.footer-column-payment__block
-			+footer-column-title(title)
+			+footer-column-title(props.title)
 			.footer-column-payment__types
 				ul.footer-column-payment__list
 					li.footer-column-payment__item
@@ -10,10 +10,10 @@ mixin footer-column-pay(title, href, link, titleBottom)
 						+icon('mastercard', 'footer-column-payment__icon')
 					li.footer-column-payment__item
 						+icon('mir', 'footer-column-payment__icon')
-				a.footer-column-payment__link(href= href)= link
-		if (titlebottom !== 'undefined')
+				a.footer-column-payment__link(href= props.href)= props.link
+		if (props.titlebottom !== 'undefined')
 			.footer-column-payment__block.footer-column-payment__block--relative
-				+footer-column-title(titleBottom, 'promo')
+				+footer-column-title(props.titleBottom, 'promo')
 				+tooltip({
 					icon: 'gift',
 					text: 'Мультиварка в подарок до 31 декабря',

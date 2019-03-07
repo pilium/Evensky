@@ -1,4 +1,4 @@
-mixin logo(src, alt, text)
-	.header__logo.logo
-		img.logo__img(src= src alt= alt)
-		span.logo__text= text
+mixin logo(props)
+	.logo
+		img.logo__img(src= props.src alt= props.alt)
+		span.logo__text= props.text

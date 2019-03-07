@@ -1,6 +1,16 @@
-mixin category-prev(name)
-	.category-prev
-		.category-prev__img(style="background-image: url('https://source.unsplash.com/MYlCex1M7Ok/255x180')")
+mixin category-prev(name, mods)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' category-prev--' + modsList[i].trim();
+			}
+		}
+
+	.category-prev(class=allMods)
+		.category-prev__img(style="background-image: url('../images/category-preview/images/pop-cat-1.png')")
 		.category-prev__body
 			.category-prev__title
 				span.category-prev__title-name= name
