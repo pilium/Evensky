@@ -10,18 +10,6 @@
 	box-shadow: 0 0 5px 0 rgba(159, 197, 178, 0.5);
 	background-color: #fff;
 
-	// &::after {
-	// 	content: "";
-	// 	position: absolute;
-	// 	left: 100px;
-	// 	top: 10px;
-	// 	border-style: solid;
-	// 	border-width: 0 10px 10px 10px;
-	// 	border-color: transparent transparent #fff transparent;
-	// 	width: 0;
-	// 	height: 0;
-	// }
-
 	> * {
 		&:not(:last-child) { margin-right: 16px; }
 	}
@@ -41,5 +29,13 @@
 		font-size: 14px;
 		line-height: 24px;
 		white-space: nowrap;
+
+		@media screen and (max-width: $tablet-size) {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
+
+	@media screen and (max-width: $tablet-size) { max-width: 728px; }
 }
