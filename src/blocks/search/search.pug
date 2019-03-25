@@ -10,4 +10,13 @@ mixin search(ph, icon)
 					placeholder: ph
 				}
 				})
-		+icon(icon,'search-icon')
+		+search-result({
+			text: 'Показать все результаты',
+			count: 768
+		})
+		+btn({
+				tag: 'button',
+				icon: icon,
+				iconClass: 'search-icon',
+				mods: 'size-m2,search'
+			})

@@ -1,0 +1,59 @@
+mixin search-result(props)
+	.search-result
+		+form('search')
+			+field-text({
+				mods: 'search,size-small',
+				id: 'search',
+				attrs: {
+					type: 'search',
+					name: 's',
+					placeholder: 'Поиск'
+				}
+				})
+		+search-item({
+			title: 'Весь каталог',
+			name: 'Планка стыковочная',
+			count: '123 результата',
+		})
+		+search-item({
+			title: 'Доборные элементы кровли',
+			name: 'Планка стыковочная',
+			count: '144 результата',
+		})
+		+search-item({
+			title: 'Элементы безопасноти кровли',
+			name: 'Планка стыковочная',
+			count: '128 результатов',
+		})
+		+search-goods({
+			title: 'Товары',
+			name: 'Планка стыковочная',
+			descr: '30х20х3000 мм, толщина 0.4 мм',
+			price: '356 руб. за шт.'
+		})
+		.search-result__all
+			span.search-result__text= props.text
+			span.search-result__count= props.count
+
+mixin search-item(props)
+	a.search-item(href="#")
+		span.search-item__title.search-result__title= props.title
+		.search-item__body
+			span.search-item__name= props.name
+			span.search-item__count= props.count
+
+mixin search-goods(props)
+	.search-goods
+		span.search-goods__title.search-result__title= props.title
+		ul.search-goods__list
+			each val in [1,2,3,4]
+				li.search-goods__item
+					a.search-goods__link(href="#")
+						.search-goods__img-wrapper
+							img.search-goods__img(src="images/product/images/plank.png" alt="Планка")
+						.search-goods__body
+							.search-goods__line
+								span.search-goods__name= props.name
+								span.search-goods__descr= props.descr
+							.search-goods__line
+								span.search-goods__price= props.price
