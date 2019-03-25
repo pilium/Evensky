@@ -10,7 +10,12 @@
 
 	&__line {
 		> * {
-			&:not(:last-child) { margin-right: 32px; }
+			&:not(:last-child) {
+				margin-right: 32px;
+
+				@media screen and (max-width: $phone-size) { margin-right: 8px; }
+			}
+			&:last-child { display: block; }
 		}
 	}
 

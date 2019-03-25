@@ -13,6 +13,18 @@
 		.fieldset__inner {
 			display: flex;
 			justify-content: space-between;
+
+			.input-field {
+				@media screen and (max-width: $phone-size) {
+					flex: 0 0 auto;
+				}
+			}
+
+			.input-field__input {
+				@media screen and (max-width: $phone-size) { margin-bottom: 8px; }
+			}
+
+			@media screen and (max-width: $phone-size) { flex-direction: column; }
 		}
 	}
 }

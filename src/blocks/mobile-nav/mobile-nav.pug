@@ -1,0 +1,28 @@
+mixin mobile-nav()
+	.mobile-nav
+		+sandwich('mobile')
+		.mobile-nav__content
+			.mobile-nav__main
+				ul.mobile-nav__list
+					li.mobile-nav__item
+						a.mobile-nav__link(href="#") Оплата и доставка
+					li.mobile-nav__item
+						a.mobile-nav__link(href="#") Гарантия
+					li.mobile-nav__item
+						a.mobile-nav__link(href="#") Услуги
+					li.mobile-nav__item
+						a.mobile-nav__link(href="#") Компания
+					li.mobile-nav__item
+						a.mobile-nav__link(href="#") Контакты
+				ul.mobile-nav__user-list
+					li.mobile-nav__user-item
+						a.mobile-nav__user-link(href="#") Войти
+				+location('map','Нижний Новгород')
+			.mobile-nav__callback
+				+order-callback({
+					descr: 'Звоните круглосуточно',
+					tel: '+7 490 456-34-34',
+					link: '#',
+					linkText: 'Заказать звонок',
+					position: 'mobile'
+				})

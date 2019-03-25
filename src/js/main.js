@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
 /* eslint-disable func-names */
 $(document).ready(() => {
 	svg4everybody();
+
+	$('input[type="tel"]').mask('+7(999) 999-9999');
 
 	// @include('detect.js')
 
@@ -11,15 +14,35 @@ $(document).ready(() => {
 			const catalog = $(this).parent();
 
 			sandwichElem.toggleClass('sandwich--active');
+			$('.sandwich--mobile').removeClass('sandwich--active');
+			$('.mobile-nav').removeClass('mobile-nav--active');
 			catalog.toggleClass('catalog-nav--active');
 		});
+
+		if ($(window).width() < 768) {
+			$(document).on('click', '.sandwich--mobile', () => {
+				$('.sandwich--mobile').toggleClass('sandwich--active');
+				$('body').toggleClass('is-fixed');
+				$('.mobile-nav').toggleClass('mobile-nav--active');
+
+				if ($('.catalog-nav').hasClass('catalog-nav--active')) {
+					$('.catalog-nav').removeClass('catalog-nav--active');
+				}
+			});
+		}
 	};
 
 	let popularCategoriesSlider = function () {
 		if ($(window).width() < 768) {
 			$('.js-categories-prev').slick({
-				slidesToShow: 2,
+				slidesToShow: 1,
 				slidesToScroll: 1,
+				adaptiveHeight: true,
+				infinite: false,
+				arrows: true,
+				prevArrow: '.popular-prev__btn--prev',
+				nextArrow: '.popular-prev__btn--next',
+				dots: true,
 			});
 		}
 	};
@@ -28,7 +51,6 @@ $(document).ready(() => {
 		const sliderCount = $('.js-section-header__text');
 		const slider = $('.js-slider--you-seen');
 
-		// eslint-disable-next-line func-names
 		slider.on('init afterChange', (event, slick, currentSlide) => {
 			let i = (currentSlide ? currentSlide : 0) + 1;
 
@@ -52,48 +74,83 @@ $(document).ready(() => {
 						dots: true,
 					},
 				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
+						dots: false,
+					},
+				},
 			],
 		});
 	};
 
 	let catalogNav = () => {
-		// eslint-disable-next-line func-names
-		$('.js-catalog-list__item').hover(function () {
-			let catalogBody = $(this).closest('.js-catalog-nav__body');
+		if (window.innerWidth > 767) {
+			$('.js-catalog-list__item').hover(function () {
+				let catalogBody = $(this).closest('.js-catalog-nav__body');
 
-			catalogBody.css('width', 925);
-		// eslint-disable-next-line func-names
-		}, function () {
-			let catalogBody = $(this).closest('.js-catalog-nav__body');
+				catalogBody.css('width', 925);
+			}, function () {
+				let catalogBody = $(this).closest('.js-catalog-nav__body');
 
-			catalogBody.css('width', 'auto');
+				catalogBody.css('width', 'auto');
+			}
+			);
+		} else if (window.innerWidth <= 767) {
+			$(document).on('click', '.catalog-list__label', function () {
+				$(this).parent().toggleClass('catalog-list__item--active');
+				$(this).siblings().removeClass('catalog-list__item--active');
+			});
 		}
-		);
+	};
+
+	let catalogSubnavInner = () => {
+		if (window.innerWidth <= 767) {
+			$(document).on('click', '.catalog-subnav__header', function () {
+				$(this).toggleClass('catalog-subnav__header--active');
+			});
+		}
 	};
 
 	let locationSelect = () => {
-		// eslint-disable-next-line func-names
 		$(document).on('click', '.btn--js-location', function () {
 			const val = $(this).data('location');
 
 			$(this).closest('.js-location-question').hide();
 			if (!val) {
 				$(this).closest('.js-location__body').addClass('is-location-selected');
+				$('.overlay').addClass('overlay--is-active');
 			}
 		});
 
-		// eslint-disable-next-line func-names
 		$(document).on('click', '.js-location__header', function () {
 			$(this).siblings('.js-location__body').toggleClass('is-location-selected');
+			$('.overlay').addClass('overlay--is-active');
+		});
+
+		$(document).on('click', '.close--location', function () {
+			$(this).closest('.js-location__body').removeClass('is-location-selected');
+			$('.overlay').removeClass('overlay--is-active');
+		});
+
+		$(document).on('click', (e) => {
+			let target = e.target.classList;
+			let t = Array.from(target);
+
+			if (t.includes('overlay')) {
+				$('.js-location__body').removeClass('is-location-selected');
+				$('.overlay').removeClass('overlay--is-active');
+			}
 		});
 	};
 
 	let citySelect = () => {
-		// eslint-disable-next-line func-names
 		$(document).on('click', '.location-select__item', function () {
 			let cityVal = $(this).data('city');
 
 			$(this).closest('.js-location__body').removeClass('is-location-selected');
+			$('.overlay').removeClass('overlay--is-active');
 			$('.js-location__current').text(cityVal);
 		});
 	};
@@ -102,6 +159,15 @@ $(document).ready(() => {
 		$('.js-modal-link').magnificPopup({
 			showCloseBtn: false,
 		});
+
+		if (window.innerWidth < 768) {
+			$('.js-modal-link').on('mfpOpen', () => {
+				$('body').addClass('is-fixed');
+			});
+			$('.js-modal-link').on('mfpClose', () => {
+				$('body').removeClass('is-fixed');
+			});
+		}
 
 		$(document).on('click', '.close--modal', () => {
 			$.magnificPopup.close();
@@ -178,6 +244,104 @@ $(document).ready(() => {
 		});
 	};
 
+	let simpleBar = () => {
+		if ($(window).width() > 767) {
+			$.each($('.catalog-subnav'), (i, v) => {
+				// eslint-disable-next-line no-new
+				new SimpleBar(v);
+			});
+		}
+	};
+
+	let inputSearch = () => {
+		const search = document.querySelector('input[type="search"]');
+
+		search.addEventListener('input', () => {
+			if (search.value.length > 2) {
+				$('.search-result').addClass('search-result--is-active');
+			} else {
+				$('.search-result').removeClass('search-result--is-active');
+			}
+		});
+
+		if ($(window).width() < 1240) {
+			$(document).on('click', '.btn--search', () => {
+				$('.btn--search').addClass('btn--search-active');
+				$('.search-result').toggleClass('search-result--is-active');
+				$('body').toggleClass('is-fixed');
+			});
+		}
+	};
+
+	// map
+	if ($('div').is('.tooltip-map__map')) {
+		ymaps.ready(() => {
+		// eslint-disable-next-line one-var
+			let mapOffice = new ymaps.Map('tooltip-map-office', {
+					center: [55.751574, 37.573856],
+					zoom: 13,
+				}, {
+					searchControlProvider: 'yandex#search',
+				}),
+
+				MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+					'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+				),
+
+				myPlacemark = new ymaps.Placemark(mapOffice.getCenter(), {
+					hintContent: 'Собственный значок метки',
+					balloonContent: 'Это красивая метка',
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: '../images/tooltip-map/images/map.png',
+					iconImageSize: [20, 32],
+					iconImageOffset: [-5, -38],
+					iconContentLayout: MyIconContentLayout,
+				});
+
+			mapOffice.geoObjects
+				.add(myPlacemark);
+			mapOffice.controls.remove('trafficControl')
+				.remove('searchControl')
+				.remove('typeSelector')
+				.remove('geolocationControl')
+				.remove('fullscreenControl')
+				.remove('rulerControl');
+
+			// Stock
+			// eslint-disable-next-line one-var
+			let mapStock = new ymaps.Map('tooltip-map-stock', {
+					center: [55.751574, 37.573856],
+					zoom: 13,
+				}, {
+					searchControlProvider: 'yandex#search',
+				}),
+				MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
+					'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+				),
+
+				myPlacemark2 = new ymaps.Placemark(mapStock.getCenter(), {
+					hintContent: 'Собственный значок метки',
+					balloonContent: 'Это красивая метка',
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: '../images/tooltip-map/images/map.png',
+					iconImageSize: [20, 32],
+					iconImageOffset: [-5, -38],
+					iconContentLayout: MyIconContentLayout2,
+				});
+
+			mapStock.geoObjects
+				.add(myPlacemark2);
+			mapStock.controls.remove('trafficControl')
+				.remove('searchControl')
+				.remove('typeSelector')
+				.remove('geolocationControl')
+				.remove('fullscreenControl')
+				.remove('rulerControl');
+		});
+	}
+
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -190,6 +354,9 @@ $(document).ready(() => {
 	fastReview();
 	tooltipMap('office');
 	tooltipMap('stock');
+	simpleBar();
+	catalogSubnavInner();
+	inputSearch();
 });
 
 let popularCategoriesSlider = () => {
@@ -203,72 +370,3 @@ let popularCategoriesSlider = () => {
 $(window).on('resize', () => {
 	popularCategoriesSlider();
 });
-
-// map
-if ($('div').is('.tooltip-map__map')) {
-	ymaps.ready(() => {
-		// eslint-disable-next-line one-var
-		let mapOffice = new ymaps.Map('tooltip-map-office', {
-				center: [55.751574, 37.573856],
-				zoom: 13,
-			}, {
-				searchControlProvider: 'yandex#search',
-			}),
-
-			MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-				'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-			),
-
-			myPlacemark = new ymaps.Placemark(mapOffice.getCenter(), {
-				hintContent: 'Собственный значок метки',
-				balloonContent: 'Это красивая метка',
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: '../images/tooltip-map/images/map.png',
-				iconImageSize: [20, 32],
-				iconImageOffset: [-5, -38],
-				iconContentLayout: MyIconContentLayout,
-			});
-
-		mapOffice.geoObjects
-			.add(myPlacemark);
-		mapOffice.controls.remove('trafficControl')
-			.remove('searchControl')
-			.remove('typeSelector')
-			.remove('geolocationControl')
-			.remove('fullscreenControl')
-			.remove('rulerControl');
-
-		// Stock
-		// eslint-disable-next-line one-var
-		let mapStock = new ymaps.Map('tooltip-map-stock', {
-				center: [55.751574, 37.573856],
-				zoom: 13,
-			}, {
-				searchControlProvider: 'yandex#search',
-			}),
-			MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
-				'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-			),
-
-			myPlacemark2 = new ymaps.Placemark(mapStock.getCenter(), {
-				hintContent: 'Собственный значок метки',
-				balloonContent: 'Это красивая метка',
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: '../images/tooltip-map/images/map.png',
-				iconImageSize: [20, 32],
-				iconImageOffset: [-5, -38],
-				iconContentLayout: MyIconContentLayout2,
-			});
-
-		mapStock.geoObjects
-			.add(myPlacemark2);
-		mapStock.controls.remove('trafficControl')
-			.remove('searchControl')
-			.remove('typeSelector')
-			.remove('geolocationControl')
-			.remove('fullscreenControl')
-			.remove('rulerControl');
-	});
-}

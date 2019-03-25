@@ -3,6 +3,8 @@
 		font-family: $font-family-semibold;
 		font-size: 40px;
 		line-height: 48px;
+
+		@media screen and (max-width: $phone-size) { font-size: 30px; }
 	}
 
 	&--section {
@@ -11,5 +13,7 @@
 		line-height: 48px;
 
 		@media screen and (max-width: $tablet-size) { margin: 8px 0 16px 0; }
+
+		@media screen and (max-width: $phone-size) { font-size: 30px; }
 	}
 }

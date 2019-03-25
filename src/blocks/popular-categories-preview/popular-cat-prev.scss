@@ -1,22 +1,53 @@
-.popular-cat__prev {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+.popular-prev {
+	position: relative;
 
-	> * {
-		margin-bottom: 32px;
-		width: calc(25% - 15px);
-		max-width: calc(25% - 15px);
+	&__navigation {
+		display: none;
 
-		@media screen and (max-width: $tablet-size) {
-			margin-right: 24px;
-			margin-bottom: 24px;
-			width: calc(33% - 25px);
-			max-width: 33%;
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
 
-			&:nth-child(3n+3) {
-				margin-right: 0;
+	&__btn {
+		&--prev {
+			left: -15px;
+		}
+
+		&--next {
+			right: -15px;
+		}
+	}
+
+	&__prev {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		> * {
+			margin-bottom: 32px;
+			width: calc(25% - 15px);
+			max-width: calc(25% - 15px);
+
+			@media screen and (max-width: $tablet-size) {
+				margin-right: 24px;
+				margin-bottom: 24px;
+				width: calc(33% - 25px);
+				max-width: 33%;
+
+				&:nth-child(3n+3) {
+					margin-right: 0;
+				}
 			}
+
+			@media screen and (max-width: $phone-size) {
+				flex: 1;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		@media screen and (max-width: $phone-size) {
+			display: block;
+			margin: 0 24px;
 		}
 	}
 }

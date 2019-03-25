@@ -69,6 +69,7 @@
 				"bowser": "1.9.1",
 				"jquery": "3.3.1",
 				"jquery-validation": "1.19.0",
+				"jquery.maskedinput": "1.4.1",
 				"magnific-popup": "1.1.0",
 				"normalize-css": "2.3.1",
 				"simplebar": "3.1.3",

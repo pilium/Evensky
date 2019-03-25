@@ -8,13 +8,13 @@ mixin promoPrev(props)
 			}
 
 	.promo-prev(class=allMods)
-		.promo-prev__header(style="background-image: url('../images/promo-preview/images/prof.png')")
+		.promo-prev__header(style="background-image: url('../images/promo-preview/images/prof.jpg')")
 			+btn({
 				tag: 'a',
 				href: '#',
 				text: props.link
 			})
 		.promo-prev__body
-			.promo-prev__text
+			a.promo-prev__text(href="#")
 				span.promo-prev__descr= props.descr
 				span.promo-prev__title= props.title

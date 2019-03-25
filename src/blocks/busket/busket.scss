@@ -12,6 +12,11 @@
 		fill: #fff;
 
 		@media screen and (max-width: $tablet-size) { margin-bottom: 0; }
+
+		@media screen and (max-width: $phone-size) {
+			width: 26px;
+			height: 26px;
+		}
 	}
 
 	&__title {
@@ -44,5 +49,14 @@
 		background-color: $color-main-action;
 
 		@media screen and (max-width: $tablet-size) { display: block; }
+
+		@media screen and (max-width: $phone-size) {
+			right: -8px;
+			top: -8px;
+			width: 16px;
+			height: 16px;
+			font-size: 10px;
+			line-height: 16px;
+		}
 	}
 }

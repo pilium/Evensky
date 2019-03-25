@@ -13,6 +13,11 @@
 				margin-right: 32px;
 
 				@media screen and (max-width: $tablet-size) { margin-right: 24px; }
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 24px;
+				}
 			}
 
 			@media screen and (max-width: $tablet-size) {
@@ -21,5 +26,7 @@
 				}
 			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 }

@@ -2,7 +2,7 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: calc(100% + 10px);
+	top: 25px;
 	border-radius: 4px;
 	padding: 8px 8px 8px 32px;
 	background-color: #fff;
@@ -38,6 +38,7 @@
 		right: auto;
 		top: auto;
 		bottom: 30%;
+		z-index: 3;
 		padding: 0;
 
 		&::before {
@@ -47,11 +48,27 @@
 			bottom: -12px;
 			border-width: 12px 12px 0 12px;
 			border-color: #fff transparent transparent transparent;
+
+			@media screen and (max-width: $tablet-size) { display: none; }
 		}
 
 		&-office,
 		&-stock {
 			display: none;
 		}
+
+		@media screen and (max-width: $tablet-size) {
+			position: fixed;
+			left: auto;
+			right: 10%;
+		}
+
+		@media screen and (max-width: $phone-size) {
+			left: 5%;
+			right: 5%;
+			bottom: auto;
+		}
 	}
+
+	@media screen and (max-width: $phone-size) { top: 5%; }
 }

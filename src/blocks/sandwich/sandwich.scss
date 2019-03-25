@@ -19,6 +19,28 @@
 		&--bottom { top: 12px; }
 	}
 
+	&.sandwich--mobile {
+		@media screen and (max-width: $phone-size) {
+			display: block;
+			width: 30px;
+			height: 18px;
+
+			.sandwich__line {
+				&--middle { top: 9px; }
+
+				&--bottom { top: 18px; }
+			}
+
+			&.sandwich--active {
+				.sandwich__line {
+					&--top { top: 9px; }
+
+					&--bottom { top: 9px; }
+				}
+			}
+		}
+	}
+
 	&--active {
 		.sandwich__line {
 			&--top {
@@ -33,4 +55,6 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: $phone-size) { display: none; }
 }

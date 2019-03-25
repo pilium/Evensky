@@ -6,4 +6,6 @@
 	&__img { width: 100px; }
 
 	&__text { white-space: nowrap; }
+
+	@media screen and (max-width: $phone-size) { display: none; }
 }

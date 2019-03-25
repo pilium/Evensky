@@ -5,4 +5,35 @@ mixin top-sales()
 	})
 		+section-header('Лидеры продаж')
 		.top-sales
-			block
+			+top-sale({
+				href: '#',
+				title: 'Водосточные трубы',
+				grid: 'first',
+				big: 'big'
+			})
+			+top-sale({
+				href: '#',
+				title: 'Гладкий лист оцинкованый',
+				grid: 'second'
+			})
+			+top-sale({
+				href: '#',
+				title: 'Гладкий лист оцинкованый',
+				grid: 'third'
+			})
+			+top-sale({
+				href: '#',
+				title: 'Гладкий лист оцинкованый',
+				grid: 'fourth'
+			})
+			+top-sale({
+				href: '#',
+				title: 'Гладкий лист оцинкованый',
+				grid: 'fives'
+			})
+			+top-sale({
+				href: '#',
+				title: 'Планка стыковочная 30х30х2000 мм, толщина 0.4 мм, цвет графитовый серый',
+				grid: 'sixes',
+				big: 'big'
+			})

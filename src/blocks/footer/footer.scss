@@ -2,10 +2,19 @@
 	&__columns {
 		display: flex;
 
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+
 		> * {
 			flex: 1;
 
-			&:not(:last-child) { margin-right: 16px; }
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 24px;
+				}
+			}
 
 			&.footer__nav {
 				flex: 2;
@@ -46,12 +55,18 @@
 				&:last-child { margin-bottom: 0; }
 			}
 		}
+
+		@media screen and (max-width: $phone-size) { padding: 16px 0; }
 	}
 
 	&__main {
 		display: flex;
 		padding-bottom: 16px;
 		background-color: $color-dark-bg;
+
+		.container { margin: 0; }
+
+		@media screen and (max-width: $tablet-size) { padding-top: 8px; }
 	}
 
 	&__bottom {

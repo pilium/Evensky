@@ -8,9 +8,18 @@ mixin slider(props)
 			}
 		}
 	.slider(class=allMods)
-		.slider__nav.slider__nav--prev
-			+icon('arrow-left', 'slider__icon')
-		.slider__nav.slider__nav--next
-			+icon('arrow-right', 'slider__icon')
-		.js-slider(class=`${props.jsMod}`)
-			block
+		if (props.type === 'cat')
+			.popular-prev__navigation
+				.slider__nav.popular-prev__btn.popular-prev__btn--prev
+					+icon('arrow-left', 'slider__icon')
+				.slider__nav.popular-prev__btn.popular-prev__btn--next
+					+icon('arrow-right', 'slider__icon')
+			.js-categories-prev.popular-prev__prev
+				block
+		else
+			.slider__nav.slider__nav--prev
+				+icon('arrow-left', 'slider__icon')
+			.slider__nav.slider__nav--next
+				+icon('arrow-right', 'slider__icon')
+			.js-slider(class=`${props.jsMod}`)
+				block

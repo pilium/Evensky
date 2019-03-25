@@ -5,7 +5,7 @@
 	min-width: 320px;
 	max-width: $content-size;
 
-	@media screen and (max-width: $tablet-size) {
-		padding: 0 16px;
-	}
+	@media screen and (max-width: $tablet-size) { padding: 0 16px; }
+
+	// @media screen and (max-width: $phone-size) { padding: 0 8px; }
 }

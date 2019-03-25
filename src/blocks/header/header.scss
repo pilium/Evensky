@@ -2,14 +2,18 @@
 	.container {
 		display: flex;
 		align-items: center;
+
+		@media screen and (max-width: $tablet-size) { justify-content: center; }
 	}
 
 	&__top {
 		padding: 8px 0;
+
+		@media screen and (max-width: $phone-size) { display: none; }
 	}
 
 	&__main {
-		padding: 32px 0;
+		padding: 16px 0;
 		color: #fff;
 		background-color: $color-dark-bg;
 
@@ -20,14 +24,14 @@
 				&:not(:last-child) {
 					margin-right: 48px;
 
-					@media screen and (max-width: $tablet-size) {
-						margin-right: 40px;
-					}
+					@media screen and (max-width: $tablet-size) { margin-right: 40px; }
+
+					@media screen and (max-width: $phone-size) { margin-right: 24px; }
 				}
 			}
 		}
 
-		@media screen and (max-width: $tablet-size) { padding: 24px 0; }
+		@media screen and (max-width: $tablet-size) { padding: 8px 0; }
 	}
 
 	&__user-nav {
@@ -42,6 +46,37 @@
 		}
 	}
 
+	&__actions {
+		display: flex;
+		align-items: center;
+
+		> * {
+			&:not(:last-child) {
+				margin-right: 48px;
+
+				@media screen and (max-width: $tablet-size) { margin-right: 40px; }
+
+				@media screen and (max-width: $phone-size) { margin-right: 16px; }
+			}
+		}
+
+		@media screen and (max-width: $tablet-size) { order: 3; }
+
+		@media screen and (max-width: $phone-size) { margin-left: auto; }
+	}
+
+	&__phone-link {
+		display: none;
+		height: 26px;
+
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
+
+	&__phone-icon {
+		width: 26px;
+		height: 26px;
+	}
+
 	.logo {
 		@media screen and (max-width: $tablet-size) { order: 1; }
 	}
@@ -51,21 +86,27 @@
 	}
 
 	.search {
-		@media screen and (max-width: $tablet-size) { order: 3; }
+		@media screen and (max-width: $tablet-size) { order: 1; }
+	}
+
+	.header__phone-link {
+		@media screen and (max-width: $phone-size) { order: 2; }
 	}
 
 	.order-callback {
 		@media screen and (max-width: $tablet-size) {
-			order: 5;
+			order: 3;
 			margin-right: 0;
 		}
 	}
 
 	.basket {
 		@media screen and (max-width: $tablet-size) {
-			order: 4;
+			order: 2;
 			margin-right: 32px;
 			margin-left: 0;
 		}
+
+		@media screen and (max-width: $phone-size) { margin-right: 0; }
 	}
 }

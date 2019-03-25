@@ -8,4 +8,8 @@
 	&--promo {
 		margin-bottom: 0;
 	}
+
+	&--nav {
+		@media screen and (max-width: $tablet-size) { margin-bottom: 8px; }
+	}
 }

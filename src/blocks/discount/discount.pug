@@ -3,6 +3,59 @@ mixin discount()
 		mods: 'discount,bg-white',
 		mainClass: 'discount'
 	})
-		+section-header('Товары со скидкой', 'Все товары со скидкой', 123, true)
+		+section-header('Товары со скидкой')
+			+section-header-right(123, 'Все товары со скидкой')
 		.product-wrapper
-			block
+			+product({
+				link: '#',
+				sale: '-25%',
+				badge: '',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '10 шт.',
+				articul: 13761533,
+				timeFor: 'от 2 до 5 дней',
+				priceOld: '80 руб.',
+				priceNow: '76 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'discount'
+			})
+			+product({
+				link: '#',
+				sale: '-50%',
+				badge: '',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '10 шт.',
+				articul: 13761533,
+				timeFor: 'от 2 до 5 дней',
+				priceOld: '80 руб.',
+				priceNow: '76 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'discount'
+			})
+			+product({
+				link: '#',
+				sale: '-30%',
+				badge: 'хит',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '12 шт.',
+				articul: 13565534,
+				timeFor: 'от 2 до 3 дней',
+				priceOld: '120 руб.',
+				priceNow: '90 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'discount'
+			})
+			+product({
+				link: '#',
+				sale: '-20%',
+				badge: 'хит',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '9 шт.',
+				articul: 13562322,
+				timeFor: 'от 2 до 3 дней',
+				priceOld: '110 руб.',
+				priceNow: '95 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'discount,hide'
+			})
+		+section-header-right(123, 'Все товары со скидкой', 'mobile')

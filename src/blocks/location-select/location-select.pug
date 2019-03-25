@@ -1,8 +1,9 @@
 mixin location-select(ph)
 	.location-select
+		+close('', 'location')
 		.location-select__header
 			+field-text({
-			mods: 'size-small',
+			mods: 'size-small,location',
 			attrs: {
 				type: 'text',
 				name: 'location-select',
@@ -14,6 +15,10 @@ mixin location-select(ph)
 				li.location-select__item(data-city="Москва") Москва
 				li.location-select__item(data-city="Санкт-Петербург") Санкт-Петербург
 				li.location-select__item(data-city="Екатеринбург") Екатеринбург
+				li.location-select__item(data-city="Екатеринбург") Волгодонск
+				li.location-select__item(data-city="Екатеринбург") Волгоград
+				li.location-select__item(data-city="Екатеринбург") Калинов
+				li.location-select__item(data-city="Екатеринбург") Керчь
 				li.location-select__item(data-city="Нижний Новгород") Нижний Новгород
 				li.location-select__item(data-city="Пермь") Пермь
 				li.location-select__item(data-city="Казань") Казань

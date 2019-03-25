@@ -21,6 +21,29 @@
 			opacity: 0.8;
 			transition: opacity linear 0.3s;
 		}
+
+		@media screen and (max-width: $phone-size) {
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			margin-left: 0;
+			opacity: 1;
+
+			span {
+				&::before,
+				&::after {
+					background-color: $color-main-action;
+				}
+			}
+
+			&:hover,
+			&:focus { opacity: 1; }
+
+		}
+	}
+
+	.form {
+		@media screen and (max-width: $phone-size) { padding: 8px 16px; }
 	}
 
 	&__header {
@@ -28,6 +51,10 @@
 		align-items: center;
 		padding: 8px 24px 8px 40px;
 		background-color: $color-light-bg;
+
+		@media screen and (max-width: $phone-size) {
+			padding: 0 16px;
+		}
 	}
 
 	&__body { background-color: #fff; }
@@ -35,5 +62,12 @@
 	&__title {
 		font-size: 18px;
 		line-height: 24px;
+
+		@media screen and (max-width: $phone-size) {
+			margin: 8px 0;
+			font-size: 14px;
+		}
 	}
+
+	@media screen and (max-width: $phone-size) { margin: 0 auto; }
 }

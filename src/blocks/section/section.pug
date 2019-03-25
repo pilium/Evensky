@@ -22,10 +22,20 @@ mixin section-header(text, link, count, right)
 			mods: 'section',
 			text: (text) ? text : null
 		}, 'h2')
-		if right
-			.section-header__right
-				if (count !== '')
-					a.section-header__link(href="#")= link
-					span.section-header__count.text-count= count
-				else
-					span.js-section-header__text
+		block
+
+mixin section-header-right(col, link, mods)
+	-
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' section-header-right--' + modsList[i].trim();
+			}
+		}
+	.section-header-right(class=allMods)
+		if (col !== '')
+			a.section-header__link(href="#")= link
+			span.section-header__count.text-count= count
+		else
+			span.js-section-header__text

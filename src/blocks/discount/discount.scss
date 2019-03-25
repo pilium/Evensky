@@ -1,3 +1,11 @@
 .product-wrapper {
 	display: flex;
+
+	@media screen and (max-width: $phone-size) {
+		> * {
+			&:not(:last-child) { margin-bottom: 16px; }
+		}
+	}
+
+	@media screen and (max-width: $phone-size) { flex-direction: column; }
 }

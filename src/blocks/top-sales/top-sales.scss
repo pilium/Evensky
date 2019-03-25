@@ -8,5 +8,15 @@
 			"first first second third"
 			"first first sixes sixes"
 			"fourth fives sixes sixes";
+
+		@media screen and (max-width: $phone-size) {
+			grid-template-areas:
+				"first"
+				"second"
+				"third"
+				"fourth"
+				"fives"
+				"sixes";
+		}
 	}
 }

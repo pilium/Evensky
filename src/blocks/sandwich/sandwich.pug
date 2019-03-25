@@ -1,5 +1,11 @@
-mixin sandwich()
-	.sandwich
-		.sandwich__line.sandwich__line--top
-		.sandwich__line.sandwich__line--middle
-		.sandwich__line.sandwich__line--bottom
+mixin sandwich(type)
+	if (type && type !== 'undefined')
+		.sandwich.sandwich--mobile
+			.sandwich__line.sandwich__line--top
+			.sandwich__line.sandwich__line--middle
+			.sandwich__line.sandwich__line--bottom
+	else
+		.sandwich
+			.sandwich__line.sandwich__line--top
+			.sandwich__line.sandwich__line--middle
+			.sandwich__line.sandwich__line--bottom

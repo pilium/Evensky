@@ -4,9 +4,7 @@
 	color: $color-base-text;
 	background-color: #fff;
 
-	&__count {
-		opacity: 0;
-	}
+	&__count { opacity: 0; }
 
 	&__label-text {
 		font-family: $font-family-semibold;
@@ -18,12 +16,19 @@
 			content: "";
 			position: absolute;
 			right: 16px;
-			top: 9px;
+			top: 16px;
 			border-style: solid;
 			border-width: 5px 0 5px 5px;
 			border-color: transparent transparent transparent $color-base-text;
 			width: 0;
 			height: 0;
+
+			@media screen and (max-width: $phone-size) { transform: rotate(90deg); }
+		}
+
+		@media screen and (max-width: $phone-size) {
+			font-size: 16px;
+			line-height: 1.63;
 		}
 	}
 
@@ -31,7 +36,7 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		padding: 2px 24px 2px 16px;
+		padding: 8px 24px 8px 16px;
 		cursor: pointer;
 		transition: background-color linear 0.3s;
 
@@ -48,22 +53,40 @@
 				transition: opacity linear 0.3s;
 			}
 		}
+
+		@media screen and (max-width: $phone-size) { border-bottom: 1px solid rgba(159, 197, 178, 0.5); }
 	}
 
 	&__item {
 		&:hover,
 		&:focus {
-			.catalog-subnav { display: block; }
+			.catalog-subnav {
+				@media screen and (min-width: $phone-size) { display: block; }
+			}
 		}
 
 		&:first-child {
 			overflow: hidden;
 			border-radius: 4px 4px 0 0;
+
+			@media screen and (max-width: $phone-size) { border-radius: 0; }
 		}
 
 		&:last-child {
 			overflow: hidden;
 			border-radius: 0 0 4px 4px;
+
+			@media screen and (max-width: $phone-size) { border-radius: 0; }
 		}
+
+		&--active {
+			.catalog-subnav {
+				@media screen and (max-width: $phone-size) { display: block; }
+			}
+		}
+
+		@media screen and (max-width: $phone-size) { background-color: $color-main-action; }
 	}
+
+	@media screen and (max-width: $phone-size) { width: 100%; }
 }

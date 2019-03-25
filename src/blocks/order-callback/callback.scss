@@ -36,6 +36,10 @@
 		}
 	}
 
+	&--header {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
 	&--form {
 		position: relative;
 		display: flex;
@@ -56,6 +60,12 @@
 			top: 0;
 			width: 35px;
 			height: 35px;
+
+			&.icon-phone {
+				@media screen and (max-width: $phone-size) { top: 12px; }
+			}
+
+			@media screen and (max-width: $phone-size) { top: 2px; }
 		}
 
 		.order-callback__link {

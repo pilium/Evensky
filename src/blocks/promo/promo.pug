@@ -3,6 +3,25 @@ mixin promo()
 		mods: 'promo',
 		mainClass: 'promo'
 	})
-		+section-header('Акции и предложения', 'Все спецпредложения', 123,  true)
+		+section-header('Акции и предложения')
+			+section-header-right(123, 'Все спецпредложения', '')
 		.promo__prevs
-			block
+			+promoPrev({
+				link: 'Купить листы оцинкованные',
+				descr: 'Специальное предложение',
+				title:  'на листы оцинкованные',
+				mods: ' '
+			})
+			+promoPrev({
+				link: 'Купить доборные элементы кровли',
+				descr: 'Распродажа',
+				title: 'доборных элементов кровли',
+				mods: ' '
+			})
+			+promoPrev({
+				link: 'Купить профнастил со скидкой',
+				descr: 'Скидки до 50%',
+				title: 'на профнастил',
+				mods: 'hide'
+			})
+		+section-header-right(123, 'Все спецпредложения', 'mobile')

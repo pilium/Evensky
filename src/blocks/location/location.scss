@@ -18,7 +18,17 @@
 	&__body {
 		&.is-location-selected {
 			.location-select {
-				display: block;
+				display: flex;
+			}
+
+			@media screen and (max-width: $phone-size) {
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 3;
+				background-color: rgba(#033, 0.3);
 			}
 		}
 	}
@@ -43,6 +53,8 @@
 			width: 0;
 			height: 0;
 		}
+
+		@media screen and (max-width: $phone-size) { font-size: 16px; }
 	}
 
 	&__icon {

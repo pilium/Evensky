@@ -7,13 +7,27 @@
 		align-items: center;
 		margin-bottom: 24px;
 
-		&__right { margin-left: auto; }
-
 		&__link {
 			font-family: $font-family-semibold;
 			font-weight: 600;
 			text-decoration: underline;
 			color: $color-link;
+		}
+
+		&-right {
+			margin-left: auto;
+
+			&.section-header-right--mobile {
+				display: none;
+				margin: 16px auto;
+				text-align: center;
+
+				.text-count { display: none; }
+
+				@media screen and (max-width: $phone-size) { display: block; }
+			}
+
+			@media screen and (max-width: $phone-size) { display: none; }
 		}
 	}
 

@@ -10,14 +10,25 @@
 	&__block {
 		padding: 32px 40px;
 		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) { padding: 16px 24px; }
 	}
 
 	&__row {
 		display: flex;
 
 		> * {
-			&:not(:last-child) { margin-right: 24px; }
+			&:not(:last-child) {
+				margin-right: 24px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 24px;
+				}
+			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 
 	&__info {
@@ -28,6 +39,10 @@
 
 		> * {
 			&:not(:last-child) { margin-right: 8px; }
+		}
+
+		@media screen and (max-width: $phone-size) {
+			font-size: 18px;
 		}
 	}
 

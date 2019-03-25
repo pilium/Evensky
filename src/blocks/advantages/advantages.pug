@@ -4,4 +4,23 @@ mixin advantages()
 		mainClass: 'advantages'
 	})
 		.advantages__list
-			block
+			+advantage({
+				icon: 'warranty',
+				title: '30-дневная гарантия возврата денег',
+				text: 'Поэтому вы можете делать покупки с уверенностью',
+				href: '#',
+				link: 'Узнать о гарантии'
+			})
+			+advantage({
+				icon: 'support',
+				title: 'Специалисты по товарам на связи',
+				text: 'Мы ответим на любые вопросы о товарах в течение 10 минут',
+				href: '#popup-consultation',
+				link: 'Получить консультацию',
+				modal: true
+			})
+			+advantage({
+				icon: 'sample',
+				title: 'Бесплатные образцы',
+				text: 'Некоторые товары вы можете изучить внимательнее перед покупкой'
+			})

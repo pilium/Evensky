@@ -11,7 +11,14 @@
 	background-color: #fff;
 
 	> * {
-		&:not(:last-child) { margin-right: 16px; }
+		&:not(:last-child) {
+			margin-right: 16px;
+
+			@media screen and (max-width: $phone-size) {
+				margin-right: 0;
+				margin-bottom: 8px;
+			}
+		}
 	}
 
 	&__buttons {
@@ -29,6 +36,7 @@
 		font-size: 14px;
 		line-height: 24px;
 		white-space: nowrap;
+		color: $color-base-text;
 
 		@media screen and (max-width: $tablet-size) {
 			display: block;
@@ -38,4 +46,15 @@
 	}
 
 	@media screen and (max-width: $tablet-size) { max-width: 728px; }
+
+	@media screen and (max-width: $phone-size) {
+		position: fixed;
+		right: 0;
+		top: auto;
+		bottom: 0;
+		flex-direction: column;
+		border: 2px solid $color-main-action;
+		padding: 8px;
+		max-width: 100%;
+	}
 }

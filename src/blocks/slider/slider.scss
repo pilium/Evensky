@@ -1,6 +1,32 @@
 .slider {
 	position: relative;
 
+	.slick-dots {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 2px;
+
+		button {
+			display: block;
+			border: 0;
+			border-radius: 2px;
+			padding: 0;
+			width: 10px;
+			height: 10px;
+			text-indent: -9999px;
+			background-color: $color-slider-dot-bg;
+		}
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+
+		.slick-active {
+			button { background-color: $color-main-action; }
+		}
+	}
+
 	&__nav {
 		position: absolute;
 		top: 50%;
@@ -21,9 +47,17 @@
 			}
 		}
 
-		&--prev { left: -55px; }
+		&--prev {
+			left: -55px;
 
-		&--next { right: -55px; }
+			@media screen and (max-width: $phone-size) { left: -15px; }
+		}
+
+		&--next {
+			right: -55px;
+
+			@media screen and (max-width: $phone-size) { right: -15px; }
+		}
 	}
 
 	&__icon {

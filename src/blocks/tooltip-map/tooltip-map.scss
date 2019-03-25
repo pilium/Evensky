@@ -5,6 +5,11 @@
 		width: 690px;
 		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
 		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) {
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	&__info {
@@ -12,10 +17,19 @@
 		padding: 40px 16px;
 		width: 264px;
 		max-width: 264px;
+
+		@media screen and (max-width: $phone-size) {
+			flex: 0 0 296px;
+			padding: 8px;
+			width: 296px;
+			max-width: 296px;
+		}
 	}
 
 	&__map {
-		flex: 1;
+		width: 100%;
+
+		@media screen and (max-width: $phone-size) { height: 300px; }
 	}
 
 	&__title {
@@ -30,6 +44,8 @@
 		display: block;
 		margin-bottom: 16px;
 		font-size: 14px;
+
+		@media screen and (max-width: $phone-size) { font-size: 12px; }
 	}
 
 	&__label {

@@ -11,16 +11,22 @@ mixin order-callback(props)
 					a.order-callback__link.order-callback__link--phone(href="tel:+74904563434")= props.tel
 					a.order-callback__qr(href=link)= props.linkText
 
-	else if (position === 'footer')
+	else if (props.position === 'footer')
 		.order-callback.order-callback--footer
 			img.order-callback__img(src="images/order-callback/images/wiki.png" alt="Wikipedia logo")
 			.order-callback__info
 				span.order-callback__description= props.descr
 				a.order-callback__phone(href="tel:+74904563434")= props.tel
-				a.order-callback__link(href=link)= props.linkText
-	else
-		.order-callback
+				a.order-callback__link.js-modal-link(href="#popup-consultation")= props.linkText
+	else if (props.position === 'mobile')
+		.order-callback.order-callback--mobile
 			.order-callback__info
 				span.order-callback__description= props.descr
 				a.order-callback__phone(href="tel:+74904563434")= props.tel
-				a.order-callback__link(href=link)= props.linkText
+				a.order-callback__link.js-modal-link(href="#popup-consultation")= props.linkText
+	else
+		.order-callback.order-callback--header
+			.order-callback__info
+				span.order-callback__description= props.descr
+				a.order-callback__phone(href="tel:+74904563434")= props.tel
+				a.order-callback__link.js-modal-link(href="#popup-consultation")= props.linkText

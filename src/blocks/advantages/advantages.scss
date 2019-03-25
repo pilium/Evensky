@@ -9,7 +9,16 @@
 				margin-right: 32px;
 
 				@media screen and (max-width: $tablet-size) { margin-right: 8px; }
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 32px;
+				}
 			}
+		}
+
+		@media screen and (max-width: $phone-size) {
+			flex-direction: column;
 		}
 	}
 }

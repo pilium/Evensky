@@ -10,8 +10,17 @@
 		align-items: center;
 
 		> * {
-			&:not(:last-child) { margin-right: 16px; }
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 8px;
+				}
+			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 
 	&__text {
