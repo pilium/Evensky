@@ -170,33 +170,11 @@
 		@media screen and (max-width: $phone-size) { display: block; }
 	}
 
-	&--discount {
-		@media screen and (max-width: $tablet-size) {
-			.product-prev__img {
-				margin: 0 auto;
-				width: auto;
-			}
-
-			.product-prev__marks {
-				top: 3px;
-			}
-		}
-
-		@media screen and (max-width: $phone-size) {
-			.product-prev__footer { opacity: 1; }
-			.btn--fill { width: auto; }
-		}
-	}
-
 	&--no-footer {
 		.product-prev {
 			&__footer {
 				@media screen and (max-width: $tablet-size) { display: none; }
 			}
 		}
-	}
-
-	&--seen {
-		@media screen and (max-width: $phone-size) { padding: 0 24px; }
 	}
 }

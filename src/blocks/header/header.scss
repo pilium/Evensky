@@ -101,6 +101,8 @@
 	}
 
 	.basket {
+		margin-left: auto;
+
 		@media screen and (max-width: $tablet-size) {
 			order: 2;
 			margin-right: 32px;
