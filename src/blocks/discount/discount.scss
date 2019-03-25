@@ -1,11 +1,31 @@
-.product-wrapper {
-	display: flex;
+.discount {
+	&__product-wrapper {
+		display: flex;
 
-	@media screen and (max-width: $phone-size) {
-		> * {
-			&:not(:last-child) { margin-bottom: 16px; }
+		@media screen and (max-width: $phone-size) {
+			> * {
+				&:not(:last-child) { margin-bottom: 16px; }
+			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 
-	@media screen and (max-width: $phone-size) { flex-direction: column; }
+	.product-prev {
+		@media screen and (max-width: $tablet-size) {
+			.product-prev__img {
+				margin: 0 auto;
+				width: auto;
+			}
+
+			.product-prev__marks {
+				top: 3px;
+			}
+		}
+
+		@media screen and (max-width: $phone-size) {
+			.product-prev__footer { opacity: 1; }
+			.btn--fill { width: auto; }
+		}
+	}
 }

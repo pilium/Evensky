@@ -1,4 +1,8 @@
 .you-seen {
+	.product-prev {
+		@media screen and (max-width: $phone-size) { padding: 0 24px; }
+	}
+
 	@media screen and (max-width: $tablet-size) {
 		.slider__nav {
 			&--prev { display: none; }
