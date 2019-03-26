@@ -237,7 +237,7 @@ $(document).ready(() => {
 
 	let tooltipMap = (pos) => {
 		$(document).on('click', `.footer-column-contacts__${pos}`, () => {
-			$(`.tooltip--map-${pos}`).addClass('tooltip-map--active');
+			$(`.tooltip--map-${pos}`).toggleClass('tooltip-map--active');
 		});
 		$(document).on('click', '.close--map', () => {
 			$(`.tooltip--map-${pos}`).removeClass('tooltip-map--active');
