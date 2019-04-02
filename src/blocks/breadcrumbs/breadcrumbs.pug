@@ -1,0 +1,46 @@
+mixin breadcrumbs(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+		var modsList = props.mods.split(',');
+		for (var i = 0; i < modsList.length; i++) {
+			allMods = allMods + ' breadcrumbs--' + modsList[i].trim();
+		}
+		}
+	+section({
+		mods: 'breadcrumbs',
+		mainClass: ''
+	})
+		ul.breadcrumbs(class=allMods aria-label="Breadcrumb" role="navigation")
+			block
+
+mixin breadcrumbs-item(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+		var modsList = props.mods.split(',');
+		for (var i = 0; i < modsList.length; i++) {
+			allMods = allMods + ' breadcrumbs__item--' + modsList[i].trim();
+		}
+		}
+
+	li.breadcrumbs__item(class=allMods)
+		if(typeof(props.href) !== 'undefined' && props.href)
+			a.breadcrumbs__link(href=props.href)!= props.text
+		else
+			span.breadcrumbs__label!= props.text
+
+mixin breadcrumbs-item-icon(icon)
+	li.breadcrumbs__item.breadcrumbs-item-icon.breadcrumbs__item--with__icon
+		a.breadcrumbs-item-icon__link(href="/")
+			+icon(icon, 'breadcrumbs__icon')
+
+mixin breadcrumbs-item-nav(props)
+	li.breadcrumbs__item.breadcrumbs-item-nav.breadcrumbs__item--with__nav.js-breadcrumbs__item
+		span.breadcrumbs__label.breadcrumbs-item-nav__label= props.label
+		+tooltip({
+			text: 'Материалы для мягкой кровли и металлчерепицы в Нижнем Новгороде',
+			mods: 'breadcrumbs',
+		})
+		+breadcrumbs-nav()
