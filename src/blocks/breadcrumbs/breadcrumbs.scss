@@ -61,6 +61,13 @@
 			width: 0;
 			height: 0;
 		}
+
+		&:hover,
+		&:focus {
+			color: $color-breadcrumbs-link-hover;
+
+			&::before { border-color: $color-breadcrumbs-link-hover transparent transparent transparent; }
+		}
 	}
 
 	&__icon {

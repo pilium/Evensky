@@ -27,7 +27,7 @@ mixin breadcrumbs-item(props)
 
 	li.breadcrumbs__item(class=allMods)
 		if(typeof(props.href) !== 'undefined' && props.href)
-			a.breadcrumbs__link(href=props.href)!= props.text
+			a.breadcrumbs__link.breadcrumbs__label(href=props.href)!= props.text
 		else
 			span.breadcrumbs__label!= props.text
 
