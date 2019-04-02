@@ -273,6 +273,15 @@ $(document).ready(() => {
 		}
 	};
 
+	let breadcrumbsNav = () => {
+		$(document).on('click', '.js-breadcrumbs__item', function () {
+			// if ($('.js-breadcrumbs__item').hasClass('breadcrumbs__item--nav-active')) {
+			// 	$('.js-breadcrumbs__item').removeClass('breadcrumbs__item--nav-active');
+			// }
+			$(this).toggleClass('breadcrumbs__item--nav-active');
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -357,6 +366,7 @@ $(document).ready(() => {
 	simpleBar();
 	catalogSubnavInner();
 	inputSearch();
+	breadcrumbsNav();
 });
 
 let popularCategoriesSlider = () => {

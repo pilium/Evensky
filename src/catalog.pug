@@ -6,10 +6,18 @@ append vars
 block header
 	+header()
 block content
-	+breadcrumbs({
-		mods: 'catalog'
-	})
-	+popular-categories()
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Каталог',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Каталог металлопродукции',
+		})
+		+breadcrumbs-item({
+			text: 'Материалы для мягкой кровли и металлчерепицы'
+		})
+	+popular-categories('catalog-page')
 		+popular-cat-prev({mods: 'catalog'})
 			+category-prev('Водосточные системы')
 				+categoryPrevListItem('Комплекты водосточных труб', 23)

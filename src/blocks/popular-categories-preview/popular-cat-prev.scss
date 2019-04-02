@@ -30,7 +30,7 @@
 			@media screen and (max-width: $tablet-size) {
 				margin-right: 24px;
 				margin-bottom: 24px;
-				width: calc(33% - 25px);
+				width: calc(33% - 14px);
 				max-width: 33%;
 
 				&:nth-child(3n+3) {
@@ -48,6 +48,20 @@
 		@media screen and (max-width: $phone-size) {
 			display: block;
 			margin: 0 24px;
+		}
+	}
+
+	&--catalog {
+		.popular-prev__prev {
+			justify-content: flex-start;
+
+			> * {
+				&:not(:nth-child(4n)) { margin-right: 16px; }
+
+				@media screen and (max-width: $tablet-size) {
+					&:not(:nth-child(3n)) { margin-right: 16px; }
+				}
+			}
 		}
 	}
 }

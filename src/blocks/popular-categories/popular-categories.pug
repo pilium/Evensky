@@ -1,4 +1,4 @@
-mixin popular-categories()
+mixin popular-categories(type)
 	+section({
 		mods: 'popular-cat',
 		mainClass: 'popular-cat'
@@ -8,5 +8,8 @@ mixin popular-categories()
 				mods: 'section',
 				text: 'Популярные категории товаров',
 			}, 'h2')
+		if (type === 'catalog-page')
+			nav.catalog-mobile-nav
+				+catalog-list('catalog-page')
 		.popular-cat__body
 			block

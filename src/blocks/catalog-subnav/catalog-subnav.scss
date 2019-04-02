@@ -69,6 +69,13 @@
 			}
 		}
 
+		&--all {
+			display: none;
+			color: $color-link;
+
+			&::after { display: none; }
+		}
+
 		@media screen and (max-width: $phone-size) {
 			margin-bottom: 0;
 			border-bottom: 1px solid $color-main-action;
@@ -81,6 +88,7 @@
 		font-weight: bold;
 		font-size: 22px;
 		line-height: 24px;
+		white-space: nowrap;
 
 		@media screen and (max-width: $phone-size) {
 			font-size: 14px;
@@ -111,6 +119,7 @@
 
 	@media screen and (max-width: $phone-size) {
 		position: static;
+		border-left: 0;
 		padding: 0;
 		width: 100%;
 	}
