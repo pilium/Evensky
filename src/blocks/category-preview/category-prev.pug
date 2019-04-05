@@ -1,4 +1,4 @@
-mixin category-prev(name, mods)
+mixin category-prev(img, name, mods)
 	-
 		// список модификаторов
 		var allMods = '';
@@ -10,11 +10,12 @@ mixin category-prev(name, mods)
 		}
 
 	.category-prev(class=allMods)
-		.category-prev__img(style="background-image: url('../images/category-preview/images/pop-cat-1.png')")
+		if (img === true && img)
+			.category-prev__img(style="background-image: url('../images/category-preview/images/pop-cat-1.png')")
 		.category-prev__body
 			.category-prev__title
 				span.category-prev__title-name= name
-				span.category-prev__count.text-count 12345
+				span.category-prev__count.text-count 999
 			ul.category-prev__list
 				block
 

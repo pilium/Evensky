@@ -1,0 +1,304 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Категории'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Каталог металлопродукции',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Все для кровли',
+		})
+	+categories-all({
+			mods: '1',
+			title: 'Все для кровли',
+		})
+		+category-prev(false, 'Прямоугольный водосток')
+			+categoryPrevListItem('Прямоугольные оцинкованные трубы водостока', 23)
+			+categoryPrevListItem('Соединители прямоугольных желобов водостока', 98)
+			+categoryPrevListItem('Воронка водостока прямоугольная оцинкованная', 98)
+			+categoryPrevListItem('Заглушки прямоугольного водостока оцинкованные', 98)
+			+categoryPrevListItem('Крепление прямоугольного водостока', 98)
+		+category-prev(false, 'Изоляция для кровли')
+			+categoryPrevListItem('Вертоизоляция', 23)
+			+categoryPrevListItem('Влагоизоляция', 38)
+			+categoryPrevListItem('Пароизоляция', 98)
+			+categoryPrevListItem('Гидроизоляция', 13)
+			+categoryPrevListItem('Утеплитель', 13)
+			+categoryPrevListItem('Минеральная вата', 13)
+		+category-prev(false, 'Водосточные системы')
+			+categoryPrevListItem('Комплекты водосточных систем', 23)
+			+categoryPrevListItem('Водосточные трубы', 38)
+			+categoryPrevListItem('Желоб водосточный', 98)
+			+categoryPrevListItem('Воронка желоба выпускная', 13)
+			+categoryPrevListItem('Воронка водосборная конусная', 13)
+			+categoryPrevListItem('Воронка водосборная круглая', 13)
+			+categoryPrevListItem('Желоб с выходом', 13)
+			+categoryPrevListItem('Угол желоба 135 гр.', 13)
+			+categoryPrevListItem('Угол желоба 90 гр.', 13)
+			+categoryPrevListItem('Отмет трубы водостока', 13)
+			+categoryPrevListItem('Колено трубы водостока', 13)
+			+categoryPrevListItem('Тройник трубы водостока', 13)
+			+categoryPrevListItem('Крепление желоба', 13)
+			+categoryPrevListItem('Крепление трубы водостока анкерное', 13)
+			+categoryPrevListItem('Крепление трубы водостока сварное', 13)
+			+categoryPrevListItem('Труба водостока промежуточная', 13)
+		+category-prev(false, 'Доборные жлементы кровли')
+			+categoryPrevListItem('Планка стыковочная', 98)
+			+categoryPrevListItem('Планка эндовы нижняя', 98)
+			+categoryPrevListItem('Планка эндовы верхняя', 98)
+			+categoryPrevListItem('Планка угла наружного', 98)
+			+categoryPrevListItem('Планка угла внутреннего', 98)
+			+categoryPrevListItem('Планка карнизная', 98)
+			+categoryPrevListItem('Планка торцевая', 98)
+			+categoryPrevListItem('Планка примыкания верхняя', 98)
+			+categoryPrevListItem('Планка примыкания нижняя', 98)
+			+categoryPrevListItem('Планка конька плоского', 98)
+			+categoryPrevListItem('Конек круглый', 98)
+			+categoryPrevListItem('Заглушка конька круглого простая', 98)
+			+categoryPrevListItem('Заглушка конька круглого конусная', 98)
+			+categoryPrevListItem('Снегодержатель коньковый', 98)
+			+categoryPrevListItem('Планка снегодержателя усиливающая', 98)
+		+category-prev(false, 'Кляммеры')
+		+category-prev(false, 'Элементы безопасной кровли')
+		+category-prev(false, 'Фальцевые картины')
+			+categoryPrevListItem('Самозащелкивающийся фальц', 23)
+		+category-prev(false, 'Снегодержатели')
+			+categoryPrevListItem('Снегодержатели для металлочерепицы', 23)
+			+categoryPrevListItem('Снегодержатели для профнастила', 38)
+			+categoryPrevListItem('Снегодержатели для фальцевой кровли', 98)
+			+categoryPrevListItem('Снегодержатели для черепицы', 13)
+			+categoryPrevListItem('Снегодержатели универсальные', 98)
+			+categoryPrevListItem('Снегодержатели трубчатые', 13)
+		+category-prev(false, 'Металлочерепица')
+			+categoryPrevListItem('Квинта', 23)
+			+categoryPrevListItem('Venevsky', 38)
+			+categoryPrevListItem('Kredo', 98)
+		+category-prev(false, 'Софиты')
+	+popular-categories('catalog-page', 'Другие разделы каталога')
+		+popular-cat-prev({mods: 'catalog'})
+			+category-prev(true, 'Водосточные системы')
+				+categoryPrevListItem('Комплекты водосточных труб', 23)
+				+categoryPrevListItem('Водосточные трубы', 98)
+				+categoryPrevListItem('Желоб водосточный', 98)
+				+categoryPrevListItem('Воронка желоба выпускная', 98)
+				+categoryPrevListItem('Все водосточные системы', 7)
+			+category-prev(true, 'Кровля')
+				+categoryPrevListItem('Металлочерепица', 23)
+				+categoryPrevListItem('Элементы безопасной кровли', 38)
+				+categoryPrevListItem('Лестницы', 98)
+				+categoryPrevListItem('Мостики кровельные', 13)
+				+categoryPrevListItem('Все водосточные системы', 7)
+			+category-prev(true, 'Доборные элементы кровли')
+				+categoryPrevListItem('Планка стыковочная', 98)
+				+categoryPrevListItem('Планка ендовы нижняя', 98)
+				+categoryPrevListItem('Планка ендовы вержняя', 98)
+				+categoryPrevListItem('Планка угла наружного', 98)
+				+categoryPrevListItem('Все водосточные системы', 7)
+			+category-prev(true, 'Профнастил')
+				+categoryPrevListItem('Профнастил С8-1150', 98)
+				+categoryPrevListItem('Профнастил С10-1150', 98)
+				+categoryPrevListItem('Профнастил С20-1100', 98)
+				+categoryPrevListItem('Профнастил С21-1100', 98)
+				+categoryPrevListItem('Профнастил HS35-1000', 98)
+				+categoryPrevListItem('Весь профнастил', 18)
+			+category-prev(true, 'Лист оцинкованный')
+				+categoryPrevListItem('Металлочерепица', 23)
+				+categoryPrevListItem('Элементы безопасной кровли', 38)
+				+categoryPrevListItem('Лестницы', 98)
+				+categoryPrevListItem('Мостики кровельные', 13)
+				+categoryPrevListItem('Весь лист оцинкованный', 98)
+			+category-prev(true, 'Штрипс')
+				+categoryPrevListItem('Металлочерепица', 23)
+				+categoryPrevListItem('Элементы безопасной кровли', 38)
+				+categoryPrevListItem('Лестницы', 98)
+				+categoryPrevListItem('Мостики кровельные', 13)
+				+categoryPrevListItem('Весь штрипс', 98)
+	+top-sales({type: 'categories'})
+		+product({
+				link: '#',
+				sale: '-25%',
+				badge: '',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '9 шт.',
+				articul: 13562322,
+				timeFor: 'от 2 до 3 дней',
+				priceOld: '110 руб.',
+				priceNow: '95 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-50%',
+			badge: 'новый',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-25%',
+			badge: 'хит',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-25%',
+			badge: 'хит',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-25%',
+			badge: 'хит',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-25%',
+			badge: 'хит',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+		+product({
+			link: '#',
+			sale: '-25%',
+			badge: 'хит',
+			name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+			count: '9 шт.',
+			articul: 13562322,
+			timeFor: 'от 2 до 3 дней',
+			priceOld: '110 руб.',
+			priceNow: '95 руб. за шт.',
+			btnText: 'В корзину',
+			mods: 'no-footer,seen'
+		})
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-consultation',
+		title: 'Получить консультацию',
+		successText: 'Мы Вам перезвоним',
+		long: true,
+		mods: 'consult'
+	})
+		+form('consultation')
+			.form__body
+				+fieldset('Контактный телефон')
+					+field-text({
+						mods: 'width-s,require',
+						id: 'consult-phone',
+						labelText: "Контактный телефон",
+						attrs: {
+							type: 'tel',
+							name: 'phone',
+							placeholder: "+7(999)999-9999"
+						}
+					})
+				+fieldset('Вопрос или комментарий')
+					+field-text({
+						mods: 'textarea',
+						id: 'consult-textarea',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, меня интересует...",
+						attrs: {
+							type: 'textarea',
+							rows: 10,
+							cols: 5
+						}
+					})
+				+fieldset('Прикрепите файл')
+					+field-file({
+						icon: 'paper-holder'
+					})
+			+form-footer('#', 'Получить консультацию', true)
+	+modal({
+		id: 'popup-questions',
+		title: 'Что можно улучшить на этой странице?',
+		successText: 'Что можно улучшить на этой странице',
+		mods: 'questions'
+	})
+		+form('questions')
+			.form__body
+				+fieldset('Вопрос или кооментарий')
+					+field-text({
+						mods: 'textarea,require',
+						id: 'questions-ask',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, на этой странице можно...",
+						attrs: {
+							type: 'textarea',
+							name: 'textarea',
+							rows: 10,
+							cols: 5
+						}
+					})
+				.form__columns
+					.form__column
+						+fieldset('Электронная почта')
+							+field-text({
+								mods: 'width-m',
+								id: 'questions-mail',
+								labelText: "Электронная почта",
+								attrs: {
+									type: 'email',
+									name: 'mail',
+									placeholder: "Введите свой email"
+								}
+							})
+						+fieldset('Контактный телефон')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'consult-phone',
+								labelText: "Контактный телефон",
+								attrs: {
+									type: 'tel',
+									name: 'phone',
+									placeholder: "+7(999)99-9999"
+								}
+							})
+					.form__column.form__column--text
+						span.form-line__info Мы быстрее исправим ошибку , если сможем связаться с вами для уточнения информации
+			+form-footer('#', 'Предложить улучшение')
+	+overlay()

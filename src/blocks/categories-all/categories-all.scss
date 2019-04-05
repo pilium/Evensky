@@ -1,0 +1,21 @@
+.categories-all {
+	&__wrapper {
+		columns: 4;
+		column-gap: 16px;
+
+		@media screen and (max-width: $tablet-size) {
+			columns: 3;
+			column-gap: 24px;
+		}
+	}
+
+	.category-prev {
+		margin-bottom: 24px;
+		break-inside: avoid;
+
+		&__body {
+			padding: 24px 16px;
+			background-color: #fff;
+		}
+	}
+}

@@ -1,13 +1,20 @@
 .sales {
-	padding: 16px 0;
+	&__wrapper {
+		overflow: hidden;
+		border-radius: 8px;
+		background-color: #fff;
 
-	.top-sales {
+		.product-prev__footer { opacity: 1; }
+	}
+
+	&__wrapper-grid {
 		display: grid;
 		grid-gap: 10px;
 		grid-template-areas:
 			"first first second third"
 			"first first sixes sixes"
 			"fourth fives sixes sixes";
+		cursor: pointer;
 
 		@media screen and (max-width: $phone-size) {
 			grid-template-areas:
@@ -18,5 +25,32 @@
 				"fives"
 				"sixes";
 		}
+	}
+
+	&__row {
+		display: flex;
+		border-bottom: 1px solid #f2f2f2;
+
+		&:last-child { border-bottom: 0; }
+	}
+
+	&__col {
+		flex: 1;
+		border-right: 1px solid #f2f2f2;
+		padding: 8px;
+
+		&:first-child {
+			@media screen and (max-width: $tablet-size) { display: none; }
+		}
+
+		&:last-child { border-right: 0; }
+
+		&--wide { flex: 2; }
+	}
+
+	.btn--fill {
+		border-radius: 4px;
+		width: auto;
+		box-sizing: border-box;
 	}
 }

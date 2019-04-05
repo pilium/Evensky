@@ -5,11 +5,13 @@
 }
 
 html {
-	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
 	position: relative;
+	margin: 0;
 	height: 100%;
 	font-family: $font-family-main;
 	font-size: 14px;
@@ -28,9 +30,50 @@ li {
 	padding: 0;
 }
 
+input[type="search"] {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+a,
+button,
+input,
+label,
+select,
+textarea {
+	margin: 0;
+	touch-action: manipulation;
+}
+
+button,
+input {
+	overflow: visible;
+	text-transform: none;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
+
+	&:visited { color: #000; }
+
+	&:hover,
+	&:focus { color: #008000; }
+
+	&:active { color: #8a2be2; }
 }
 
 p { margin: 0; }

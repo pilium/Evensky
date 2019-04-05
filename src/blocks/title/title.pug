@@ -8,3 +8,5 @@ mixin title(props, tag)
 			}
 		}
 	#{tag}(class='title' + allMods)= props.text
+		if (typeof(props.count) !== 'undefined' && props.count)
+			span.text-count.text-count--page= props.count

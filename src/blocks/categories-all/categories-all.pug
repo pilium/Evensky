@@ -1,0 +1,16 @@
+mixin categories-all(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+		var modsList = props.mods.split(',');
+		for (var i = 0; i < modsList.length; i++) {
+			allMods = allMods + ' categories-all--' + modsList[i].trim();
+		}
+		}
+	+section({
+		mods: 'categories-all',
+		mainClass: 'categories-all'
+	})
+		+section-header('Все для кровли', '8641')
+		.categories-all__wrapper
+			block

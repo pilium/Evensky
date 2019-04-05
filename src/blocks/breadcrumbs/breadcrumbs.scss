@@ -83,6 +83,19 @@
 		z-index: 3;
 	}
 
+	&--category {
+		.breadcrumbs__item {
+			&:last-child {
+				&::after { display: none; }
+
+				.breadcrumbs__label {
+					padding-right: 16px;
+					&::before { display: block; }
+				}
+			}
+		}
+	}
+
 	@media screen and (max-width: $phone-size) {
 		overflow: auto;
 		padding: 8px 0;

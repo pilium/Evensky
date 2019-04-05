@@ -16,12 +16,19 @@ mixin section(props)
 			.container
 				block
 
-mixin section-header(text, link, count, right)
+mixin section-header(text, count)
 	.section-header
-		+title({
-			mods: 'section',
-			text: (text) ? text : null
-		}, 'h2')
+		if ( typeof(count) !== 'undefined' && count )
+			+title({
+				mods: 'section',
+				text: (text) ? text : null,
+				count: 8341,
+			}, 'h1')
+		else
+			+title({
+				mods: 'section',
+				text: (text) ? text : null
+			}, 'h2')
 		block
 
 mixin section-header-right(col, link, mods)
