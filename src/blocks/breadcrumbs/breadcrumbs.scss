@@ -60,6 +60,8 @@
 			border-color: #333 transparent transparent transparent;
 			width: 0;
 			height: 0;
+
+			@media screen and (max-width: $phone-size) { display: none; }
 		}
 
 		&:hover,
@@ -68,6 +70,8 @@
 
 			&::before { border-color: $color-breadcrumbs-link-hover transparent transparent transparent; }
 		}
+
+		@media screen and (max-width: $phone-size) { padding-right: 0; }
 	}
 
 	&__icon {
@@ -89,8 +93,11 @@
 				&::after { display: none; }
 
 				.breadcrumbs__label {
-					padding-right: 16px;
-					&::before { display: block; }
+					cursor: default;
+					pointer-events: none;
+
+					&:hover,
+					&:focus { color: inherit; }
 				}
 			}
 		}
