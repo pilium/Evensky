@@ -277,6 +277,9 @@ export function scss() {
 					browsers: ['> 0%'],
 				}),
 		]))
+		.pipe($.combineMq({
+			beautify: false,
+		}))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('build/css'));
 }
