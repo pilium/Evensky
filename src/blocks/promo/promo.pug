@@ -4,7 +4,7 @@ mixin promo()
 		mainClass: 'promo'
 	})
 		+section-header('Акции и предложения')
-			+section-header-right(123, 'Все спецпредложения', '')
+			+page-counter(123, 'Все спецпредложения', '')
 		.promo__prevs
 			+promoPrev({
 				link: 'Купить листы оцинкованные',
@@ -24,4 +24,4 @@ mixin promo()
 				title: 'на профнастил',
 				mods: 'hide'
 			})
-		+section-header-right(123, 'Все спецпредложения', 'mobile')
+		+page-counter(123, 'Все спецпредложения', 'mobile')

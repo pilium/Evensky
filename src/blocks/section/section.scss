@@ -13,22 +13,6 @@
 			text-decoration: underline;
 			color: $color-link;
 		}
-
-		&-right {
-			margin-left: auto;
-
-			&.section-header-right--mobile {
-				display: none;
-				margin: 16px auto;
-				text-align: center;
-
-				.text-count { display: none; }
-
-				@media screen and (max-width: $phone-size) { display: block; }
-			}
-
-			@media screen and (max-width: $phone-size) { display: none; }
-		}
 	}
 
 	&--banner {

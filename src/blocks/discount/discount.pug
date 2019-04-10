@@ -4,7 +4,7 @@ mixin discount()
 		mainClass: 'discount'
 	})
 		+section-header('Товары со скидкой')
-			+section-header-right(123, 'Все товары со скидкой')
+			+page-counter(123, 'Все товары со скидкой')
 		.discount__product-wrapper
 			+product({
 				link: '#',
@@ -58,4 +58,8 @@ mixin discount()
 				btnText: 'В корзину',
 				mods: 'discount,hide'
 			})
-		+section-header-right(123, 'Все товары со скидкой', 'mobile')
+		+page-counter({
+			col: true,
+			link: 'Все товары со скидкой',
+			mods: 'mobile'
+		})
