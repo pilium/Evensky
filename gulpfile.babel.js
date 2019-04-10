@@ -217,6 +217,16 @@ export function jsVendor() {
 }
 
 export function pug() {
+	let renamer = (filepath) => {
+		if (filepath.basename === '404') {
+			return;
+		}
+		if (filepath.basename !== 'index') {
+			filepath.dirname = path.join(filepath.dirname, filepath.basename);
+			filepath.basename = 'index';
+		}
+	};
+
 	if (!argv.cache) {
 		return gulp.src('src/*.pug')
 			.pipe($.plumber({
@@ -240,6 +250,7 @@ export function pug() {
 				.pipe($.pug({
 					pretty: argv.minify ? false : '\t',
 				}))
+				// .pipe($.rename(renamer))
 				.pipe(gulp.dest('build'))
 				.on('end', resolve)
 				.on('error', reject);
@@ -277,9 +288,9 @@ export function scss() {
 					browsers: ['> 0%'],
 				}),
 		]))
-		.pipe($.combineMq({
-			beautify: false,
-		}))
+		// .pipe($.combineMq({
+		// 	beautify: false,
+		// }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('build/css'));
 }
