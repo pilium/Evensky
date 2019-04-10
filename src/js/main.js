@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow-callback */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
 /* eslint-disable func-names */
@@ -282,6 +283,26 @@ $(document).ready(() => {
 		});
 	};
 
+	let counter = () => {
+		$(document).on('click', '.js-counter-btn--minus', function () {
+			let target = +$(this).parent().find('.js-counter-target').text();
+
+			if (target !== 1) {
+				target--;
+			} else {
+				target = 1;
+			}
+			$(this).parent().find('.js-counter-target').text(target);
+		});
+
+		$(document).on('click', '.js-counter-btn--plus', function () {
+			let target = +$(this).parent().find('.js-counter-target').text();
+
+			target++;
+			$(this).parent().find('.js-counter-target').text(target);
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -367,6 +388,7 @@ $(document).ready(() => {
 	catalogSubnavInner();
 	inputSearch();
 	breadcrumbsNav();
+	counter();
 });
 
 let popularCategoriesSlider = () => {
