@@ -30,6 +30,8 @@ mixin product(props)
 				span.product-prev__price-old= props.priceOld
 				span.product-prev__price-current= props.priceNow
 		.product-prev__footer
+			if (props.counter === true)
+				+product-counter()
 			+btn({
 				tag: 'button',
 				href: '#',
