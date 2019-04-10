@@ -1,0 +1,19 @@
+.page-counter {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	padding: 0 16px;
+	font-size: 14px;
+
+	&.page-counter--mobile {
+		display: none;
+		margin: 16px auto;
+		text-align: center;
+
+		.text-count { display: none; }
+
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
+
+	@media screen and (max-width: $phone-size) { display: none; }
+}

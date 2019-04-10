@@ -1,0 +1,17 @@
+mixin page-counter(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' page-counter--' + modsList[i].trim();
+			}
+		}
+	.page-counter(class=allMods)
+		if (props.col)
+			a.page-counter__link(href="#")= props.link
+			span.page-counter__count.text-count 123
+		else if(typeof(props.str) !== 'undefined' && props.str)
+			span.js-sub-category__counter Страница 1 из 7
+		else
+			span.js-section-header__text
