@@ -1,0 +1,32 @@
+mixin pagination(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' pagination--' + modsList[i].trim();
+			}
+		}
+
+	ul.pagination(class=allMods aria-label="Page navigation")
+		block
+
+//- mixin pagination-item(text, href, active, mods)
+mixin pagination-item(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' &&props. mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' pagination__item--' + modsList[i].trim();
+			}
+		}
+		if(typeof(props.active) !== 'undefined' && props.active)
+			allMods = allMods + ' pagination__item--active';
+
+	if(typeof(props.href) !== 'undefined' && props.href)
+		li.pagination__item(class=allMods)
+			a.pagination__link(href=props.href)= props.text
+	else
+		li.pagination__item(class=allMods)
+			span.pagination__text= props.text
