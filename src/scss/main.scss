@@ -57,14 +57,17 @@
 @import "../blocks/top-sale/top-sale";
 @import "../blocks/you-seen/you-seen";
 @import "../blocks/slider/slider";
-@import "../blocks/questions/questions";
-@import "../blocks/question-social/question-social";
 
 // catalog-sections
 @import "../blocks/popular-categories/popular-categories";
 
 // Categories-sections
 @import "../blocks/categories-all/categories-all";
+
+// Sub-categories-sections
+@import "../blocks/sub-categories/sub-categories";
+@import "../blocks/sort-line/sort";
+@import "../blocks/often-search/often-search";
 
 // footer
 @import "../blocks/footer/footer";
@@ -83,3 +86,9 @@
 @import "../blocks/tooltip/tooltip";
 @import "../blocks/tooltip-map/tooltip-map";
 @import "../blocks/overlay/overlay";
+@import "../blocks/tags/tags";
+@import "../blocks/questions/questions";
+@import "../blocks/question-social/question-social";
+@import "../blocks/page-counter/page-counter";
+@import "../blocks/product-counter/product-counter";
+@import "../blocks/pagination/paginaton";

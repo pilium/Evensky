@@ -1,0 +1,23 @@
+mixin often-search()
+	+section({
+		mods: 'often-search',
+		mainClass: 'often-search'
+	})
+		+section-header('Часто ищут доборные элементы кровли')
+		.often-search__wrapper
+			+category-prev(false, 'По материалу')
+				+categoryPrevListItem('Доборные элементы кровли из оцинкованной стали', 23)
+				+categoryPrevListItem('Доборные элементы кровли из неоцинкованной х/к стали', 98)
+				+categoryPrevListItem('')
+			+category-prev(false, 'По цвету')
+				+categoryPrevListItem('Доборные элементы кровли зеленого цвета', 23)
+				+categoryPrevListItem('Доборные элементы кровли красного цвета', 38)
+				+categoryPrevListItem('Доборные элементы кровли черного цвета', 98)
+				+categoryPrevListItem('Доборные элементы кровли белого цвета', 13)
+				+categoryPrevListItem('')
+			+category-prev(false, 'По толщине металла')
+				+categoryPrevListItem('Доборные элементы кровли толщиной 0,4 мм', 98)
+				+categoryPrevListItem('Доборные элементы кровли толщиной 0,5 мм', 98)
+				+categoryPrevListItem('Доборные элементы кровли толщиной 0,6 мм', 98)
+				+categoryPrevListItem('Доборные элементы кровли толщиной 0,7 мм', 98)
+				+categoryPrevListItem('')
