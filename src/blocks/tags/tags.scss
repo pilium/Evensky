@@ -1,0 +1,45 @@
+.tags {
+	display: flex;
+	align-items: flex-start;
+	font-size: 14px;
+	line-height: 18px;
+
+	&__title {
+		flex-shrink: 0;
+		font-weight: 600;
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+
+		> * {
+			margin-bottom: 8px;
+
+			&:not(:last-child) { margin-right: 8px; }
+			&:first-child { margin-right: 16px; }
+		}
+	}
+
+	&__toggle {
+		flex-shrink: 0;
+		margin-left: auto;
+		border-bottom: 1px solid $color-link;
+		padding-top: 16px;
+		font-weight: 600;
+		color: $color-link;
+		cursor: pointer;
+	}
+
+	.tag {
+		display: inline-block;
+		border-radius: 4px;
+		padding: 8px;
+		background-color: #fff;
+		cursor: pointer;
+	}
+
+	> * {
+		&:not(:last-child) { margin-right: 8px; }
+	}
+}
