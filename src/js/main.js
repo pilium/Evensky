@@ -303,6 +303,56 @@ $(document).ready(() => {
 		});
 	};
 
+	let filterItem = () => {
+		$(document).on('click', '.js-filter-item__header', function () {
+			$(this).parent().toggleClass('filter-item--active');
+		});
+	};
+
+	let filterSlider = () => {
+		$('.filter-slider__line').each(function () {
+			let slider = $(this)[0];
+			let sliderFrom = $(this).parent().find('.filter-slider__value--from')[0];
+			let sliderTo = $(this).parent().find('.filter-slider__value--to')[0];
+			let inputs = [sliderFrom, sliderTo];
+			let type = $(this).data('range-type');
+
+			if (type === 'price') {
+				noUiSlider.create(slider, {
+					start: [2500, 5900],
+					connect: true,
+					range: {
+						min: 0,
+						max: 10000,
+					},
+				});
+			} else if (type === 'mm') {
+				noUiSlider.create(slider, {
+					start: [0.5, 7],
+					connect: true,
+					range: {
+						min: 0,
+						max: 10,
+					},
+					format: wNumb({
+						decimals: 2,
+						thousand: ' ',
+					}),
+				});
+			}
+
+			slider.noUiSlider.on('update', function (values, handle) {
+				inputs[handle].value = values[handle];
+			});
+
+			inputs.forEach(function (input, handle) {
+				input.addEventListener('change', function () {
+					slider.noUiSlider.setHandle(handle, this.value);
+				});
+			});
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -389,6 +439,8 @@ $(document).ready(() => {
 	inputSearch();
 	breadcrumbsNav();
 	counter();
+	filterItem();
+	filterSlider();
 });
 
 let popularCategoriesSlider = () => {
