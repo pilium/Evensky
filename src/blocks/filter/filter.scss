@@ -1,0 +1,147 @@
+.filter {
+	border-radius: 4px;
+	background-color: #fff;
+
+	.noUi-target {
+		border: 0;
+		height: 2px;
+		box-shadow: none;
+		background: #ededed;
+	}
+
+	.noUi-handle {
+		right: -10px;
+		border: 0;
+		border-radius: 50%;
+		width: 16px;
+		height: 16px;
+		box-shadow: none;
+		background: #165f2d;
+		cursor: pointer;
+
+		&::before,
+		&::after { display: none; }
+	}
+
+	.noUi-connect { background: #165f2d; }
+
+	&__header {
+		border-bottom: 1px solid #dedede;
+		padding: 16px;
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 28px;
+	}
+
+	&__link {
+		display: block;
+		margin-top: 16px;
+		font-weight: 600;
+		font-size: 14px;
+		color: $color-link;
+	}
+
+	&__toggle {
+		display: flex;
+		align-items: center;
+		margin-top: 16px;
+		font-size: 14px;
+		color: $color-link;
+		cursor: pointer;
+	}
+
+	&__toggle-text {
+		display: flex;
+		align-items: center;
+
+		&::after {
+			content: "";
+			margin-left: 8px;
+			border-style: solid;
+			border-width: 5px 5px 0 5px;
+			border-color: $color-link transparent transparent transparent;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		border-top: 1px solid #ededed;
+		padding: 16px;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&-slider__values {
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+	}
+
+	&-slider__values-line {
+		flex-shrink: 0;
+		margin: 0 8px;
+		width: 16px;
+		height: 2px;
+		background-color: #333;
+	}
+
+	@at-root .filter-item {
+		border-bottom: 1px solid #dedede;
+
+		&__header {
+			position: relative;
+			display: flex;
+			align-items: center;
+			padding: 16px;
+			cursor: pointer;
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: 15px;
+				top: 22px;
+				border-style: solid;
+				border-width: 5px 5px 0 5px;
+				border-color: #bababa transparent transparent transparent;
+				width: 0;
+				height: 0;
+			}
+		}
+
+		&__title {
+			font-weight: 600;
+		}
+
+		&__body {
+			display: none;
+			padding: 0 16px 16px;
+		}
+
+		&__list {
+			> * {
+				margin: 8px 0;
+				&:first-child { margin-top: 0; }
+				&:last-child { margin-bottom: 0; }
+			}
+		}
+
+		&:last-child { border-bottom: 0; }
+
+		&--active {
+			.filter-item__header {
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+			.filter-item__body { display: block; }
+		}
+	}
+}
