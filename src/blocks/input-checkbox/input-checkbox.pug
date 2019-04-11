@@ -1,0 +1,13 @@
+mixin checkbox(props)
+	.input-checkbox
+		label.input-checkbox__label
+			input.input-checkbox__input(type="checkbox")
+			span.input-checkbox__custom
+			.input-checkbox__body
+				if (props.color)
+					span.input-checkbox__text= props.text
+					.input-checkbox__color(style =`background-color: ${props.color}`)
+				else
+					span.input-checkbox__text= props.text
+		if (props.count === true)
+			span.filter__count.text-count 456
