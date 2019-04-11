@@ -44,6 +44,17 @@
 		}
 	}
 
+	&--transparent {
+		color: $color-link;
+		background-color: transparent;
+
+		&:hover,
+		&:focus {
+			color: $color-main-action;
+			background-color: transparent;
+		}
+	}
+
 	&--border {
 		&-green {
 			border-color: $color-link;

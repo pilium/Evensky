@@ -14,5 +14,7 @@ mixin btn(props)
 			if (props.icon)
 				+icon(props.icon, props.iconClass)
 			span= props.text
+			if (props.count)
+				span.text-count 786
 	if(props.tag === 'input')
 		input.btn(class=allMods type="submit" value=props.text)
