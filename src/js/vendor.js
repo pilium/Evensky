@@ -7,3 +7,5 @@
 // @include('../../node_modules/magnific-popup/dist/jquery.magnific-popup.js');
 // @include('../../node_modules/jquery-validation/dist/jquery.validate.js');
 // @include('../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js');
+// @include('../../node_modules/nouislider/distribute/nouislider.js');
+// @include('../../node_modules/wnumb/wNumb.js');
