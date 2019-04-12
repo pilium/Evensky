@@ -5,15 +5,14 @@ mixin tags(props)
 			block
 		span.tags__toggle.js-tags__toggle Все запросы
 
-//- Не используется
-mixin tag(props)
-	-
-		var allMods = "";
-		if(typeof(props.mods) !== "undefined" && props.mods)
-			var modsList = props.mods.split(",");
-			for (var i = 0; i < modsList.length; i++) {
-				allMods = allMods + " tags--" + modsList[i].trim();
-			}
-	.tag(class=allMods)
-		span.tag__text= props.text
-		span.tag__count.text-count 123
+//- mixin tag(props)
+//- 	-
+//- 		var allMods = "";
+//- 		if(typeof(props.mods) !== "undefined" && props.mods)
+//- 			var modsList = props.mods.split(",");
+//- 			for (var i = 0; i < modsList.length; i++) {
+//- 				allMods = allMods + " tags--" + modsList[i].trim();
+//- 			}
+//- 	.tag(class=allMods)
+//- 		span.tag__text= props.text
+//- 		span.tag__count.text-count 123

@@ -12,6 +12,9 @@
 	&__body {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
+		overflow: hidden;
+		height: 46px;
 
 		> * {
 			margin-bottom: 8px;
@@ -42,5 +45,9 @@
 
 	> * {
 		&:not(:last-child) { margin-right: 8px; }
+	}
+
+	&--active {
+		.tags__body { height: auto; }
 	}
 }

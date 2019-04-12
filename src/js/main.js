@@ -364,6 +364,18 @@ $(document).ready(() => {
 		});
 	};
 
+	let tagsToggle = () => {
+		$(document).on('click', '.js-tags__toggle', function () {
+			if ($(this).parent().hasClass('tags--active')) {
+				$(this).parent().removeClass('tags--active');
+				$(this).text('Все запросы');
+			} else {
+				$(this).parent().addClass('tags--active');
+				$(this).text('Скрыть');
+			}
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -453,6 +465,7 @@ $(document).ready(() => {
 	filterItem();
 	filterSlider();
 	sortItem();
+	tagsToggle();
 });
 
 let popularCategoriesSlider = () => {
