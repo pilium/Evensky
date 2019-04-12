@@ -3,18 +3,24 @@ mixin filter()
 		.filter__header
 			span.filter__title Фильтр
 		.filter__body
+			+tooltip({
+				text: 'Найдено 456 товаров',
+				btn: 'Показать',
+			})
 			+filter-item({title: 'Цена за шт.'})
 				+filter-slider({type: 'price'})
 			+filter-item({title: 'Толщина металла'})
 				+filter-slider({type: 'mm'})
 			+filter-item({title: 'Материал'})
 				.filter-item__list
-					+checkbox({text: 'Дерево', count: true})
-					+checkbox({text: 'Металл', count: true})
-					+checkbox({text: 'Камень', count: true})
-					+checkbox({text: 'Кирпич', count: true})
+					+fieldset('Материал')
+						+checkbox({text: 'Дерево', count: true})
+						+checkbox({text: 'Металл', count: true})
+						+checkbox({text: 'Камень', count: true})
+						+checkbox({text: 'Кирпич', count: true})
 			+filter-item({title: 'Полимерное покрытие'})
 				.filter-item__list
+					+fieldset('Полимерное покрытие')
 						+checkbox({text: 'Цветное с одной стороны', count: true})
 						+checkbox({text: 'Цветное с двух сторон', count: true})
 						+checkbox({text: 'Printech с рисунком под дерево', count: true})
@@ -22,6 +28,7 @@ mixin filter()
 						+checkbox({text: 'Printech с рисунком под кирпич', count: true})
 			+filter-item({title: 'Цвет'})
 				.filter-item__list
+					+fieldset('Цвет')
 						+checkbox({text: 'Зеленый', count: true, color: '#417505'})
 						+checkbox({text: 'Коричневый', count: true, color: '#8b572a'})
 						+checkbox({text: 'Красное вино', count: true, color: '#ae0707'})
@@ -29,21 +36,23 @@ mixin filter()
 						+checkbox({text: 'Серый', count: true, color: '#bebebe'})
 						+checkbox({text: 'Черный', count: true, color: '#000'})
 						+checkbox({text: 'Оранжевый', count: true, color: '#cf6b0c'})
-				a.filter__link(href="#" title="Переход в каталог") Выбрать в каталоге
+				a.filter__link.js-modal-link(href="#popup-colors" title="Переход в каталог цветов") Выбрать в каталоге
 					span.text-count 473
 			+filter-item({title: 'Коллекция'})
 				.filter-item__list
-					+checkbox({text: 'Времена года', count: true})
-					+checkbox({text: 'Времена года', count: true})
-					+checkbox({text: 'Времена года', count: true})
-					+checkbox({text: 'Времена года', count: true})
-					+checkbox({text: 'Времена года', count: true})
-					+checkbox({text: 'Времена года', count: true})
+					+fieldset('Коллекция')
+						+checkbox({text: 'Времена года', count: true})
+						+checkbox({text: 'Времена года', count: true})
+						+checkbox({text: 'Времена года', count: true})
+						+checkbox({text: 'Времена года', count: true})
+						+checkbox({text: 'Времена года', count: true})
+						+checkbox({text: 'Времена года', count: true})
 				.filter__toggle
 					span.filter__toggle-text Показать еще
 			+filter-item({title: 'Спецпредложения'})
 				.filter-item__list
-					+checkbox({text: 'Краска в подарок', count: true})
+					+fieldset('Спецпредложения')
+						+checkbox({text: 'Краска в подарок', count: true})
 		.filter__footer
 			+btn({
 				tag: 'button',
