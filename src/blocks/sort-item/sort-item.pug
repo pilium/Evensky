@@ -1,0 +1,14 @@
+mixin sort-item(props)
+	.sort-item
+			span.sort-item__title= props.title
+			.sort-item__action
+				.sort-item__header.js-sort-item__header
+					span.sort-item__current= props.current
+				.sort-item__body
+					block
+
+mixin sort-item__link (name, descr)
+	.sort-item__link
+		span.sort-item__name= name
+		if(descr)
+			span.sort-item__descr= descr

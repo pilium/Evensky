@@ -1,11 +1,21 @@
 mixin sort()
 	.sort
-		.sort__item
-			span.sort__title Упорядочить по:
-			.sort__action
-				span.sort__current по популярности
-		.sort__item
-			span.sort__title Показывать по:
-			.sort__action
-				span.sort__current 30
+		+sort-item({
+			title: 'Упорядочить по:',
+			current: 'по популярности',
+		})
+			+sort-item__link('По цене', 'по возрастанию')
+			+sort-item__link('По цене', 'по убыванию')
+			+sort-item__link('По названию', 'А → Я')
+			+sort-item__link('По названию', 'Я → А')
+			+sort-item__link('По популярности')
+		+sort-item({
+			title: 'Показывать по:',
+			current: '30',
+		})
+			+sort-item__link('10')
+			+sort-item__link('20')
+			+sort-item__link('30')
+			+sort-item__link('40')
+			+sort-item__link('50')
 	block

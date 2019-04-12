@@ -353,6 +353,17 @@ $(document).ready(() => {
 		});
 	};
 
+	let sortItem = () => {
+		$(document).on('click', '.js-sort-item__header', function () {
+			if ($(this).parent().hasClass('sort-item__action--active')) {
+				$(this).parent().removeClass('sort-item__action--active');
+			} else {
+				$('.sort-item__action').removeClass('sort-item__action--active');
+				$(this).parent().addClass('sort-item__action--active');
+			}
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -441,6 +452,7 @@ $(document).ready(() => {
 	counter();
 	filterItem();
 	filterSlider();
+	sortItem();
 });
 
 let popularCategoriesSlider = () => {
