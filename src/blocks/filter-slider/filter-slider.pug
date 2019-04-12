@@ -1,0 +1,21 @@
+mixin filter-slider(props)
+    .filter-slider
+        .filter-slider__values
+            +field-text({
+					mods: 'no-label',
+					labelText: '',
+					attrs: {
+						type: 'text',
+						name: 'filter-slider__value--from',
+					}
+				})
+            .filter-slider__values-line
+            +field-text({
+					mods: 'no-label',
+					labelText: '',
+					attrs: {
+						type: 'text',
+						name: 'filter-slider__value--to',
+					}
+				}) 
+        .filter-slider__line(data-range-type= props.type)

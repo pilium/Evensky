@@ -10,10 +10,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		border-radius: 100% 0% 0% 100% / 50% 99% 1% 50%;
 		width: 40px;
 		height: 40px;
 		background-color: #eee;
 		cursor: pointer;
+
+		&:last-child { border-radius: 0% 100% 100% 0% / 50% 50% 50% 50%; }
 
 		&:hover,
 		&:focus {

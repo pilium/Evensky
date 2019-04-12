@@ -312,8 +312,8 @@ $(document).ready(() => {
 	let filterSlider = () => {
 		$('.filter-slider__line').each(function () {
 			let slider = $(this)[0];
-			let sliderFrom = $(this).parent().find('.filter-slider__value--from')[0];
-			let sliderTo = $(this).parent().find('.filter-slider__value--to')[0];
+			let sliderFrom = $(this).parent().find('[name="filter-slider__value--from"]')[0];
+			let sliderTo = $(this).parent().find('[name="filter-slider__value--to"]')[0];
 			let inputs = [sliderFrom, sliderTo];
 			let type = $(this).data('range-type');
 

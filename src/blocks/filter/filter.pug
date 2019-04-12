@@ -3,92 +3,47 @@ mixin filter()
 		.filter__header
 			span.filter__title Фильтр
 		.filter__body
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Цена за шт.
-				.filter-item__body
-					.filter-slider
-						.filter-slider__values
-							input.filter-slider__value.filter-slider__value--from
-							.filter-slider__values-line
-							input.filter-slider__value.filter-slider__value--to
-						.filter-slider__line(data-range-type="price")
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Толщина металла
-				.filter-item__body
-					.filter-slider
-						.filter-slider__values
-							input.filter-slider__value.filter-slider__value--from
-							.filter-slider__values-line
-							input.filter-slider__value.filter-slider__value--to
-						.filter-slider__line(data-range-type="mm")
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Материал
-				.filter-item__body
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Полимерное покрытие
-				.filter-item__body
-					ul.filter-item__list
-						li.filter-list__item
-							+checkbox({text: 'Цветное с одной стороны', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Цветное с двух сторон', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Printech с рисунком под дерево', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Printech с рисунком под камень', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Printech с рисунком под кирпич', count: true})
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Цвет
-				.filter-item__body
-					ul.filter-item__list
-						li.filter-list__item
-							+checkbox({text: 'Зеленый', count: true, color: '#417505'})
-						li.filter-list__item
-							+checkbox({text: 'Коричневый', count: true, color: '#8b572a'})
-						li.filter-list__item
-							+checkbox({text: 'Красное вино', count: true, color: '#ae0707'})
-						li.filter-list__item
-							+checkbox({text: 'Красный', count: true, color: '#ac1a1a'})
-						li.filter-list__item
-							+checkbox({text: 'Серый', count: true, color: '#bebebe'})
-						li.filter-list__item
-							+checkbox({text: 'Черный', count: true, color: '#000'})
-						li.filter-list__item
-							+checkbox({text: 'Оранжевый', count: true, color: '#cf6b0c'})
-					a.filter__link(href="#" title="Переход в каталог") Выбрать в каталоге
-						span.text-count 473
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Коллекция
-				.filter-item__body
-					ul.filter-item__list
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-						li.filter-list__item
-							+checkbox({text: 'Времена года', count: true})
-					.filter__toggle
-						span.filter__toggle-text Показать еще
-			.filter-item
-				.filter-item__header.js-filter-item__header
-					span.filter-item__title Спецпредложения
-				.filter-item__body
-					ul.filter-item__list
-						li.filter-list__item
-							+checkbox({text: 'Краска в подарок', count: true})
+			+filter-item({title: 'Цена за шт.'})
+				+filter-slider({type: 'price'})
+			+filter-item({title: 'Толщина металла'})
+				+filter-slider({type: 'mm'})
+			+filter-item({title: 'Материал'})
+				.filter-item__list
+					+checkbox({text: 'Дерево', count: true})
+					+checkbox({text: 'Металл', count: true})
+					+checkbox({text: 'Камень', count: true})
+					+checkbox({text: 'Кирпич', count: true})
+			+filter-item({title: 'Полимерное покрытие'})
+				.filter-item__list
+						+checkbox({text: 'Цветное с одной стороны', count: true})
+						+checkbox({text: 'Цветное с двух сторон', count: true})
+						+checkbox({text: 'Printech с рисунком под дерево', count: true})
+						+checkbox({text: 'Printech с рисунком под камень', count: true})
+						+checkbox({text: 'Printech с рисунком под кирпич', count: true})
+			+filter-item({title: 'Цвет'})
+				.filter-item__list
+						+checkbox({text: 'Зеленый', count: true, color: '#417505'})
+						+checkbox({text: 'Коричневый', count: true, color: '#8b572a'})
+						+checkbox({text: 'Красное вино', count: true, color: '#ae0707'})
+						+checkbox({text: 'Красный', count: true, color: '#ac1a1a'})
+						+checkbox({text: 'Серый', count: true, color: '#bebebe'})
+						+checkbox({text: 'Черный', count: true, color: '#000'})
+						+checkbox({text: 'Оранжевый', count: true, color: '#cf6b0c'})
+				a.filter__link(href="#" title="Переход в каталог") Выбрать в каталоге
+					span.text-count 473
+			+filter-item({title: 'Коллекция'})
+				.filter-item__list
+					+checkbox({text: 'Времена года', count: true})
+					+checkbox({text: 'Времена года', count: true})
+					+checkbox({text: 'Времена года', count: true})
+					+checkbox({text: 'Времена года', count: true})
+					+checkbox({text: 'Времена года', count: true})
+					+checkbox({text: 'Времена года', count: true})
+				.filter__toggle
+					span.filter__toggle-text Показать еще
+			+filter-item({title: 'Спецпредложения'})
+				.filter-item__list
+					+checkbox({text: 'Краска в подарок', count: true})
 		.filter__footer
 			+btn({
 				tag: 'button',

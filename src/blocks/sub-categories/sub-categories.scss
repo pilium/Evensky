@@ -20,14 +20,19 @@
 			margin-bottom: 16px;
 			width: calc(100% / 3);
 
+			&__footer {
+				position: absolute;
+				left: -2px;
+				right: -2px;
+				top: 100%;
+				border-left: 2px solid $color-main-action;
+				border-right: 2px solid $color-main-action;
+			}
+
 			&:hover,
 			&:focus {
 				z-index: 9;
-				border-radius: 0;
-			}
-
-			&:nth-child(n + 4) {
-				margin-top: -96px;
+				border-bottom-color: transparent;
 			}
 		}
 	}
