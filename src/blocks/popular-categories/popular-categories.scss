@@ -1,5 +1,13 @@
-.catalog-mobile-nav {
-	display: none;
+.popular-cat {
+	.catalog-mobile-nav {
+		display: none;
 
-	@media screen and (max-width: $phone-size) { display: block; }
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
+
+	@at-root .page-inner {
+		.popular-cat__body {
+			@media screen and (max-width: $phone-size) { display: none; }
+		}
+	}
 }

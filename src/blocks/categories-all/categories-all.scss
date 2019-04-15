@@ -18,4 +18,6 @@
 			background-color: #fff;
 		}
 	}
+
+	@media screen and (max-width: $phone-size) { display: none; }
 }
