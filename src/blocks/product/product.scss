@@ -173,4 +173,13 @@
 			}
 		}
 	}
+
+	&--grid {
+		&-a { grid-area: first; }
+		&-b { grid-area: second; }
+		&-c { grid-area: third; }
+		&-d { grid-area: fourth; }
+		&-e { grid-area: fives; }
+		&-f { grid-area: sixes; }
+	}
 }
