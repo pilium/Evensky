@@ -27,6 +27,7 @@ block footer
 	+modal({
 		id: 'popup-consultation',
 		title: 'Получить консультацию',
+		success: true,
 		successText: 'Мы Вам перезвоним',
 		long: true,
 		mods: 'consult'
@@ -64,6 +65,7 @@ block footer
 	+modal({
 		id: 'popup-questions',
 		title: 'Что можно улучшить на этой странице?',
+		success: true,
 		successText: 'Что можно улучшить на этой странице',
 		mods: 'questions'
 	})
@@ -109,4 +111,10 @@ block footer
 					.form__column.form__column--text
 						span.form-line__info Мы быстрее исправим ошибку , если сможем связаться с вами для уточнения информации
 			+form-footer('#', 'Предложить улучшение')
+	+modal({
+		id: 'popup-colors',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
 	+overlay()

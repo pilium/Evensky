@@ -4,9 +4,7 @@
 	border-radius: 8px;
 	max-width: 520px;
 
-	.show-on-success {
-		display: none;
-	}
+	.show-on-success { display: none; }
 
 	.close--modal {
 		display: flex;
@@ -38,7 +36,6 @@
 
 			&:hover,
 			&:focus { opacity: 1; }
-
 		}
 	}
 
@@ -52,9 +49,7 @@
 		padding: 8px 24px 8px 40px;
 		background-color: $color-light-bg;
 
-		@media screen and (max-width: $phone-size) {
-			padding: 0 16px;
-		}
+		@media screen and (max-width: $phone-size) { padding: 0 16px; }
 	}
 
 	&__body { background-color: #fff; }
@@ -66,6 +61,27 @@
 		@media screen and (max-width: $phone-size) {
 			margin: 8px 0;
 			font-size: 14px;
+		}
+	}
+
+	&--colors {
+		display: flex;
+		flex-direction: column;
+		max-width: 800px;
+		max-height: calc(100vh - 80px);
+
+		.form { padding: 0 32px; }
+
+		.modal {
+			&__header {
+				padding: 16px 32px;
+				background-color: #fff;
+			}
+
+			&__title {
+				font-weight: 600;
+				font-size: 30px;
+			}
 		}
 	}
 

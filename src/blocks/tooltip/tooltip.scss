@@ -1,11 +1,11 @@
 .tooltip {
 	position: absolute;
 	left: 0;
-	right: 0;
 	top: 25px;
 	z-index: 1;
 	border-radius: 4px;
 	padding: 8px 8px 8px 32px;
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
 	background-color: #fff;
 
 	&::before {
@@ -30,9 +30,26 @@
 	}
 
 	&__text {
+		font-family: $font-family-semibold;
+		font-weight: 600;
 		font-size: 12px;
 		color: $color-base-text;
 	}
+
+	&__btn {
+		font-family: $font-family-semibold;
+		font-weight: 600;
+		color: $color-link;
+		cursor: pointer;
+	}
+
+	&__color {
+		display: block;
+		width: 160px;
+		height: 160px;
+	}
+
+	&__descr { display: block; }
 
 	&--breadcrumbs {
 		&::before { display: none; }

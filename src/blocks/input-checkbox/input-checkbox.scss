@@ -7,9 +7,29 @@
 	padding-left: 24px;
 	user-select: none;
 
-	&__label {
-		cursor: pointer;
+	.tooltip {
+		top: auto;
+		bottom: 140%;
+		z-index: 11;
+		display: none;
+		flex-direction: column;
+		padding: 8px;
+		&::before { display: none; }
+
+		&__text {
+			font-family: $font-family-boldest;
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		> * {
+			margin: 2px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
 	}
+
+	&__label { cursor: pointer; }
 
 	&__input {
 		position: absolute;

@@ -1,5 +1,12 @@
 mixin checkbox(props)
 	.input-checkbox
+		if(props.tooltip)
+			+tooltip({
+				text: 'RAL 1000',
+				color: props.color,
+				descr: props.descr,
+				mods: 'color'
+			})
 		label.input-checkbox__label
 			input.input-checkbox__input(type="checkbox")
 			span.input-checkbox__custom

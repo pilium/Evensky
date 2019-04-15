@@ -15,11 +15,12 @@ mixin modal(props)
 					+close('Закрыть','modal')
 				.modal__body
 					block
-		+modal-on-success({
-			mods: 'consult',
-			success: props.successText,
-			long: props.long
-		})
+		if (props.success)
+			+modal-on-success({
+				mods: 'consult',
+				success: props.successText,
+				long: props.long
+			})
 
 mixin modal-on-success(props)
 	-

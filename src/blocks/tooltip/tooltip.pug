@@ -12,4 +12,10 @@ mixin tooltip(props)
 			+icon(props.icon, 'tooltip__icon')
 		if (props.text !== 'undefined' && props.text)
 			span.tooltip__text= props.text
+			if (props.descr !== 'undefined' && props.descr)
+				span.tooltip__descr= props.descr
+			if (props.color !== 'undefined' && props.color)
+				span.tooltip__color(style =`background-color: ${props.color}`)
+			if (props.btn !== 'undefined' && props.btn)
+				span.tooltip__btn= props.btn
 		block
