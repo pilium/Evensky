@@ -98,7 +98,7 @@ $(document).ready(() => {
 				catalogBody.css('width', 'auto');
 			}
 			);
-		} else if (window.innerWidth <= 767) {
+		} else if (window.innerWidth < 768) {
 			$(document).on('click', '.catalog-list__label', function () {
 				$(this).parent().toggleClass('catalog-list__item--active');
 				$(this).siblings().removeClass('catalog-list__item--active');
