@@ -151,7 +151,10 @@
 		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
 
 		.product-prev {
-			&__footer { opacity: 1; }
+			&__footer {
+				display: block;
+				opacity: 1;
+			}
 		}
 
 		@media screen and (max-width: $tablet-size) {
