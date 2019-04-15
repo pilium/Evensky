@@ -87,7 +87,7 @@ $(document).ready(() => {
 	};
 
 	let catalogNav = () => {
-		if (window.innerWidth > 767) {
+		if (window.innerWidth > 768) {
 			$('.js-catalog-list__item').hover(function () {
 				let catalogBody = $(this).closest('.js-catalog-nav__body');
 
@@ -99,6 +99,7 @@ $(document).ready(() => {
 			}
 			);
 		} else if (window.innerWidth < 768) {
+			console.log('Меньше 768');
 			$(document).on('click', '.catalog-list__label', function () {
 				$(this).parent().toggleClass('catalog-list__item--active');
 				$(this).siblings().removeClass('catalog-list__item--active');

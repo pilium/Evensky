@@ -25,11 +25,6 @@
 
 			@media screen and (max-width: $phone-size) { transform: rotate(90deg); }
 		}
-
-		@media screen and (max-width: $phone-size) {
-			font-size: 16px;
-			line-height: 1.63;
-		}
 	}
 
 	&__label {
@@ -121,7 +116,6 @@
 
 		.catalog-list__label-text {
 			padding: 8px 0;
-			font-size: 18px;
 
 			&::after { top: 20px; }
 		}
@@ -141,9 +135,15 @@
 				}
 			}
 		}
-		.catalog-subnav__item { padding: 2px 0; }
-		.catalog-subnav__link { color: $color-link; }
-		.catalog-subnav__text { white-space: nowrap; }
+
+		.catalog-subnav__link {
+			color: $color-link;
+		}
+
+		.catalog-subnav__text {
+			font-size: 12px;
+			white-space: normal;
+		}
 	}
 
 	@media screen and (max-width: $phone-size) { width: 100%; }
