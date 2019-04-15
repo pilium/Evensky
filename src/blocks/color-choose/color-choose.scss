@@ -1,0 +1,51 @@
+.color-choose {
+	.form__body { margin-bottom: 0; }
+
+	.input-checkbox {
+		&__body { align-items: flex-start; }
+
+		&__text {
+			font-family: $font-family-semibold;
+			font-weight: 600;
+		}
+
+		&__color {
+			width: 20px;
+			height: 20px;
+		}
+
+		&:hover,
+		&:focus {
+			.tooltip {
+				display: block;
+			}
+		}
+	}
+
+	&__title { margin-bottom: 24px; }
+
+	&__list {
+		.fieldset__inner {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			> * {
+				margin: 8px 0;
+				width: 20%;
+				&:first-child { margin-top: 0; }
+				&:last-child { margin-bottom: 0; }
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		padding: 24px 32px;
+
+		> * {
+			&:not(:last-child) { margin-right: 32px; }
+		}
+	}
+}
