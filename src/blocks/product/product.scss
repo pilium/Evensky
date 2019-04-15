@@ -84,7 +84,7 @@
 		margin-bottom: 8px;
 		padding: 0 8px;
 
-		@media screen and (max-width: $tablet-size) { padding: 8px; }
+		@media screen and (max-width: $tablet-size) { padding: 0; }
 	}
 
 	&__footer { opacity: 0; }
@@ -102,10 +102,8 @@
 	}
 
 	&__title {
-		margin-bottom: 16px;
+		margin-bottom: 8px;
 		height: 55px;
-
-		@media screen and (max-width: $tablet-size) { height: 75px; }
 	}
 
 	&__label {
@@ -142,7 +140,7 @@
 		margin-right: 8px;
 		width: 24px;
 		height: 24px;
-		fill: #fff;
+		fill: #000;
 	}
 
 	&:hover,

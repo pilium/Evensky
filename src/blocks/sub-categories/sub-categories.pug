@@ -66,7 +66,9 @@ mixin sub-categories()
 						span.tag__count.text-count 123
 				.sub-categories__status
 					+sort()
-						+page-counter({})
+						+page-counter({
+							str: true,
+						})
 				.sub-categories__products
 					+product({
 						link: '#',

@@ -361,6 +361,12 @@ $(document).ready(() => {
 			} else {
 				$('.sort-item__action').removeClass('sort-item__action--active');
 				$(this).parent().addClass('sort-item__action--active');
+				$(document).on('click', '.sort-item__link', function () {
+					let text = $(this).find('.sort-item__name').text();
+
+					$(this).parent().parent().find('.sort-item__current').text(text);
+					$('.sort-item__action').removeClass('sort-item__action--active');
+				});
 			}
 		});
 	};

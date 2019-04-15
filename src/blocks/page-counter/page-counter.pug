@@ -8,10 +8,10 @@ mixin page-counter(props)
 			}
 		}
 	.page-counter(class=allMods)
-		if (props.col)
+		if(props.col)
 			a.page-counter__link(href="#")= props.link
 			span.page-counter__count.text-count 123
 		else if(typeof(props.str) !== 'undefined' && props.str)
-			span.js-sub-category__counter Страница 1 из 7
+			span.page-counter__product.js-product__counter Страница 1 из 7
 		else
 			span.js-section-header__text

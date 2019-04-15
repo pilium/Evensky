@@ -2,7 +2,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 4px;
 	padding: 8px 0;
 	background-color: #fff;
 
@@ -16,16 +15,13 @@
 		background-color: #eee;
 		cursor: pointer;
 
-		&:last-child { border-radius: 0% 100% 100% 0% / 50% 50% 50% 50%; }
-
 		&:hover,
 		&:focus {
 			background-color: $color-link;
-
-			.product-counter__icon {
-				color: #fff;
-			}
+			.product-counter__icon { color: #fff; }
 		}
+
+		&:last-child { border-radius: 0% 100% 100% 0% / 50% 50% 50% 50%; }
 	}
 
 	&__icon {

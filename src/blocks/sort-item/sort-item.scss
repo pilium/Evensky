@@ -24,7 +24,10 @@
 		position: relative;
 		display: flex;
 		align-items: center;
+		overflow: hidden;
+		max-width: 104px;
 		font-weight: 600;
+		text-overflow: ellipsis;
 		color: $color-link;
 
 		&::after {
@@ -43,7 +46,7 @@
 		position: absolute;
 		left: -10px;
 		top: calc(100% + 10px);
-		z-index: 2;
+		z-index: 12;
 		display: none;
 		overflow: hidden;
 		border-radius: 4px;
@@ -72,4 +75,6 @@
 	}
 
 	&__descr { color: $color-text-info; }
+
+	@media screen and (max-width: $tablet-size) { border-right: none; }
 }

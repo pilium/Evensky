@@ -35,6 +35,10 @@
 				width: 20%;
 				&:first-child { margin-top: 0; }
 				&:last-child { margin-bottom: 0; }
+
+				@media screen and (max-width: $tablet-size) {
+					width: calc(100% / 3);
+				}
 			}
 		}
 	}

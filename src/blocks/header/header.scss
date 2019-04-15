@@ -22,9 +22,7 @@
 
 			> * {
 				&:not(:last-child) {
-					margin-right: 48px;
-
-					@media screen and (max-width: $tablet-size) { margin-right: 40px; }
+					margin-right: 32px;
 
 					@media screen and (max-width: $phone-size) { margin-right: 24px; }
 				}
