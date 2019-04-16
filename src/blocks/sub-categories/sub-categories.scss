@@ -110,8 +110,8 @@
 		border-radius: 4px;
 		background-color: #fff;
 
-		.page-counter { display: none; }
-
-		@media screen and (max-width: $tablet-size) { justify-content: center; }
+		.page-counter {
+			@media screen and (max-width: $tablet-size) { display: none; }
+		}
 	}
 }

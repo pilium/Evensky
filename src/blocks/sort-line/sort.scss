@@ -1,1 +1,5 @@
-.sort { display: flex; }
+.sort {
+	display: flex;
+
+	@media screen and (max-width: $tablet-size) { justify-content: center; }
+}
