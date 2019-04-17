@@ -3,9 +3,10 @@
 	background-color: #fff;
 
 	.tooltip {
-		left: calc(100% + 16px);
+		// left: calc(100% + 16px);
+		left: -10000%;
 		top: 100px;
-		z-index: -1;
+		z-index: 1;
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
@@ -41,6 +42,8 @@
 	&__header {
 		border-bottom: 1px solid #dedede;
 		padding: 16px;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
 	}
 
 	&__title {
