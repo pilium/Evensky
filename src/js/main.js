@@ -390,6 +390,18 @@ $(document).ready(() => {
 		});
 	};
 
+	let tabs = () => {
+		$('.tabs__item').click(function () {
+			let tabName = $(this).attr('show-tab');
+
+			$(this).toggleClass('tabs__item--active').siblings().removeClass('tabs__item--active');
+			if ($(this).hasClass('tabs__item--aside')) {
+				$(this).closest('.sub-categories__aside').addClass('sub-categories__aside--active');
+			}
+			$(`.${tabName}`).toggleClass('tab--active').siblings().removeClass('tab--active');
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -480,6 +492,7 @@ $(document).ready(() => {
 	filterSlider();
 	sortItem();
 	tagsToggle();
+	tabs();
 });
 
 let popularCategoriesSlider = () => {
