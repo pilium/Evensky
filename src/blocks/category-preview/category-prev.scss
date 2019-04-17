@@ -42,4 +42,20 @@
 	&--hide {
 		@media screen and (max-width: $tablet-size) { display: none; }
 	}
+
+	&--mobile-only {
+		display: none;
+
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
+
+	&--exp {
+		.category-prev__item {
+			&:last-child {
+				margin-top: 0;
+
+				.category-prev__link { color: inherit; }
+			}
+		}
+	}
 }
