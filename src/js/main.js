@@ -266,6 +266,18 @@ $(document).ready(() => {
 			}
 		});
 
+		search.addEventListener('blur', () => {
+			if (search.value.length > 2) {
+				$('.search-result').removeClass('search-result--is-active');
+			}
+		});
+
+		search.addEventListener('focus', () => {
+			if (search.value.length > 2) {
+				$('.search-result').addClass('search-result--is-active');
+			}
+		});
+
 		if ($(window).width() < 1240) {
 			$(document).on('click', '.btn--search', () => {
 				$('.btn--search').addClass('btn--search-active');
