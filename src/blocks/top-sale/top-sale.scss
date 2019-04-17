@@ -91,7 +91,10 @@
 		}
 	}
 
-	@media screen and (max-width: $tablet-size) { padding: 8px; }
+	@media screen and (max-width: $tablet-size) {
+		padding: 8px;
+		text-align: center;
+	}
 
 	@media screen and (max-width: $phone-size) {
 		display: flex;
