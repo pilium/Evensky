@@ -1,15 +1,27 @@
 .sub-categories {
+	.tags {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
 	&__wrapper {
 		display: flex;
 
 		> * {
-			&:not(:last-child) { margin-right: 16px; }
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 16px;
+				}
+			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 
 	&__products {
 		display: flex;
-		align-items: center;
 		flex-wrap: wrap;
 		background-color: #fff;
 
@@ -27,6 +39,12 @@
 					padding: 0;
 					width: 168px;
 					height: 100%;
+				}
+
+				@media screen and (max-width: $phone-size) {
+					position: static;
+					padding-right: 0;
+					width: 100%;
 				}
 			}
 
@@ -48,10 +66,6 @@
 					display: block;
 					border: none;
 					opacity: 1;
-
-					> * {
-						&:not(:last-child) { margin-right: 8px; }
-					}
 				}
 			}
 
@@ -68,6 +82,8 @@
 				padding-left: 168px;
 				width: 100%;
 			}
+
+			@media screen and (max-width: $phone-size) { padding-left: 0; }
 		}
 
 		@media screen and (max-width: $tablet-size) {
@@ -76,20 +92,54 @@
 	}
 
 	&__aside {
+		position: relative;
 		flex: 0 0 256px;
 		width: 256px;
 		max-width: 256px;
 
-		> * {
-			margin: 16px 0;
-			&:first-child { margin-top: 0; }
-			&:last-child { margin-bottom: 0; }
+		.tabs__content {
+			> * {
+				margin: 16px 0;
+				&:first-child { margin-top: 0; }
+				&:last-child { margin-bottom: 0; }
+
+				@media screen and (max-width: $phone-size) { margin: 0; }
+			}
 		}
 
 		@media screen and (max-width: $tablet-size) {
 			flex: 0 0 224px;
 			width: 224px;
 			max-width: 224px;
+		}
+
+		@media screen and (max-width: $phone-size) {
+			flex: 1;
+			width: auto;
+			max-width: 100%;
+
+			.tab {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 100%;
+				z-index: 5;
+				background-color: #fff;
+			}
+
+			&--active {
+				.tabs__list {
+					position: relative;
+					z-index: 6;
+					border-radius: 4px 4px 0 0;
+				}
+
+				.tab--active {
+					position: relative;
+					z-index: 9;
+					box-shadow: 0 13px 30px 0 rgba(0, 0, 0, 0.2);
+				}
+			}
 		}
 	}
 

@@ -6,14 +6,30 @@ mixin sub-categories()
 		+section-header('Доборные элементы кровли', '2341')
 		.sub-categories__wrapper
 			aside.sub-categories__aside
-				+category-prev(false, 'Категории', '')
-					+categoryPrevListItem('Планка стыковочная', 23)
-					+categoryPrevListItem('Планка ендовы нижняя', 98)
-					+categoryPrevListItem('Планка ендовы верхняя', 98)
-					+categoryPrevListItem('Планка угла наружного', 98)
-					+categoryPrevListItem('Планка угла внутренного', 98)
-					+categoryPrevListItem('Все водосточные системы', 7)
-				+filter()
+				+tabs()
+					.tabs__content
+						.tab.tab--category
+							+category-prev(false, 'Категории', 'exp')
+								+categoryPrevListItem('Планка стыковочная', 23)
+								+categoryPrevListItem('Планка ендовы нижняя', 98)
+								+categoryPrevListItem('Планка ендовы верхняя', 98)
+								+categoryPrevListItem('Планка угла наружного', 98)
+								+categoryPrevListItem('Планка угла внутренного', 98)
+								+categoryPrevListItem('Планка угла наружного', 98)
+						.tab.tab--filter
+							+filter()
+						.tab.tab--often
+							+category-prev(false, 'Категории', 'exp,mobile-only')
+								+categoryPrevListItem('Планка стыковочная', 23)
+								+categoryPrevListItem('Планка ендовы нижняя', 98)
+								+categoryPrevListItem('Планка ендовы верхняя', 98)
+								+categoryPrevListItem('Планка угла наружного', 98)
+								+categoryPrevListItem('Планка угла внутренного', 98)
+								+categoryPrevListItem('Планка стыковочная', 23)
+								+categoryPrevListItem('Планка ендовы нижняя', 98)
+								+categoryPrevListItem('Планка ендовы верхняя', 98)
+								+categoryPrevListItem('Планка угла наружного', 98)
+								+categoryPrevListItem('Планка угла внутренного', 98)
 			main.sub-categories__main
 				+tags({title: 'Часто ищут'})
 					.tag
