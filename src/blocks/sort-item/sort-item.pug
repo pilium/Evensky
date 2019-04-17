@@ -1,5 +1,13 @@
 mixin sort-item(props)
-	.sort-item
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " sort-item--" + modsList[i].trim();
+			}
+
+	.sort-item(class= allMods)
 			span.sort-item__title= props.title
 			.sort-item__action
 				.sort-item__header.js-sort-item__header

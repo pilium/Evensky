@@ -53,6 +53,8 @@
 		max-width: 208px;
 		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
 		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) { left: -100%; }
 	}
 
 	&__link {
@@ -75,6 +77,10 @@
 	}
 
 	&__descr { color: $color-text-info; }
+
+	&--mobile-hide {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
 
 	@media screen and (max-width: $tablet-size) { border-right: none; }
 }
