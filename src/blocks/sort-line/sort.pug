@@ -3,6 +3,7 @@ mixin sort()
 		+sort-item({
 			title: 'Упорядочить по:',
 			current: 'по популярности',
+			mods: ' '
 		})
 			+sort-item__link('По цене', 'по возрастанию')
 			+sort-item__link('По цене', 'по убыванию')
@@ -12,6 +13,7 @@ mixin sort()
 		+sort-item({
 			title: 'Показывать по:',
 			current: '30',
+			mods: 'mobile-hide'
 		})
 			+sort-item__link('10')
 			+sort-item__link('20')
