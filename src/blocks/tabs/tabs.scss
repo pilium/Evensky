@@ -1,0 +1,40 @@
+.tabs {
+	.tab {
+		@media screen and (max-width: $phone-size) {
+			display: none;
+
+			&--active {
+				@media screen and (max-width: $phone-size) { display: block; }
+			}
+		}
+	}
+
+	&__list {
+		display: none;
+		overflow: hidden;
+		border-radius: 4px;
+
+		@media screen and (max-width: $phone-size) { display: flex; }
+	}
+
+	&__item {
+		flex: 1;
+		padding: 16px;
+		font-size: 14px;
+		white-space: nowrap;
+		background-color: #fff;
+		cursor: pointer;
+
+		> * {
+			&:not(:last-child) {
+				border-right: 1px solid #ededed;
+			}
+		}
+
+		&--active { background-color: $color-main-action; }
+	}
+
+	.category-prev__title {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+}

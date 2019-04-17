@@ -1,0 +1,20 @@
+mixin tabs()
+	.tabs
+		ul.tabs__list(role='tablist')
+			+tabs__item({text: 'Подразделы', dataTab: 'tab--category',mods: 'aside'})
+			+tabs__item({text: 'Фильтр', dataTab: 'tab--filter',mods: 'aside'})
+			+tabs__item({text: 'Часто ищут', dataTab: 'tab--often',mods: 'aside'})
+		block
+
+mixin tabs__item(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' tabs__item--' + modsList[i].trim();
+			}
+		}
+
+	li.tabs__item(role='presentation' show-tab= props.dataTab class= allMods)
+		span.tabs__link(role='tab')= props.text
