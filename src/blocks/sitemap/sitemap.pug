@@ -1,0 +1,60 @@
+mixin sitemap(props)
+    +section({
+		mods: 'sitemap',
+		mainClass: 'sitemap'
+	})
+        +section-header('Карта сайта')
+        .sitemap__wrapper
+            +sitemap__block(true)
+            +sitemap__block(false)
+            
+
+mixin sitemap__block(full)
+    .sitemap__block
+        .sitemap__block-header
+            span.sitemap__block-title Название раздела
+        if(full)
+            .sitemap__block-body
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                    +sitemap__item-link('Название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                    +sitemap__item-link('Название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+        else
+            .sitemap__block-body
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+                    +sitemap__item-link('Название страницы')
+                +sitemap__item()
+                    +sitemap__item-link('Название страницы')
+                    +sitemap__item-link('Другое название страницы')
+
+mixin sitemap__item()
+    .sitemap__item
+        span.sitemap__item-title Название подраздела
+        ul.sitemap__list
+            block
+                    
+mixin sitemap__item-link(text)
+    li.sitemap__list-item
+        a.sitemap__list-link(href="#")= text
+
