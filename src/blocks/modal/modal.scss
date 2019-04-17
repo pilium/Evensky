@@ -72,12 +72,18 @@
 		max-width: 800px;
 		max-height: calc(100vh - 80px);
 
-		.form { padding: 0 32px; }
+		.form {
+			padding: 0 32px;
+
+			@media screen and (max-width: $phone-size) { padding: 0 16px; }
+		}
 
 		.modal {
 			&__header {
 				padding: 16px 32px;
 				background-color: #fff;
+
+				@media screen and (max-width: $phone-size) { padding: 16px; }
 			}
 
 			&__title {
@@ -86,9 +92,9 @@
 			}
 		}
 
-		@media screen and (max-width: $tablet-size) {
-			max-width: 520px;
-		}
+		@media screen and (max-width: $tablet-size) { max-width: 520px; }
+
+		@media screen and (max-width: $phone-size) { max-width: 320px; }
 	}
 
 	@media screen and (max-width: $phone-size) { margin: 0 auto; }
