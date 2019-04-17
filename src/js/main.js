@@ -376,6 +376,11 @@ $(document).ready(() => {
 				});
 			}
 		});
+		$('body').click(function () {
+			if ($('.sort-item__action').hasClass('sort-item__action--active')) {
+				$('.sort-item__action').removeClass('sort-item__action--active');
+			}
+		});
 	};
 
 	let tagsToggle = () => {
