@@ -75,7 +75,6 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: 16px;
-		padding: 8px 0;
 		height: 136px;
 	}
 
@@ -83,6 +82,7 @@
 		display: block;
 		margin-bottom: 8px;
 		padding: 0 8px;
+		background-color: #fff;
 
 		@media screen and (max-width: $tablet-size) { padding: 0; }
 	}
@@ -103,7 +103,7 @@
 
 	&__title {
 		margin-bottom: 8px;
-		height: 55px;
+		min-height: 56px;
 	}
 
 	&__label {
