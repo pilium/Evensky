@@ -1,0 +1,113 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Каталог'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Каталог',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Каталог металлопродукции',
+		})
+		+breadcrumbs-item({
+			text: 'Материалы для мягкой кровли и металлчерепицы'
+		})
+	+sitemap()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-consultation',
+		title: 'Получить консультацию',
+		success: true,
+		successText: 'Мы Вам перезвоним',
+		long: true,
+		mods: 'consult'
+	})
+		+form('consultation')
+			.form__body
+				+fieldset('Контактный телефон')
+					+field-text({
+						mods: 'width-s,require',
+						id: 'consult-phone',
+						labelText: "Контактный телефон",
+						attrs: {
+							type: 'tel',
+							name: 'phone',
+							placeholder: "+7(999)999-9999"
+						}
+					})
+				+fieldset('Вопрос или комментарий')
+					+field-text({
+						mods: 'textarea',
+						id: 'consult-textarea',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, меня интересует...",
+						attrs: {
+							type: 'textarea',
+							rows: 10,
+							cols: 5
+						}
+					})
+				+fieldset('Прикрепите файл')
+					+field-file({
+						icon: 'paper-holder'
+					})
+			+form-footer('#', 'Получить консультацию', true)
+	+modal({
+		id: 'popup-questions',
+		title: 'Что можно улучшить на этой странице?',
+		success: true,
+		successText: 'Что можно улучшить на этой странице',
+		mods: 'questions'
+	})
+		+form('questions')
+			.form__body
+				+fieldset('Вопрос или кооментарий')
+					+field-text({
+						mods: 'textarea,require',
+						id: 'questions-ask',
+						labelText: "Вопрос или кооментарий",
+						placeholder: "Здравствуйте, на этой странице можно...",
+						attrs: {
+							type: 'textarea',
+							name: 'textarea',
+							rows: 10,
+							cols: 5
+						}
+					})
+				.form__columns
+					.form__column
+						+fieldset('Электронная почта')
+							+field-text({
+								mods: 'width-m',
+								id: 'questions-mail',
+								labelText: "Электронная почта",
+								attrs: {
+									type: 'email',
+									name: 'mail',
+									placeholder: "Введите свой email"
+								}
+							})
+						+fieldset('Контактный телефон')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'consult-phone',
+								labelText: "Контактный телефон",
+								attrs: {
+									type: 'tel',
+									name: 'phone',
+									placeholder: "+7(999)99-9999"
+								}
+							})
+					.form__column.form__column--text
+						span.form-line__info Мы быстрее исправим ошибку , если сможем связаться с вами для уточнения информации
+			+form-footer('#', 'Предложить улучшение')
+	+overlay()
