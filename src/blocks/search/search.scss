@@ -32,13 +32,15 @@
 		left: 0;
 		right: 0;
 		top: 42px;
-		z-index: 1;
+		z-index: 10;
+		overflow-y: scroll;
 		width: 460px;
 
 		@media screen and (max-width: $tablet-size) {
 			position: fixed;
 			top: 113px;
 			width: 100%;
+			height: 100%;
 		}
 
 		@media screen and (max-width: $phone-size) { top: 54px; }
