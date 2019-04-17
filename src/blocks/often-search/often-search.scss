@@ -8,9 +8,29 @@
 			flex: 1;
 			border-right: 1px solid #f2f2f2;
 
-			&:not(:last-child) { margin-right: 16px; }
+			&:not(:last-child) {
+				margin-right: 16px;
 
-			&:last-child { border-right: 0; }
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 8px;
+				}
+			}
+
+			&:last-child {
+				border-right: 0;
+
+				@media screen and (max-width: $phone-size) {
+					border-bottom: 0;
+				}
+			}
+
+			@media screen and (max-width: $phone-size) {
+				border-right: 0;
+				border-bottom: 1px solid #f2f2f2;
+			}
 		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
 	}
 }
