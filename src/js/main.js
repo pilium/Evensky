@@ -66,6 +66,7 @@ $(document).ready(() => {
 			nextArrow: '.slider__nav--next',
 			autoplay: true,
 			edgeFriction: 0.56,
+			adaptiveHeight: true,
 			responsive: [
 				{
 					breakpoint: 1239,
@@ -99,7 +100,6 @@ $(document).ready(() => {
 			}
 			);
 		} else if (window.innerWidth < 768) {
-			console.log('Меньше 768');
 			$(document).on('click', '.catalog-list__label', function () {
 				$(this).parent().toggleClass('catalog-list__item--active');
 				$(this).siblings().removeClass('catalog-list__item--active');
@@ -276,11 +276,18 @@ $(document).ready(() => {
 	};
 
 	let breadcrumbsNav = () => {
-		$(document).on('click', '.js-breadcrumbs__item', function () {
-			// if ($('.js-breadcrumbs__item').hasClass('breadcrumbs__item--nav-active')) {
-			// 	$('.js-breadcrumbs__item').removeClass('breadcrumbs__item--nav-active');
-			// }
+		$(document).on('click', '.js-breadcrumbs__item', function (e) {
+			if ($(window).width() > 767) {
+				e.preventDefault();
+			}
 			$(this).toggleClass('breadcrumbs__item--nav-active');
+			$('body').click(function (event) {
+				if ($('.breadcrumbs__item').hasClass('breadcrumbs__item--nav-active')) {
+					if (!$(event.target).hasClass('breadcrumbs-nav__link')) {
+						$('.breadcrumbs__item').removeClass('breadcrumbs__item--nav-active');
+					}
+				}
+			});
 		});
 	};
 
