@@ -33,5 +33,10 @@
 		width: 45px;
 		height: 45px;
 		font-size: 18px;
+
+		@media screen and (max-width: $phone-size) {
+			width: 41px;
+			height: 40px;
+		}
 	}
 }
