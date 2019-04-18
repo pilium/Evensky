@@ -1,0 +1,21 @@
+mixin action-prev(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' action-prev--' + modsList[i].trim();
+			}
+		}
+	a.action-prev(class= allMods href="#")
+		.action-prev__image(style="background-image: url('images/promo-preview/images/prof.jpg')")
+		.action-prev__body
+			.action-prev__content
+				span.action-prev__title(href="#")= props.title
+				p.action-prev__descr= props.descr
+				+action-time({
+					text: props.time,
+					mods: 'retaired',
+				})
+		block
