@@ -1,7 +1,13 @@
 .actions {
+	&__wrapper {
+		@media screen and (max-width: $phone-size) { margin: 0 -16px; }
+	}
+
 	&__block {
 		padding: 32px;
 		background-color: #fff;
+
+		@media screen and (max-width: $tablet-size) { padding: 16px 24px; }
 	}
 
 	&__block-header {
@@ -11,7 +17,21 @@
 		margin-bottom: 32px;
 
 		> * {
-			&:not(:last-child) { margin-right: 8px; }
+			&:not(:last-child) {
+				margin-right: 8px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $tablet-size) { margin-bottom: 16px; }
+
+		@media screen and (max-width: $phone-size) {
+			align-items: center;
+			flex-direction: column;
 		}
 	}
 
