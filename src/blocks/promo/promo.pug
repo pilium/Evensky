@@ -4,7 +4,10 @@ mixin promo()
 		mainClass: 'promo'
 	})
 		+section-header('Акции и предложения')
-			+page-counter(123, 'Все спецпредложения', '')
+			+page-counter({
+				col: true,
+				link: 'Все спецпредложения',
+			})
 		.promo__prevs
 			+promoPrev({
 				link: 'Купить листы оцинкованные',

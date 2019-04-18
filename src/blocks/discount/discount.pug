@@ -4,7 +4,10 @@ mixin discount()
 		mainClass: 'discount'
 	})
 		+section-header('Товары со скидкой')
-			+page-counter(123, 'Все товары со скидкой')
+			+page-counter({
+				col: true,
+				link: 'Все товары со скидкой',
+			})
 		.discount__product-wrapper
 			+product({
 				link: '#',
