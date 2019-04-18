@@ -171,6 +171,11 @@
 		.product-prev {
 			&__footer {
 				@media screen and (max-width: $tablet-size) { display: none; }
+
+				@media screen and (max-width: $phone-size) {
+					display: block;
+					opacity: 1;
+				}
 			}
 		}
 	}
