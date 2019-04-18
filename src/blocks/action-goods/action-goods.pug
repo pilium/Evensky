@@ -1,0 +1,78 @@
+mixin action-goods()
+	+section({
+		mods: 'action-goods,bg-white',
+		mainClass: 'action-goods'
+	})
+		+section-header('Товары из акции ', '', 'small')
+		.action-goods__wrapper
+			+action-goods__block({
+				title: 'Скидки на кровельные комплектующие',
+				btnText: 'Все кровельные комплектующие со скидкой',
+			})
+			+action-goods__block({
+				btnText: 'Все для водосточных систем со скидкой',
+			})
+
+mixin action-goods__block(props)
+	.action-goods__block
+		.action-goods__block-header
+			span.action-goods__block-title= props.title
+		.action-goods__product-wrapper
+			+product({
+				link: '#',
+				sale: '-25%',
+				badge: '',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '10 шт.',
+				articul: 13761533,
+				timeFor: 'от 2 до 5 дней',
+				priceOld: '80 руб.',
+				priceNow: '76 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'action-goods,no-footer'
+			})
+			+product({
+				link: '#',
+				sale: '-50%',
+				badge: '',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '10 шт.',
+				articul: 13761533,
+				timeFor: 'от 2 до 5 дней',
+				priceOld: '80 руб.',
+				priceNow: '76 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'action-goods,no-footer'
+			})
+			+product({
+				link: '#',
+				sale: '-30%',
+				badge: 'хит',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '12 шт.',
+				articul: 13565534,
+				timeFor: 'от 2 до 3 дней',
+				priceOld: '120 руб.',
+				priceNow: '90 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'action-goods,no-footer'
+			})
+			+product({
+				link: '#',
+				sale: '-20%',
+				badge: 'хит',
+				name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+				count: '9 шт.',
+				articul: 13562322,
+				timeFor: 'от 2 до 3 дней',
+				priceOld: '110 руб.',
+				priceNow: '95 руб. за шт.',
+				btnText: 'В корзину',
+				mods: 'action-goods,hide,no-footer'
+			})
+		.action-goods__footer
+			+btn({
+			tag: 'button',
+			text: props.btnText,
+			count: true
+		})
