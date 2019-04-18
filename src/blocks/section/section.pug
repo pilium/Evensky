@@ -16,7 +16,7 @@ mixin section(props)
 			.container
 				block
 
-mixin section-header(text, count)
+mixin section-header(text, count, mods)
 	.section-header
 		if ( typeof(count) !== 'undefined' && count )
 			+title({
@@ -24,6 +24,11 @@ mixin section-header(text, count)
 				text: (text) ? text : null,
 				count: 8341,
 			}, 'h1')
+		else if(mods === 'small')
+			+title({
+				mods: 'small-section',
+				text: (text) ? text : null
+			}, 'h2')
 		else
 			+title({
 				mods: 'section',

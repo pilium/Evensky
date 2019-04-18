@@ -1,6 +1,7 @@
 .title {
+	font-family: $font-family-semibold;
+
 	&--page {
-		font-family: $font-family-semibold;
 		font-size: 40px;
 		line-height: 48px;
 
@@ -9,11 +10,17 @@
 
 	&--section {
 		margin: 16px 0;
-		font-family: $font-family-semibold;
 		font-size: 40px;
 		line-height: 1.1;
 
 		@media screen and (max-width: $tablet-size) { margin: 8px 0 16px 0; }
+
+		@media screen and (max-width: $phone-size) { font-size: 26px; }
+	}
+
+	&--small-section {
+		font-size: 30px;
+		line-height: 1.25;
 
 		@media screen and (max-width: $phone-size) { font-size: 26px; }
 	}
