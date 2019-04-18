@@ -78,6 +78,31 @@
 		&-l { padding: 16px 32px; }
 	}
 
+	&--arrow-down {
+		.btn__text {
+			position: relative;
+			padding-right: 24px;
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 8px;
+				border-style: solid;
+				border-width: 7px 7px 0 7px;
+				border-color: $color-link transparent transparent transparent;
+				width: 0;
+				height: 0;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: $color-link;
+			background-color: rgba($color-link, 0.2);
+		}
+	}
+
 	@media screen and (max-width: $phone-size) {
 		overflow: hidden;
 		text-overflow: ellipsis;
