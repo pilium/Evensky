@@ -1,0 +1,24 @@
+.action-time {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	color: #10ae42;
+
+	&__icon {
+		width: 17px;
+		height: 23px;
+		fill: #10ae42;
+	}
+
+	> * {
+		&:not(:last-child) { margin-right: 8px; }
+	}
+
+	&--retaired {
+		color: #d0021b;
+
+		.action-time__icon {
+			fill: #d0021b;
+		}
+	}
+}

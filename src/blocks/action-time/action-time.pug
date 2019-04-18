@@ -1,0 +1,13 @@
+mixin action-time(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' action-time--' + modsList[i].trim();
+			}
+		}
+	.action-time(class= allMods)
+		+icon('time', 'action-time__icon')
+		span.action-time__text= props.text
