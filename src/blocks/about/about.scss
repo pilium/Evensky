@@ -1,0 +1,132 @@
+.about {
+	&__wrapper {
+		border-radius: 4px;
+		font-size: 18px;
+		line-height: 1.44;
+		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) {
+			padding-bottom: 8px;
+			font-size: 16px;
+		}
+	}
+
+	&__block {
+		padding: 32px 40px;
+
+		> * {
+			margin: 32px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+
+		&--boredered {
+			border-top: 1px solid $color-input-border;
+			border-bottom: 1px solid $color-input-border;
+		}
+
+		&--small { max-width: 704px; }
+		&--team { padding-bottom: 0; }
+
+		@media screen and (max-width: $tablet-size) { padding: 24px; }
+
+		@media screen and (max-width: $phone-size) { padding: 0; }
+	}
+
+	&__block-btn--prev {
+		left: -55px;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
+
+	&__block-btn--next {
+		right: -55px;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
+
+	&__list {
+		> * {
+			margin: 16px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&__list-item {
+		position: relative;
+		padding-left: 24px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 8px;
+			border-radius: 50%;
+			width: 6px;
+			height: 6px;
+			background-color: #000;
+		}
+	}
+
+	&__video {
+		display: flex;
+
+		> * {
+			flex: 1;
+
+			&:not(:last-child) {
+				margin-right: 24px;
+
+				@media screen and (max-width: $tablet-size) {
+					margin-right: 0;
+					margin-bottom: 32px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $tablet-size) { flex-direction: column; }
+	}
+
+	&__video-col {
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			margin: 8px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&__video-content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		width: 100%;
+		height: 270px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+	}
+
+	&__video-icon {
+		position: relative;
+		z-index: 1;
+		width: 46px;
+		height: 46px;
+		fill: $color-main-action;
+	}
+}

@@ -1,0 +1,150 @@
+mixin about()
+	+section({
+		mods: 'about,bg-white',
+		mainClass: 'about'
+	})
+		+section-header('Компания', '', 'small')
+		.about__wrapper
+			+about__block-text({
+				mods: 'text,small'
+			})
+			+about__block-video({
+				mods: 'video',
+			})
+			+about__block-cert({
+				mods: 'cert',
+			})
+			+about__block-team({
+				mods: 'team',
+			})
+			+about__block-recommend({
+				mods: 'recommend',
+			})
+
+mixin about__block-text(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' about__block--' + modsList[i].trim();
+			}
+		}
+	.about__block(class= allMods)
+		p.about__text Предприятие "Веневский" работает с 2008 года и специализируется на рулонной холоднокатанной стали:
+		ul.about__list
+			li.about__list-item
+				p.about__list-text Производство металлопроката: штрипс, профнастил, доборные элементы для кровли и стеновых сэндвич-панелей, водосточные системы, лист оцинкованный с полимерным покрытием.
+			li.about__list-item
+				p.about__list-text Услуги по обработке рулонной стали: отмотка от рулона, продольно-поперечный роспуск и наносим полимерные покрытия на рулоны.
+			li.about__list-item
+				p.about__list-text Под заказ работаем с материалом заказчика.
+		p.about__text Вся производимая продукция сертифицирована и соответствует требованиям ГОСТ И ТУ.
+mixin about__block-video(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' about__block--' + modsList[i].trim();
+			}
+		}
+	.about__block(class= allMods)
+		.about__video
+			.about__video-col
+				+section-header('Видеопрезентация','', 'small')
+				a.about__video-content.js-modal-link(href="#popup-video" style="background-image: url('images/promo-preview/images/prof.jpg')")
+					+icon('play', 'about__video-icon')
+			.about__video-col
+				+section-header('Виртуальный тур','', 'small')
+				a.about__video-content.js-modal-link(href="#popup-video" style="background-image: url('images/promo-preview/images/prof.jpg')")
+					+icon('eye', 'about__video-icon')
+mixin about__block-cert(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' about__block--' + modsList[i].trim();
+			}
+		}
+	.about__block(class= allMods)
+		+section-header('Сертификаты','', 'small')
+		+slider({
+			mods: 'about__block',
+			type: 'about__block',
+			jsMod: 'js-slider--about-block'
+		})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+mixin about__block-team(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' about__block--' + modsList[i].trim();
+			}
+		}
+	.about__block(class= allMods)
+		+section-header('Сотрудники','', 'small')
+		+team-list()
+mixin about__block-recommend(props)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' about__block--' + modsList[i].trim();
+			}
+		}
+	.about__block(class= allMods)
+		+section-header('Нас рекомендуют','', 'small')
+		+slider({
+			mods: 'about__recommend',
+			type: 'about__recommend',
+			jsMod: 'js-slider--about-recommend'
+		})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
+			+cert({
+				icon: 'pdf',
+				text: 'Открыть в PDF',
+				img: 'images/cert/images/sert.jpg',
+			})
