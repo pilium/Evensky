@@ -16,6 +16,20 @@ mixin slider(props)
 					+icon('arrow-right', 'slider__icon')
 			.js-categories-prev.popular-prev__prev
 				block
+		else if (props.type === 'about__block')
+			.slider__nav.about__block-btn--prev
+				+icon('arrow-left', 'slider__icon')
+			.slider__nav.about__block-btn--next
+				+icon('arrow-right', 'slider__icon')
+			.js-slider(class=`${props.jsMod}`)
+				block
+		else if (props.type === 'about__recommend')
+			.slider__nav.about__block-btn--prev.about__recommend-btn--prev
+				+icon('arrow-left', 'slider__icon')
+			.slider__nav.about__block-btn--next.about__recommend-btn--next
+				+icon('arrow-right', 'slider__icon')
+			.js-slider(class=`${props.jsMod}`)
+				block
 		else
 			.slider__nav.slider__nav--prev
 				+icon('arrow-left', 'slider__icon')
