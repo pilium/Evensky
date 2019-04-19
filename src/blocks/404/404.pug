@@ -1,0 +1,12 @@
+mixin 404()
+	section.not-found
+		.container
+			.not-found__wrapper
+				span.not-found__number 404
+				+title({text: 'Страница не найдена', mods: 'section'}, 'h1')
+				p.not-found__text По ссылке, которую вы попытались открыть, страницы не оказалось. #[br] Попробуйте найти нужную страницу через поиск.
+				+search({
+					ph: 'Страница',
+					icon: 'search',
+					mods: '404',
+				})(type="submit")

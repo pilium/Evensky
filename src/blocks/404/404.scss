@@ -1,0 +1,34 @@
+.not-found {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: 0 auto;
+		max-width: 560px;
+
+		> * {
+			margin: 8px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+
+		@media screen and (max-width: $phone-size) { align-items: flex-start; }
+	}
+
+	&__number {
+		font-family: $font-family-semibold;
+		font-size: 150px;
+		line-height: 1.25;
+		color: #dedede;
+
+		@media screen and (max-width: $tablet-size) { font-size: 90px; }
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 1.44;
+		text-align: center;
+
+		@media screen and (max-width: $phone-size) { text-align: left; }
+	}
+}
