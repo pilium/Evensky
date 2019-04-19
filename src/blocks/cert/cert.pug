@@ -1,0 +1,6 @@
+mixin cert(props)
+	a.cert(href="#")
+		img.cert__img(src= props.img alt="placeholder")
+		.cert__hover
+			+icon(props.icon, 'cert__icon')
+			span.cert__text= props.text

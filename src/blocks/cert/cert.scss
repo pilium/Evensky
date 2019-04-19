@@ -1,0 +1,43 @@
+.cert {
+	position: relative;
+	margin-right: 16px;
+	max-width: 100%;
+
+	&__img {
+		max-width: 320px;
+
+		@media screen and (max-width: $tablet-size) { max-width: 100%; }
+	}
+
+	&__icon {
+		width: 38px;
+		height: 38px;
+		fill: #fff;
+	}
+
+	&__hover {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		font-size: 18px;
+		line-height: 1.44;
+		color: #fff;
+		background-color: rgba(51, 51, 51, 0.6);
+		opacity: 0;
+		transition: opacity linear 0.3s;
+	}
+
+	&:hover,
+	&:focus {
+		.cert__hover { opacity: 1; }
+	}
+
+	@media screen and (max-width: $phone-size) { margin-right: 0; }
+}
