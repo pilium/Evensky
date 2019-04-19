@@ -1,5 +1,6 @@
 .modal {
 	position: relative;
+	overflow: hidden;
 	margin: 48px auto;
 	border-radius: 8px;
 	max-width: 520px;
@@ -96,6 +97,8 @@
 
 		@media screen and (max-width: $phone-size) { max-width: 320px; }
 	}
+
+	&--big { max-width: 800px; }
 
 	@media screen and (max-width: $phone-size) { margin: 0 auto; }
 }
