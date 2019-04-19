@@ -1,0 +1,12 @@
+mixin embed-responsive(mods)
+	-
+		// список модификаторов
+		var allMods = '';
+		if(typeof(mods) !== 'undefined' && mods) {
+			var modsList = mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' embed-responsive--' + modsList[i].trim();
+			}
+		}
+	.embed-responsive(class=allMods)&attributes(attributes)
+		block
