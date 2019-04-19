@@ -14,6 +14,12 @@ mixin field-text(props)
 		else if (props.attrs.type === 'textarea')
 			label.input-field__label(for=props.id)= props.labelText
 			textarea.input-field__input.input-field__textarea(id=props.id placeholder= props.placeholder name=props.attrs.name)&attributes(props.attrs)
+		else if (props.attrs.type === 'password' && props.link)
+			.input-field__header
+				label.input-field__label(for=props.id)= props.labelText
+				a.input-field__forgot(href="#") Забыли пароль ?
+			.input-field__body
+				input.input-field__input(id=props.id type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val name=props.attrs.name)&attributes(props.attrs)
 		else
 			label.input-field__label(for=props.id)= props.labelText
 			input.input-field__input(id=props.id type=(typeof(props.attrs) !== 'undefined' && props.attrs.type) ? props.attrs.type : 'text' value=props.val name=props.attrs.name)&attributes(props.attrs)

@@ -124,3 +124,97 @@ mixin footer()
 					.form__column.form__column--text
 						span.form-line__info Мы быстрее исправим ошибку , если сможем связаться с вами для уточнения информации
 			+form-footer('#', 'Предложить улучшение')
+	+modal({
+		id: 'popup-login',
+		title: 'Войти в личный кабинет',
+		success: false,
+		mods: 'login'
+	})
+		+form('login')
+			.form__body
+				.form__columns
+					.form__column
+						+fieldset('Электронная почта')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'questions-mail',
+								labelText: "Электронная почта",
+								attrs: {
+									type: 'email',
+									name: 'mail',
+									placeholder: "Введите свой email"
+								}
+							})
+						+fieldset('Пароль')
+							+field-text({
+								mods: 'width-m,require,pass',
+								id: 'consult-pass',
+								labelText: "Пароль",
+								link: true,
+								attrs: {
+									type: 'password',
+									name: 'password',
+									placeholder: "Введите пароль"
+								}
+							})
+					.form__column.form__column--text
+						.unregister
+							span.unregister__text Нет личного кабинета?
+							a.unregister__link.js-modal-link(href="#popup-registration") Зарегистрироваться
+							span.unregister__info Зарегистрированные пользователи получают скидку 3% на весь ассортимент
+			+form-footer('#', 'Войти')
+	+modal({
+		id: 'popup-registration',
+		title: 'Регистрация',
+		success: false,
+		mods: 'registration'
+	})
+		+form('registration')
+			.form__body
+				.form__columns
+					.form__column
+						+fieldset('Электронная почта')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'questions-mail',
+								labelText: "Электронная почта",
+								attrs: {
+									type: 'email',
+									name: 'mail',
+									placeholder: "Введите свой email"
+								}
+							})
+						+fieldset('Пароль')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'consult-pass',
+								labelText: "Пароль",
+								attrs: {
+									type: 'password',
+									name: 'password',
+									placeholder: "Введите пароль"
+								}
+							})
+						+fieldset('Требования к паролю')
+							.form__requires
+								span.form__requires__name Укажите сильный пароль:
+								ul.form__requires__list
+									li.form__requires__item Длина не менее 8 символов
+									li.form__requires__item.form__requires__item--success Включает буквы и цифры
+									
+						+fieldset('Имя и фамилия')
+							+field-text({
+								mods: 'width-m,require',
+								id: 'questions-name',
+								labelText: "Имя и фамилия",
+								attrs: {
+									type: 'text',
+									name: 'fio',
+									placeholder: "Ваше имя и фамилия"
+								}
+							})
+					.form__column.form__column--text
+						.unregister
+							span.unregister__text Уже зарегистрованы?
+							a.unregister__link.js-modal-link(href="#popup-login") Вход в личный кабинет
+			+form-footer('#', 'Зарегистрироваться', true)

@@ -75,7 +75,13 @@
 		&-s { padding: 2px 16px; }
 		&-m { padding: 8px 32px; }
 		&-m2 { padding: 8px; }
-		&-l { padding: 16px 32px; }
+
+		&-l {
+			padding: 16px 32px;
+			width: 50%;
+
+			@media screen and (max-width: $phone-size) { width: 100%; }
+		}
 	}
 
 	&--arrow-down {
