@@ -15,7 +15,11 @@ mixin header()
 				})
 				+catalog-nav('Каталог стройматериалов')
 				.header__actions
-					+search('Артикул или название товара','search')
+					+search({
+						ph: 'Артикул или название товара',
+						icon: 'search',
+						mods: 'header',
+					})(type="submit")
 					a.header__phone-link(href="#")
 						+icon('call', 'header__phone-icon')
 					+order-callback({

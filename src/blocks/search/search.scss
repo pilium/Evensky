@@ -47,4 +47,24 @@
 	}
 
 	.btn { background-color: transparent; }
+
+	&--404 {
+		.search-icon { fill: #000; }
+
+		.input-field {
+			&__input {
+				flex: 0 0 420px;
+				width: 420px;
+
+				@media screen and (max-width: $tablet-size) {
+					flex: 0 0 220px;
+					width: 220px;
+				}
+			}
+
+			&--search {
+				@media screen and (max-width: $tablet-size) { display: block; }
+			}
+		}
+	}
 }

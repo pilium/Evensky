@@ -7,14 +7,14 @@ mixin btn(props)
 				allMods = allMods + ' btn--' + modsList[i].trim();
 			}
 		}
-	if(props.tag === 'a')
+	if (props.tag === 'a')
 		a.btn(class=allMods href=props.href)&attributes(attributes)= props.text
-	if(props.tag === 'button')
+	if (props.tag === 'button')
 		button.btn(class=allMods)&attributes(attributes)
 			if (props.icon)
 				+icon(props.icon, props.iconClass)
 			span.btn__text= props.text
 			if (props.count)
 				span.text-count 786
-	if(props.tag === 'input')
+	if (props.tag === 'input')
 		input.btn(class=allMods type="submit" value=props.text)

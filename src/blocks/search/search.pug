@@ -1,5 +1,13 @@
-mixin search(ph, icon)
-	.search
+mixin search(props)
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + "search--" + modsList[i].trim();
+			}
+
+	.search(class= allMods)
 		+form('search')
 			+field-text({
 				mods: 'search,size-small',
@@ -7,16 +15,24 @@ mixin search(ph, icon)
 				attrs: {
 					type: 'search',
 					name: 's',
-					placeholder: ph
+					placeholder: props.ph
 				}
 				})
-		+search-result({
-			text: 'Показать все результаты',
-			count: 768
-		})
-		+btn({
+		if(props.mods === 'header')
+			+search-result({
+				text: 'Показать все результаты',
+				count: 768
+			})
+			+btn({
+					tag: 'button',
+					icon: props.icon,
+					iconClass: 'search-icon',
+					mods: 'size-m2,search'
+				})
+		else
+			+btn({
 				tag: 'button',
-				icon: icon,
+				icon: props.icon,
 				iconClass: 'search-icon',
-				mods: 'size-m2,search'
+				mods: 'size-m2'
 			})
