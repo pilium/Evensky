@@ -53,9 +53,11 @@ $(document).ready(() => {
 		const slider = $('.js-slider--you-seen');
 
 		slider.on('init afterChange', (event, slick, currentSlide) => {
-			let i = (currentSlide ? currentSlide : 0) + 1;
+			if (slick.slideCount > 4) {
+				let i = (currentSlide ? currentSlide : 0) + 1;
 
-			sliderCount.text(`Товар ${i} из ${slick.slideCount}`);
+				sliderCount.text(`Товар ${i} из ${slick.slideCount}`);
+			}
 		});
 
 		slider.slick({
@@ -64,7 +66,7 @@ $(document).ready(() => {
 			slidesToScroll: 1,
 			prevArrow: '.slider__nav--prev',
 			nextArrow: '.slider__nav--next',
-			autoplay: true,
+			autoplay: false,
 			edgeFriction: 0.56,
 			adaptiveHeight: true,
 			responsive: [
@@ -81,6 +83,73 @@ $(document).ready(() => {
 					settings: {
 						slidesToShow: 1,
 						dots: false,
+					},
+				},
+			],
+		});
+	};
+
+	let aboutBlockSlider = function () {
+		const slider = $('.js-slider--about-block');
+
+		$(slider).slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			adaptiveHeight: true,
+			infinite: true,
+			autoplay: false,
+			arrows: true,
+			prevArrow: '.about__block-btn--prev',
+			nextArrow: '.about__block-btn--next',
+			dots: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 2,
+						dots: false,
+						arrows: false,
+					},
+				},
+				{
+					breakpoint: 550,
+					settings: {
+						slidesToShow: 1,
+						dots: true,
+						arrows: false,
+					},
+				},
+			],
+		});
+	};
+
+	let recommendSlider = function () {
+		const slider = $('.js-slider--about-recommend');
+
+		$(slider).slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			infinite: true,
+			autoplay: false,
+			arrows: true,
+			prevArrow: '.about__recommend-btn--prev',
+			nextArrow: '.about__recommend-btn--next',
+			dots: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 2,
+						arrows: false,
+						dots: true,
+					},
+				},
+				{
+					breakpoint: 550,
+					settings: {
+						slidesToShow: 1,
+						dots: true,
+						arrows: false,
 					},
 				},
 			],
@@ -492,6 +561,7 @@ $(document).ready(() => {
 	catalogNav();
 	popularCategoriesSlider();
 	productSeenSlider();
+	aboutBlockSlider();
 	locationSelect();
 	citySelect();
 	modalLink();
@@ -510,6 +580,7 @@ $(document).ready(() => {
 	sortItem();
 	tagsToggle();
 	tabs();
+	recommendSlider();
 });
 
 let popularCategoriesSlider = () => {
