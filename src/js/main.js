@@ -271,11 +271,17 @@ $(document).ready(() => {
 						s: 'required',
 						phone: 'required',
 						textarea: 'required',
+						mail: 'required',
+						password: 'required',
+						fio: 'required',
 					},
 					messages: {
 						s: 'Введите поисковый запрос',
 						phone: 'Введите корректный номер',
 						textarea: 'Заполните поле',
+						mail: 'Введите электронную почту',
+						password: 'Введите пароль',
+						fio: 'Введите ваше имя и фамилию',
 					},
 					errorPlacement(error, element) {
 						element.attr('placeholder', error[0].outerText);
