@@ -100,5 +100,9 @@
 
 	&--big { max-width: 800px; }
 
+	.is-engine-gecko & {
+		.input-field { width: 220px; }
+	}
+
 	@media screen and (max-width: $phone-size) { margin: 0 auto; }
 }
