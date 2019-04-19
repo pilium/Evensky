@@ -5,7 +5,10 @@
 
 	&__img { width: 100px; }
 
-	&__text { white-space: nowrap; }
+	&__text {
+		white-space: nowrap;
+		color: #fff;
+	}
 
 	@media screen and (max-width: $phone-size) { display: none; }
 }
