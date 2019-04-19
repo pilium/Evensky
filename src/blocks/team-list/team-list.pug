@@ -1,0 +1,18 @@
+mixin team-list(props)
+	ul.team-list
+		+team-item('Пантелеймон Константинопольский')
+		+team-item('Ирина Белых')
+		+team-item('Алена Иванова')
+		+team-item('Пантелеймон Константинопольский')
+		+team-item('Ирина Белых')
+		+team-item('Алена Иванова')
+		+team-item('Пантелеймон Константинопольский')
+		+team-item('Ирина Белых')
+		+team-item('Алена Иванова')
+		+team-item('Пантелеймон Константинопольский')
+
+mixin team-item(name)
+	li.team-list__item
+		.team-list__item-img-wrapper
+			img.team-list__item-img(src="images/about/images/team.jpg" alt="Фото сотрудника" witdh="150px")
+		span.team-list__item-name= name

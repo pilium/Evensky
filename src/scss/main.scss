@@ -74,6 +74,22 @@
 // Sitemap
 @import "../blocks/sitemap/sitemap";
 
+// Action-single
+@import "../blocks/action-single/action-single";
+@import "../blocks/action-goods/action-goods";
+
+// About-us
+@import "../blocks/about/about";
+@import "../blocks/cert/cert";
+@import "../blocks/team-list/team-list";
+@import "../blocks/embed-responsive/embed-responsive";
+
+// Special-offer
+@import "../blocks/actions/actions";
+@import "../blocks/action-time/action-time";
+@import "../blocks/action-mark/action-mark";
+@import "../blocks/action-prev/action-prev";
+
 // footer
 @import "../blocks/footer/footer";
 @import "../blocks/copyright/copyright";
@@ -102,9 +118,3 @@
 @import "../blocks/filter-slider/filter-slider";
 @import "../blocks/input-checkbox/input-checkbox";
 @import "../blocks/tabs/tabs";
-@import "../blocks/actions/actions";
-@import "../blocks/action-time/action-time";
-@import "../blocks/action-mark/action-mark";
-@import "../blocks/action-prev/action-prev";
-@import "../blocks/action-single/action-single";
-@import "../blocks/action-goods/action-goods";
