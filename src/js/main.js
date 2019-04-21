@@ -494,6 +494,28 @@ $(document).ready(() => {
 		});
 	};
 
+	let passValidate = () => {
+		const passwordInput = document.getElementById('pass-validate');
+		const conditions = document.querySelectorAll('.form__requires__item');
+
+		passwordInput.addEventListener('input', function () {
+			let passValue = passwordInput.value;
+			const re = /[A-Za-z][0-9]/;
+
+			if (passValue.length > 8) {
+				conditions[0].classList.add('form__requires__item--success');
+			} else {
+				conditions[0].classList.remove('form__requires__item--success');
+			}
+
+			if (re.test(passValue)) {
+				conditions[1].classList.add('form__requires__item--success');
+			} else {
+				conditions[1].classList.remove('form__requires__item--success');
+			}
+		});
+	};
+
 	// map
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -587,6 +609,7 @@ $(document).ready(() => {
 	tagsToggle();
 	tabs();
 	recommendSlider();
+	passValidate();
 });
 
 let popularCategoriesSlider = () => {

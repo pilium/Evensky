@@ -50,7 +50,7 @@ mixin footer()
 				+fieldset('Контактный телефон')
 					+field-text({
 						mods: 'width-s,require',
-						id: 'consult-phone',
+						id: 'consult-phone1',
 						labelText: "Контактный телефон",
 						attrs: {
 							type: 'tel',
@@ -113,7 +113,7 @@ mixin footer()
 						+fieldset('Контактный телефон')
 							+field-text({
 								mods: 'width-m,require',
-								id: 'consult-phone',
+								id: 'questions-phone',
 								labelText: "Контактный телефон",
 								attrs: {
 									type: 'tel',
@@ -137,7 +137,7 @@ mixin footer()
 						+fieldset('Электронная почта')
 							+field-text({
 								mods: 'width-m,require',
-								id: 'questions-mail',
+								id: 'login-mail',
 								labelText: "Электронная почта",
 								attrs: {
 									type: 'email',
@@ -148,12 +148,13 @@ mixin footer()
 						+fieldset('Пароль')
 							+field-text({
 								mods: 'width-m,require,pass',
-								id: 'consult-pass',
+								id: 'login-pass',
 								labelText: "Пароль",
 								link: true,
 								attrs: {
 									type: 'password',
 									name: 'password',
+									autocomplete: 'off',
 									placeholder: "Введите пароль"
 								}
 							})
@@ -176,7 +177,7 @@ mixin footer()
 						+fieldset('Электронная почта')
 							+field-text({
 								mods: 'width-m,require',
-								id: 'questions-mail',
+								id: 'registration-mail',
 								labelText: "Электронная почта",
 								attrs: {
 									type: 'email',
@@ -187,11 +188,13 @@ mixin footer()
 						+fieldset('Пароль')
 							+field-text({
 								mods: 'width-m,require',
-								id: 'consult-pass',
+								id: 'registration-pass',
 								labelText: "Пароль",
 								attrs: {
+									id: 'pass-validate',
 									type: 'password',
 									name: 'password',
+									autocomplete: 'off',
 									placeholder: "Введите пароль"
 								}
 							})
@@ -200,12 +203,12 @@ mixin footer()
 								span.form__requires__name Укажите сильный пароль:
 								ul.form__requires__list
 									li.form__requires__item Длина не менее 8 символов
-									li.form__requires__item.form__requires__item--success Включает буквы и цифры
+									li.form__requires__item Включает буквы и цифры
 									
 						+fieldset('Имя и фамилия')
 							+field-text({
 								mods: 'width-m,require',
-								id: 'questions-name',
+								id: 'registration-name',
 								labelText: "Имя и фамилия",
 								attrs: {
 									type: 'text',
