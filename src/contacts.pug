@@ -1,0 +1,28 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Контакты'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Контакты',
+		})
+	+contacts()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-video',
+		title: 'Посмотреть отзыв от Евлампии Константинопольской',
+		success: false,
+		mods: 'video,big'
+	})
+		+embed-responsive()
+			iframe(src="https://www.youtube.com/embed/B0Q1rKpDNE4" frameborder="0" allowfullscreen)
+	+overlay()
