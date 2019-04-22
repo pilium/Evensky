@@ -1,0 +1,50 @@
+mixin contacts-callback()
+	.contacts-callback
+		span.contacts__title Связь с директором
+		.contacts-callback__wrapper
+			span.contacts-callback__text Если при взаимодействии с нашей компанией возникли какие-либо сложности, вы можете написать напрямую директору.
+			+form('contacts-callback')
+				.form__body
+					+fieldset('Сообщение директору')
+						+field-text({
+							mods: 'width-s,require',
+							id: 'consult-phone2',
+							labelText: "Номер заказа",
+							attrs: {
+								type: 'text',
+								name: 'order-number',
+								placeholder: "321-123"
+							}
+						})
+						+field-text({
+							mods: 'textarea',
+							id: 'consult-textarea1',
+							labelText: "Сообщение директору",
+							placeholder: "Здравствуйте, меня интересует...",
+							attrs: {
+								type: 'textarea',
+								rows: 10,
+								cols: 5
+							}
+						})
+						+field-text({
+							mods: 'width-m,require',
+							id: 'contacts-callback-phone',
+							labelText: "Контактный телефон",
+							attrs: {
+								type: 'tel',
+								name: 'phone',
+								placeholder: "+7(999)99-9999"
+							}
+						})
+						+field-text({
+							mods: 'width-m',
+							id: 'contacts-callback-mail',
+							labelText: "Электронная почта",
+							attrs: {
+								type: 'email',
+								name: 'mail',
+								placeholder: "Введите свой email"
+							}
+						})
+				+form-footer('#', 'Написать директору')
