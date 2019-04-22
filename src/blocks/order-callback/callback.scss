@@ -4,7 +4,10 @@
 		flex-direction: column;
 	}
 
-	&__description { font-size: 14px; }
+	&__description {
+		font-family: $font-family-semibold;
+		font-size: 14px;
+	}
 
 	&__phone {
 		font-family: $font-family-boldest;
@@ -57,7 +60,7 @@
 		.order-callback__icon {
 			position: absolute;
 			left: 0;
-			top: 0;
+			top: 4px;
 			width: 35px;
 			height: 35px;
 
