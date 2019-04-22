@@ -1,0 +1,26 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Результаты поиска'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Результаты поиска',
+		})
+	+search-output()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-colors',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
+	+overlay()
