@@ -15,7 +15,10 @@
 
 				@media screen and (max-width: $phone-size) { margin-right: 8px; }
 			}
-			&:last-child { display: block; }
+
+			&:last-child {
+				@media screen and (max-width: $phone-size) { display: block; }
+			}
 		}
 	}
 
