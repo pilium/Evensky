@@ -1,0 +1,38 @@
+mixin contacts-map(props)
+	.contacts-map
+		.contacts-map__info
+			.contacts-map__group
+				span.contacts__title= props.title
+				span.contacts-text= props.text
+			if(props.download)
+				.contacts-map__group
+					.contacts-map__actions
+						a.contacts-map__link(href="#") Скачать схему проезда
+						a.contacts-map__link.contacts-map__link--qr(href="#") Построить маршрут по QR-коду
+			.contacts-map__group
+				.contacts-map__time
+					span.contacts-map__time-text Время работы:
+					if(props.timeLong)
+						span.contacts-map__text пн-чт 9:00-17:00, время заезда до 16:00
+						span.contacts-map__text пт 9:00-16:00, время заезда до 15:00
+						span.contacts-map__text обед 12:00-12:45
+					else
+						span.contacts-map__text= props.time
+			if(props.mailPhone)
+				.contacts-map__data
+					+order-callback({
+						descr: 'Напишите нам email',
+						position: 'form',
+						icon: 'mail',
+						mail: 'zakaz@evensky.ru'
+					})
+				.contacts-map__data
+					+order-callback({
+						descr: 'Звоните круглосуточно',
+						tel: '+7 490 456-34-34',
+						link: '#',
+						linkText: 'Набрать номер по QR коду',
+						position: 'form',
+						icon: 'phone'
+					})
+		.contacts-map__map(id=props.id)
