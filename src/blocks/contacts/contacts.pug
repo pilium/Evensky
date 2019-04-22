@@ -1,0 +1,45 @@
+mixin contacts()
+	+section({
+		mods: 'Contacts',
+		mainClass: 'Contacts'
+	})
+		+section-header('Контакты')
+		.contacts__wrapper
+			.contacts__block
+				+contacts-map({
+					title: 'Центральный офис в Москве',
+					text: '111033, Москва, ул.Золоторожский вал, д. 11, стр. 9',
+					time: 'пн-пт 9:00-18:00',
+					mailPhone: true,
+					id: 'tooltip-map-office1',
+				})
+				+contacts-map({
+					title: 'Производство',
+					text: 'Московская область, Ленинский р-н, г. Видное, Северная Видновская промзона, ФГУП "Комплекс"',
+					timeLong: true,
+					download: true,
+					id: 'tooltip-map-stock1',
+				})
+			.contacts__block-line
+				.contacts__block
+					+contacts-callback()
+				.contacts__block.contacts__block--reg
+					span.contacts__title Реквизиты компании
+					.contacts__req--text
+						p Общество с ограниченной ответственностью "Название компании"
+						p 
+							span.contact__req-subtitle Юридический адрес:
+							| 121231, г.Москва, улю Новый Арбат, дом 10, офис 20
+						p 
+							span.contact__req-subtitle Почтовый адрес:
+							| 121231, г.Москва, улю Новый Арбат, дом 10, офис 20
+					.contacts__req
+						p ИНН: 77777777777
+						p КЛП: 77040101
+						p ОГРН: 1157747335442
+						p ОКПО: 1733453356
+						p ОКВЭД: 51,12
+					.contacts__req
+						p Расчетный счет: 4070281030055643 в ВТБ24 (ПАО) 
+						p Корр.счет: 301018101000000342
+						p БИК: 0445240342
