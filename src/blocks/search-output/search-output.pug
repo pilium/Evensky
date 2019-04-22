@@ -1,0 +1,245 @@
+mixin search-output()
+	+section({
+		mods: 'search',
+		mainClass: 'search-output'
+	})
+		+search({
+			ph: 'Артикул или название товара',
+			icon: 'search',
+			mods: '404',
+		})(type="submit")
+		h1.search-output__title.title--section Результаты поиска по запросу
+			i  "планка стыковочная" 
+			span.text-count.text-count--page 2341
+		span.search-output__subtitle Найдено в категориях:
+		+category-prev(false, 'Категории', 'exp')
+			+categoryPrevListItem('Планка стыковочная', 23)
+			+categoryPrevListItem('Планка ендовы нижняя', 98)
+			+categoryPrevListItem('Планка ендовы верхняя', 98)
+			+categoryPrevListItem('Планка угла наружного', 98)
+			+categoryPrevListItem('Планка угла внутренного', 98)
+			+categoryPrevListItem('Планка угла наружного', 98)
+		+tags({title: 'Категории:', text: "Все категории"})
+				.tag
+					span.tag__text Разжелобок из <br> стали
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка стыковочная <br> 0,4 мм
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка угла <br> наружного
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Разжелобок из <br> стали
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка стыковочная <br> 0,4 мм
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка угла <br> наружного
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Разжелобок из <br> стали
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка стыковочная <br> 0,4 мм
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Планка угла <br> наружного
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+				.tag
+					span.tag__text Еще один <br> запрос
+					span.tag__count.text-count 123
+		.search-output__wrapper
+			aside.sub-categories__aside
+				+filter()
+			main.sub-categories__main
+				.sub-categories__status
+					+sort()
+						+page-counter({
+							str: true,
+						})
+				.sub-categories__products
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+					+product({
+						link: '#',
+						sale: '-25%',
+						badge: '',
+						name: 'Планка стыковочная 30х30х2000 мм, толщина 0,4 мм, цвет графитовый серый RAL 7024',
+						count: '9 шт.',
+						articul: 13562322,
+						timeFor: 'от 2 до 3 дней',
+						priceOld: '110 руб.',
+						priceNow: '95 руб. за шт.',
+						btnText: 'В корзину',
+						counter: true,
+						mods: 'sub-categories'
+					})
+				+pagination({
+					mods: ''
+				})
+					+pagination-item({
+						text: '1',
+						href: 'href',
+						active: true,
+						mods: ''
+					})
+					+pagination-item({
+						text: '2',
+						href: 'href',
+						mods: ''
+					})
+					+pagination-item({
+						text: '3',
+						href: 'href',
+						mods: ''
+					})
+					+pagination-item({
+						text: '4',
+						href: 'href',
+						mods: ''
+					})
+					+pagination-item({
+						text: '5',
+						href: 'href',
+						mods: ''
+					})
+					+pagination-item({
+						text: '...',
+						href: 'href',
+						mods: ''
+					})
+					+pagination-item({
+						text: '+',
+						href: 'href',
+						mods: 'plus'
+					})

@@ -1,0 +1,48 @@
+.search-output {
+	.tags {
+		margin: 16px 0;
+
+		&__title { display: none; }
+
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
+	.category-prev {
+		display: none;
+
+		@media screen and (max-width: $phone-size) {
+			display: block;
+			margin-bottom: 8px;
+		}
+	}
+
+	.filter {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: flex-start;
+
+		> * {
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) { margin-right: 0; }
+			}
+		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+
+	&__title {
+		i { color: $color-link; }
+	}
+
+	&__subtitle {
+		font-family: $font-family-semibold;
+		font-size: 24px;
+
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+}
