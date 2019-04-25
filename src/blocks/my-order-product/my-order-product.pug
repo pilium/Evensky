@@ -1,0 +1,89 @@
+mixin my-order-product(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' my-order-product--' + modsList[i].trim();
+			}
+		}
+	.my-order-product(class= allMods)
+		.my-order-product__main
+			.my-order-table__cell.my-order-table__cell--product
+				.my-order-product__info
+					.my-order-product__image-wrapper
+						img.my-order-product__img(src="images/product/images/plank.png" alt="Фото заказа")
+						if(props.mark)
+							+my-order-product__mark({
+								text: props.markText,
+								mods: props.markMods,
+							})
+					a.my-order-product__name(href="#")= props.title
+					.my-order-product__line
+						.my-order-product__line-label Артикул
+						.my-order-product__line-value= props.articul
+					if(props.kit)
+						.my-order-product__kit-toggle
+							span.my-order-product__kit-toggle-text Показать состав комплекта
+			.my-order-table__fix
+				.my-order-table__cell.my-order-table__cell--count
+					.my-order-product__count
+						span.my-order-product__count-text= props.count
+				.my-order-table__cell.my-order-table__cell--price
+					.my-order-product__price
+						span.my-order-product__price-old= props.priceOld
+						span.my-order-product__price-current= props.priceCurrent
+				.my-order-table__cell.my-order-table__cell--total
+					.my-order-product__total
+						span.my-order-product__total-text= props.total
+		if(props.kit)
+			.my-order-product__kit
+				+my-order-product__kit-item({
+					text: 'Желобь полукруглый, 125 мм, 3 м, RAL9003',
+					count: '2 шт.',
+				})
+				+my-order-product__kit-item({
+					text: 'Заглушка торцевая универс, 125 мм, 3 м, RAL9003',
+					count: '1 шт.',
+				})
+				+my-order-product__kit-item({
+					text: 'Крюк длинный, 125 мм, 3 м, RAL9003',
+					count: '2 шт.',
+				})
+				+my-order-product__kit-item({
+					text: 'Соединитель желоба, 125 мм, 3 м, RAL9003',
+					count: '2 шт.',
+				})
+				+my-order-product__kit-item({
+					text: 'Воронка, 125 мм, 3 м, RAL9003',
+					count: '1 шт.',
+				})
+				+my-order-product__kit-item({
+					text: 'Труба круглая, 125 мм, 3 м, RAL9003',
+					count: '2 шт.',
+				})
+					
+		if(props.message)
+			.my-order-product__message
+				+icon('attention', 'my-order-product__message-icon')
+				span.my-order-product__message-text Этот товар увеличивает срок доставки заказа с 27 ноября до 30 ноября - 4 декабря
+
+mixin my-order-product__mark(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' my-order-product__mark--' + modsList[i].trim();
+			}
+		}
+	.my-order-product__mark(class= allMods)= props.text
+
+mixin my-order-product__kit-item(props)
+	.my-order-product__kit-item
+		.my-order-table__cell.my-order-table__cell--product
+			span.my-order-product__kit-text= props.text
+		.my-order-table__cell.my-order-table__cell--count
+			span.my-order-product__kit-text= props.count
+		.my-order-table__cell.my-order-table__cell--price
+		.my-order-table__cell.my-order-table__cell--total

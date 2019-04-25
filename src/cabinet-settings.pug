@@ -1,0 +1,66 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Личный кабинет-настройки'
+	- var cabinetPage = 'settings'
+
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Личный кабинет'
+		})
+	+cabinet()
+		+form('cabinet')
+			.nav-v__block
+				span.nav-v__title Изменить пароль
+				+fieldset('Изменить пароль')
+					+field-text({
+						mods: 'width-m,require',
+						labelText: "Текущий пароль",
+						attrs: {
+							id: 'pass-cab-validate',
+							type: 'password',
+							name: 'cabinet-password',
+							autocomplete: 'off',
+							placeholder: "Введите пароль"
+						}
+					})
+					+fieldset('Изменить пароль', 'flex')
+						+field-text({
+							mods: 'width-m,require',
+							labelText: "Новый пароль",
+							attrs: {
+								id: 'pass-cabinet-validate',
+								type: 'password',
+								name: 'cabinet-new-password',
+								autocomplete: 'off',
+								placeholder: "Введите пароль"
+							}
+						})
+						.form__requires
+							span.form__requires__name Укажите сильный пароль:
+							ul.form__requires__list1
+								li.form__requires__item1 Длина не менее 8 символов
+								li.form__requires__item1 Включает буквы и цифры
+					+field-text({
+							mods: 'width-m,require',
+							labelText: "Повторите новый пароль",
+							attrs: {
+								id: 'pass-cab-repeat-validate',
+								type: 'password',
+								name: 'cabinet-repeat-password',
+								autocomplete: 'off',
+								placeholder: "Введите пароль"
+							}
+						})
+			+form-footer('#', 'Сохранить изменения', false, true)
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+overlay()

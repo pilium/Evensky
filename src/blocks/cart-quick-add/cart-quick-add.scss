@@ -1,0 +1,42 @@
+.cart-quick-add {
+	position: relative;
+	max-width: 416px;
+
+	.input-field {
+		flex: 0 0 416px;
+		max-width: 416px;
+	}
+
+	&__body {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		z-index: 1;
+		display: none;
+		border: 1px solid $color-main-action;
+		border-radius: 0 0 4px 4px;
+		background-color: #fff;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		padding: 8px 16px;
+		cursor: pointer;
+
+		&:hover,
+		&:focus { background-color: $color-main-action; }
+	}
+
+	&--is-active {
+		display: block;
+
+		.input-field {
+			border-color: $color-main-action;
+			border-radius: 4px 4px 0 0;
+		}
+
+		.cart-quick-add__body { display: block; }
+	}
+}

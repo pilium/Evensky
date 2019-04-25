@@ -1,0 +1,16 @@
+mixin my-order-single(props)
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " my-order-single--" + modsList[i].trim();
+			}
+	.my-order-single(class= allMods)
+		if (props.mods === 'cart')
+			+cart-quick-add()
+		else
+			.my-order-single__descr
+				span.my-order-single__descr-text Создан 29 августа 2018 г. в 14:23 мск.	
+				span.my-order-single__descr-text Выполнен 4 сентября 2018г.
+		+my-order-table()

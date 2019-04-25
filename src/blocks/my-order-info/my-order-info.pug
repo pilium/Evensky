@@ -1,0 +1,31 @@
+mixin my-order-info(props)
+	.my-order-info
+		.my-order-info__col
+			span.my-order-info__title Контактное лицо
+			.my-order-info__body
+				.my-order-info__line
+					span.my-order-info__text Вениамин Константинопольский
+				.my-order-info__line
+					span.my-order-info__text +7 921 9587019
+				.my-order-info__line
+					span.my-order-info__text mail@protect.ru
+		.my-order-info__col.my-order-info__col--wide
+			span.my-order-info__title Способ получения
+			.my-order-info__body
+				.my-order-info__line
+					address.my-order-info__text Адрес: Россия, Москва, Введенский канал, 14
+				.my-order-info__line
+					span.my-order-info__text Доставка по Москве 21-23 августа
+					span.my-order-info__descr Актуально при оплате сегодня до 15:00 мск (осталось 2 часа 11 минут)
+				.my-order-info__line
+					span.my-order-info__text Пригтовьте доверенность на получение товара
+					a.my-order-info__link(href="#")
+						+icon('pdf', 'my-order-info__icon')
+						span Инструкция по разгрузки
+		.my-order-info__col
+			span.my-order-info__title Оплата
+			.my-order-info__body
+				.my-order-info__line
+					span.my-order-info__text Выставлен счет
+				.my-order-info__line
+					span.my-order-info__text Оплатить заказ можно после потверждения менеджером

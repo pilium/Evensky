@@ -1,0 +1,28 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Корзина'
+
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Корзина'
+		})
+	+section({
+		mods: 'my-order-single',
+		mainClass: 'cart'
+	})
+		+section-header('Корзина', '', 'status')
+		+my-order-single({
+            mods: 'cart',
+        })
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+overlay()

@@ -263,6 +263,42 @@ $(document).ready(() => {
 		);
 	};
 
+	let inputSelect = () => {
+		const selects = document.querySelectorAll('.field-select__select');
+
+		if (selects) {
+			if (typeof Object.assign !== 'function') {
+				Object.assign = function (target) {
+					if (target == null) {
+						throw new TypeError('Cannot convert undefined or null to object');
+					}
+
+					target = Object(target);
+					for (let index = 1; index < arguments.length; index++) {
+						// eslint-disable-next-line prefer-rest-params
+						let source = arguments[index];
+
+						if (source != null) {
+							for (let key in source) {
+								if (Object.prototype.hasOwnProperty.call(source, key)) {
+									target[key] = source[key];
+								}
+							}
+						}
+					}
+
+					return target;
+				};
+			}
+
+			// eslint-disable-next-line no-new
+			new Choices('.field-select__select', {
+				searchEnabled: false,
+				placeholderValue: 'Выберите',
+			});
+		}
+	};
+
 	let validateForm = () => {
 		$('form').each(function () {
 			$(this).on('submit', function () {
@@ -360,6 +396,30 @@ $(document).ready(() => {
 				$('body').toggleClass('is-fixed');
 			});
 		}
+	};
+
+	let cartSearch = () => {
+		const el = document.getElementById('cart-quick-add');
+
+		el.addEventListener('input', () => {
+			if (el.value.length > 2) {
+				$('.cart-quick-add__body').addClass('cart-quick-add--is-active');
+			} else {
+				$('.cart-quick-add__body').removeClass('cart-quick-add--is-active');
+			}
+		});
+
+		el.addEventListener('blur', () => {
+			if (el.value.length > 2) {
+				$('.cart-quick-add__body').removeClass('cart-quick-add--is-active');
+			}
+		});
+
+		el.addEventListener('focus', () => {
+			if (el.value.length > 2) {
+				$('.cart-quick-add__body').addClass('cart-quick-add--is-active');
+			}
+		});
 	};
 
 	let breadcrumbsNav = () => {
@@ -516,6 +576,75 @@ $(document).ready(() => {
 		});
 	};
 
+	let cabinetPassValidate = () => {
+		const passwordInput = document.getElementById('pass-cabinet-validate');
+		const passwordRepeatInput = document.getElementById('pass-cab-repeat-validate');
+		const conditions = document.querySelectorAll('.form__requires__item1');
+		const requiresList = document.querySelector('.form__requires__list1');
+
+		if (passwordRepeatInput) {
+			passwordInput.addEventListener('input', function () {
+				let passValue = passwordInput.value;
+				const re = /[A-Za-z][0-9]/;
+
+				if (passValue.length > 8) {
+					conditions[0].classList.add('form__requires__item--success');
+				} else {
+					conditions[0].classList.remove('form__requires__item--success');
+				}
+
+				if (re.test(passValue)) {
+					conditions[1].classList.add('form__requires__item--success');
+				} else {
+					conditions[1].classList.remove('form__requires__item--success');
+				}
+			});
+			let li = document.createElement('li');
+
+			li.classList.add('form__requires__item1');
+			// eslint-disable-next-line consistent-return
+			passwordRepeatInput.addEventListener('input', function () {
+				if (passwordRepeatInput.value !== passwordInput.value) {
+					passwordRepeatInput.classList.add('error');
+					li.classList.remove('form__requires__item1--success');
+					passwordRepeatInput.classList.remove('valid');
+					passwordInput.classList.remove('valid');
+
+					return false;
+				}
+
+				passwordRepeatInput.classList.add('valid');
+				passwordInput.classList.add('valid');
+
+				li.classList.add('form__requires__item1--success');
+				li.innerHTML = 'Пароли совпадают';
+
+				requiresList.insertAdjacentElement('beforeend', li);
+			});
+		}
+	};
+
+	let cabinetMobileNav = () => {
+		$(document).on('click', '.tabs-v__item--active a', function (e) {
+			e.preventDefault();
+			$(this).closest('.tabs-v__list').toggleClass('tabs-v__list--active');
+		});
+	};
+
+	let myOrderKitToggle = () => {
+		$(document).on('click', '.my-order-product__kit-toggle-text', function () {
+			let parent = $(this).closest('.my-order-product');
+			let text = $(this);
+
+			parent.toggleClass('my-order-product--show-kit');
+			if (parent.hasClass('my-order-product--show-kit')) {
+				text.text('Скрыть состав комплекта');
+			} else {
+				text.text('Показать состав комплекта');
+			}
+		});
+	};
+
 	// map1
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -587,73 +716,78 @@ $(document).ready(() => {
 
 	// map2
 	if ($('div').is('.tooltip-map__map')) {
-		ymaps.ready(() => {
-			// eslint-disable-next-line one-var
-			let mapOffice = new ymaps.Map('tooltip-map-office1', {
-					center: [55.751574, 37.573856],
-					zoom: 13,
-				}, {
-					searchControlProvider: 'yandex#search',
-				}),
+		const map1 = document.getElementById('tooltip-map-office1');
 
-				MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-					'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-				),
+		if (map1) {
+			ymaps.ready(() => {
+				// eslint-disable-next-line one-var
+				let mapOffice = new ymaps.Map('tooltip-map-office1', {
+						center: [55.751574, 37.573856],
+						zoom: 13,
+					}, {
+						searchControlProvider: 'yandex#search',
+					}),
 
-				myPlacemark = new ymaps.Placemark(mapOffice.getCenter(), {
-					hintContent: 'Собственный значок метки',
-					balloonContent: 'Это красивая метка',
-				}, {
-					iconLayout: 'default#image',
-					iconImageHref: '../images/tooltip-map/images/map.png',
-					iconImageSize: [20, 32],
-					iconImageOffset: [-5, -38],
-					iconContentLayout: MyIconContentLayout,
-				});
+					MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+						'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+					),
 
-			mapOffice.geoObjects
-				.add(myPlacemark);
-			mapOffice.controls.remove('trafficControl')
-				.remove('searchControl')
-				.remove('typeSelector')
-				.remove('geolocationControl')
-				.remove('fullscreenControl')
-				.remove('rulerControl');
+					myPlacemark = new ymaps.Placemark(mapOffice.getCenter(), {
+						hintContent: 'Собственный значок метки',
+						balloonContent: 'Это красивая метка',
+					}, {
+						iconLayout: 'default#image',
+						iconImageHref: '../images/tooltip-map/images/map.png',
+						iconImageSize: [20, 32],
+						iconImageOffset: [-5, -38],
+						iconContentLayout: MyIconContentLayout,
+					});
 
-			// Stock
-			// eslint-disable-next-line one-var
-			let mapStock = new ymaps.Map('tooltip-map-stock1', {
-					center: [55.751574, 37.573856],
-					zoom: 13,
-				}, {
-					searchControlProvider: 'yandex#search',
-				}),
-				MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
-					'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-				),
+				mapOffice.geoObjects
+					.add(myPlacemark);
+				mapOffice.controls.remove('trafficControl')
+					.remove('searchControl')
+					.remove('typeSelector')
+					.remove('geolocationControl')
+					.remove('fullscreenControl')
+					.remove('rulerControl');
 
-				myPlacemark2 = new ymaps.Placemark(mapStock.getCenter(), {
-					hintContent: 'Собственный значок метки',
-					balloonContent: 'Это красивая метка',
-				}, {
-					iconLayout: 'default#image',
-					iconImageHref: '../images/tooltip-map/images/map.png',
-					iconImageSize: [20, 32],
-					iconImageOffset: [-5, -38],
-					iconContentLayout: MyIconContentLayout2,
-				});
+				// Stock
+				// eslint-disable-next-line one-var
+				let mapStock = new ymaps.Map('tooltip-map-stock1', {
+						center: [55.751574, 37.573856],
+						zoom: 13,
+					}, {
+						searchControlProvider: 'yandex#search',
+					}),
+					MyIconContentLayout2 = ymaps.templateLayoutFactory.createClass(
+						'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+					),
 
-			mapStock.geoObjects
-				.add(myPlacemark2);
-			mapStock.controls.remove('trafficControl')
-				.remove('searchControl')
-				.remove('typeSelector')
-				.remove('geolocationControl')
-				.remove('fullscreenControl')
-				.remove('rulerControl');
-		});
+					myPlacemark2 = new ymaps.Placemark(mapStock.getCenter(), {
+						hintContent: 'Собственный значок метки',
+						balloonContent: 'Это красивая метка',
+					}, {
+						iconLayout: 'default#image',
+						iconImageHref: '../images/tooltip-map/images/map.png',
+						iconImageSize: [20, 32],
+						iconImageOffset: [-5, -38],
+						iconContentLayout: MyIconContentLayout2,
+					});
+
+				mapStock.geoObjects
+					.add(myPlacemark2);
+				mapStock.controls.remove('trafficControl')
+					.remove('searchControl')
+					.remove('typeSelector')
+					.remove('geolocationControl')
+					.remove('fullscreenControl')
+					.remove('rulerControl');
+			});
+		}
 	}
 
+	inputSelect();
 	sandwich();
 	catalogNav();
 	popularCategoriesSlider();
@@ -679,6 +813,10 @@ $(document).ready(() => {
 	tabs();
 	recommendSlider();
 	passValidate();
+	cabinetPassValidate();
+	myOrderKitToggle();
+	cabinetMobileNav();
+	cartSearch();
 });
 
 let popularCategoriesSlider = () => {

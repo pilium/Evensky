@@ -48,7 +48,8 @@
 		margin-top: 8px;
 		font-size: 12px;
 
-		&__list {
+		&__list,
+		&__list1 {
 			> * {
 				margin: 8px 0;
 				&:first-child { margin-top: 0; }
@@ -56,7 +57,8 @@
 			}
 		}
 
-		&__item {
+		&__item,
+		&__item1 {
 			position: relative;
 			padding-left: 16px;
 			color: $color-label;

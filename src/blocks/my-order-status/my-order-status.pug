@@ -1,0 +1,10 @@
+mixin my-order-status(props)
+	-
+		var allMods = '';
+		if(typeof(props.mods) !== 'undefined' && props.mods) {
+			var modsList = props.mods.split(',');
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + ' my-order-status--' + modsList[i].trim();
+			}
+		}
+	.my-order-status(class= allMods)= props.text

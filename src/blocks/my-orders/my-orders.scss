@@ -1,0 +1,33 @@
+.my-orders {
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	> * {
+		margin: 16px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	.sort-item__title {
+		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
+	.my-order-status {
+		@media screen and (max-width: $phone-size) {
+			position: absolute;
+			right: -15px;
+			top: 0;
+			padding: 8px;
+			width: 90px;
+			font-size: 12px;
+			text-align: right;
+		}
+	}
+
+	.page-counter {
+		@media screen and (max-width: $phone-size) { display: block; }
+	}
+}

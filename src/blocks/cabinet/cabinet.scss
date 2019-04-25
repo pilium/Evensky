@@ -1,0 +1,17 @@
+.cabinet {
+	.is-engine-gecko & {
+		.input-field {
+			width: 288px;
+
+			@media screen and (max-width: $tablet-size) { width: 400px; }
+
+			@media screen and (max-width: $phone-size) { width: 180px; }
+		}
+
+		.field-select {
+			@media screen and (max-width: $tablet-size) { width: 400px; }
+
+			@media screen and (max-width: $phone-size) { width: 180px; }
+		}
+	}
+}

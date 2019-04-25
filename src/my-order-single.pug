@@ -1,0 +1,28 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Страница заказа'
+
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Заказ'
+		})
+	+section({
+		mods: 'my-order-single',
+		mainClass: ''
+	})
+		+section-header('Заказ № 321-432', '', 'status')
+		+my-order-single({
+			mods: ' ',
+		})
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+overlay()

@@ -1,0 +1,127 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Личный кабинет'
+	- var cabinetPage = 'main'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Личный кабинет'
+		})
+	+cabinet()
+		+form('cabinet')
+			.nav-v__block
+				span.nav-v__title Личные данные
+				+fieldset('Фамилия имя')
+					+field-text({
+						mods: 'width-m',
+						id: 'cabinet-name',
+						labelText: "Имя и фамилия",
+						attrs: {
+							type: 'text',
+							name: 'fio',
+							value: "Пантелеймон Константинопольский"
+						}
+					})
+				+fieldset('Телефон и почта', 'flex')
+					+field-text({
+						mods: 'width-m',
+						id: 'cabinet-phone',
+						labelText: "Контактный телефон",
+						attrs: {
+							type: 'tel',
+							name: 'phone',
+							ph: "+7(999)99-9999"
+						}
+					})
+					+field-text({
+						mods: 'width-m',
+						id: 'cabinet-mail',
+						labelText: "Электронная почта",
+						attrs: {
+							type: 'email',
+							name: 'mail',
+							value: "Zakaz@yandex.ru"
+						}
+					})
+				+form-footer('#', 'Сохранить изменения', false, true)
+			.nav-v__block
+				span.nav-v__title Данные оплаты и доставки
+				+fieldset('Опции оплаты', 'flex')
+					+field-select(
+						'Способ получения',
+						{
+							name: 'select-delivery',
+							id: 'select-delivery'
+						},
+						[
+							{
+								title: 'Доставкой',
+								count: '  78 руб',
+								attrs: {
+									value: '1',
+								}
+							},
+							{
+								title: 'Курьером',
+								count: '  178 руб',
+								attrs: {
+									value: '2',
+								}
+							},
+							{
+								title: 'Самовывоз',
+								count: '  58 руб',
+								attrs: {
+									value: '2',
+								}
+							},
+						],
+						'',
+						'width-l'
+					)
+					+field-select(
+						'Способ оплаты',
+						{
+							name: 'select-delivery-pay',
+							id: 'select-delivery-pay'
+						},
+						[
+							{
+								title: 'Кредитной картой',
+								attrs: {
+									value: '1',
+								}
+							},
+							{
+								title: 'Наличные',
+								attrs: {
+									value: '2',
+								}
+							},
+						],
+						'',
+						'width-l'
+					)
+				+fieldset('Адрес доставки')
+					+field-text({
+						mods: 'width-l',
+						id: 'delivery',
+						labelText: "Адрес доставки",
+						attrs: {
+							type: 'text',
+							name: 'delivery',
+							value: "Россия, Санкт-Петербург, Московский пр. 1"
+						}
+					})
+				+form-footer('#', 'Сохранить изменения', false, true)
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+overlay()

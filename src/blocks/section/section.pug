@@ -29,6 +29,15 @@ mixin section-header(text, count, mods)
 				mods: 'small-section',
 				text: (text) ? text : null
 			}, 'h2')
+		else if(mods === 'status')
+			+title({
+				mods: 'section',
+				text: (text) ? text : null
+			}, 'h2')
+			+my-order-status({
+				text: 'Доставлен',
+				mods: 'applied',
+			})
 		else
 			+title({
 				mods: 'section',

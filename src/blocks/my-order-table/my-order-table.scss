@@ -1,0 +1,86 @@
+.my-order-table {
+	> * {
+		margin: 2px 0;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__header {
+		background-color: #fff;
+
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
+
+	&__body {
+		background-color: #fff;
+
+		> * {
+			border-bottom: 1px solid $color-input-border;
+			&:last-child { border-bottom: 0; }
+		}
+	}
+
+	&__row {
+		display: flex;
+		padding: 0 16px;
+	}
+
+	&__cell {
+		padding: 16px 24px 16px 0;
+		&:last-child { padding-right: 0; }
+
+		&--product {
+			flex: 0 0 63%;
+
+			@media screen and (max-width: $tablet-size) { flex: 1; }
+		}
+
+		&--count {
+			flex: 0 0 200px;
+			width: 200px;
+		}
+
+		&--price {
+			flex: 0 0 190px;
+			width: 190px;
+		}
+
+		&--total {
+			flex: 0 0 105px;
+			width: 105px;
+		}
+	}
+
+	&__cell-name {
+		font-size: 12px;
+		letter-spacing: 0.6px;
+		text-transform: uppercase;
+		color: $color-text-info;
+	}
+
+	&__block {
+		padding: 16px 0;
+	}
+
+	&__block-title {
+		display: block;
+		margin-bottom: 8px;
+		padding: 0 16px;
+		font-size: 24px;
+		line-height: 1.44;
+	}
+
+	&__fix {
+		display: flex;
+		align-items: center;
+		padding: 0 16px;
+
+		> * {
+			@media screen and (max-width: $phone-size) {
+				flex: 0 0 auto;
+				width: auto;
+				font-weight: bold;
+			}
+		}
+	}
+}

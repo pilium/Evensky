@@ -9,3 +9,5 @@
 // @include('../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js');
 // @include('../../node_modules/nouislider/distribute/nouislider.js');
 // @include('../../node_modules/wnumb/wNumb.js');
+// @include('../../node_modules/choices.js/public/assets/scripts/choices.js');
+

@@ -25,8 +25,9 @@
 		display: flex;
 		align-items: center;
 		overflow: hidden;
-		max-width: 136px;
+		max-width: 100%;
 		font-weight: 600;
+		white-space: nowrap;
 		text-overflow: ellipsis;
 		color: $color-link;
 
@@ -80,6 +81,10 @@
 
 	&--mobile-hide {
 		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
+	&--border-none {
+		border-right: none;
 	}
 
 	@media screen and (max-width: $tablet-size) { border-right: none; }

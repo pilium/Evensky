@@ -101,6 +101,9 @@
 // Search-output
 @import "../blocks/search-output/search-output";
 
+// Cabinet
+@import "../blocks/cabinet/cabinet";
+
 // footer
 @import "../blocks/footer/footer";
 @import "../blocks/copyright/copyright";
@@ -129,3 +132,16 @@
 @import "../blocks/filter-slider/filter-slider";
 @import "../blocks/input-checkbox/input-checkbox";
 @import "../blocks/tabs/tabs";
+@import "../blocks/nav-v/nav-v";
+@import "../blocks/input-select/input-select";
+@import "../blocks/cabinet-orders/cabinet-orders";
+@import "../blocks/my-orders/my-orders";
+@import "../blocks/my-order/my-order";
+@import "../blocks/my-order-status/my-order-status";
+@import "../blocks/my-goods/my-goods";
+@import "../blocks/my-order-single/my-order-single";
+@import "../blocks/my-order-table/my-order-table";
+@import "../blocks/my-order-product/my-order-product";
+@import "../blocks/order-price/order-price";
+@import "../blocks/my-order-info/my-order-info";
+@import "../blocks/cart-quick-add/cart-quick-add";

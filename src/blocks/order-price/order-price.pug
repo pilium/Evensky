@@ -1,0 +1,12 @@
+mixin order-price(props)
+	.order-price
+		.order-price__line
+			span.order-price__line-label= props.label1
+			span.order-price__line-value= props.value1
+		.order-price__line
+			span.order-price__line-label= props.label2
+			span.order-price__line-value= props.value2
+		.order-price__line.order-price__line--total
+			span.order-price__line-label= props.label3
+			span.order-price__line-value= props.value3
+		span.order-price__descr Цены актуальны до 6 сентября 2018 г. в 02:54 мск.

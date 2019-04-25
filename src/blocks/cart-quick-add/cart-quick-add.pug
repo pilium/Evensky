@@ -1,0 +1,26 @@
+mixin cart-quick-add()
+	.cart-quick-add
+		+fieldset('Добавление товара в корзину')
+			+field-text({
+				mods: '',
+				id: 'cart-quick-add',
+				labelText: "",
+				attrs: {
+					type: 'text',
+					name: 'cart-quick-add',
+					placeholder: "Введите артикул или название товара"
+				}
+			})
+		.cart-quick-add__body
+			.cart-quick-add__item
+				span.cart-quick-add__name Планка стыковочная 30х20х3000 мм, толщина 0.4 мм
+				span.text-count 356 руб. за шт
+			.cart-quick-add__item
+				span.cart-quick-add__name Планка стыковочная 30х20х3000 мм, толщина 0.4 мм
+				span.text-count 356 руб. за шт
+			.cart-quick-add__item
+				span.cart-quick-add__name Планка стыковочная 30х20х3000 мм, толщина 0.4 мм
+				span.text-count 356 руб. за шт
+			.cart-quick-add__item
+				span.cart-quick-add__name Планка стыковочная 30х20х3000 мм, толщина 0.4 мм
+				span.text-count 356 руб. за шт

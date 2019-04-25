@@ -1,0 +1,49 @@
+mixin my-order(props)
+	.my-order
+		.my-order__header
+			span.my-order__number= props.number
+			span.my-order__date= props.date
+			+my-order-status({
+				text: props.statustext,
+				mods: props.status,
+			})
+			a.my-order__link(href="#")= props.link
+		.my-order__body
+			.my-order__block
+				.my-order__item
+					.my-order__line
+						span.my-order__line-label= props.lineLabel_1
+						.my-order__line-body
+							span.my-order__value= props.value_1
+							if(props.descr_1)
+								span.my-order__descr= props.descr_1
+			.my-order__block
+				.my-order__item
+					.my-order__line
+						span.my-order__line-label= props.lineLabel_2
+						.my-order__line-body
+							span.my-order__value= props.value_2
+							if(props.descr_2)
+								span.my-order__descr= props.descr_2
+					.my-order__line
+						span.my-order__line-label= props.lineLabel_3
+						.my-order__line-body
+							span.my-order__value= props.value_3
+							if(props.descr_3)
+								span.my-order__descr= props.descr_3
+				.my-order__total
+					.my-order__line
+						span.my-order__line-label= props.lineLabel_4
+						.my-order__line-body
+							span.my-order__value= props.value_4
+							if(props.descr_4)
+								span.my-order__descr= props.descr_4
+					.my-order__line
+						span.my-order__line-label= props.lineLabel_5
+						.my-order__line-body
+							span.my-order__value= props.value_5
+							if(props.descr_5)
+								span.my-order__descr= props.descr_5
+					.my-order__price
+						span.my-order__price-text Итого
+						span.my-order__price-number= props.price

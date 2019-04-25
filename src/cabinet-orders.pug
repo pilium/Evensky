@@ -1,0 +1,23 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Личный кабинет-заказы'
+	- var cabinetPage = 'orders'
+
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'catalog'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Личный кабинет'
+		})
+	+cabinet()
+		+cabinet-orders()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+overlay()

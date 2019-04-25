@@ -18,16 +18,22 @@ mixin product(props)
 			.product-prev__title
 				span.product-prev__name= props.name
 				span.text-count= props.count
-			.product-prev__info-wrapper
-				.product-prev__info
-					span.product-prev__label Артикул
-					span.product-prev__value= props.articul
-				.product-prev__info.product-prev__info--wide
-					span.product-prev__label Срок изготовления
-					span.product-prev__value= props.timeFor
-			.product-prev__price
-				span.product-prev__price-old= props.priceOld
-				span.product-prev__price-current= props.priceNow
+			if(!props.info)
+				.product-prev__info-wrapper
+					.product-prev__info
+						span.product-prev__label Артикул
+						span.product-prev__value= props.articul
+					.product-prev__info.product-prev__info--wide
+						span.product-prev__label Срок изготовления
+						span.product-prev__value= props.timeFor
+				.product-prev__price
+					span.product-prev__price-old= props.priceOld
+					span.product-prev__price-current= props.priceNow
+			else
+				.product-prev__price
+					span.product-prev__price-old= props.priceOld
+					span.product-prev__price-current= props.priceNow
+				.text-count.product-prev__order-info Заказано 2 сентября 2018 года
 		.product-prev__footer
 			if (props.counter === true)
 				+product-counter()

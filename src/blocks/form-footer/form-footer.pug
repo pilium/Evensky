@@ -1,4 +1,4 @@
-mixin form-footer(href, btnText, isText)
+mixin form-footer(href, btnText, isText, noPolitical)
 	.form-footer.form__footer
 		.form-footer__btn
 			+btn({
@@ -8,5 +8,6 @@ mixin form-footer(href, btnText, isText)
 			})
 			if (isText !== 'undefined' && isText)
 				span.form-footer__text.form-footer__text--green Текст под модалку
-		p.form-footer__info Продолжая работу, вы соглашаетесь с
-			a.form-footer__link(href=href)  политикой конфиденциальности
+		if(political)
+			p.form-footer__info Продолжая работу, вы соглашаетесь с
+				a.form-footer__link(href=href)  политикой конфиденциальности

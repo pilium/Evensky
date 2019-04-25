@@ -1,0 +1,122 @@
+mixin my-orders()
+	.my-orders
+		.my-orders__header
+			+sort-item({
+				title: 'Статус',
+				current: 'любой',
+				mods: 'border-none'
+			})
+				+sort-item__link('Ожидает потверждения')
+				+sort-item__link('Готовится к отправке')
+				+sort-item__link('Отменен')
+			+page-counter({
+				str: true,
+			})
+		.my-orders__body
+			+my-order({
+				status: 'waiting',
+				statustext: 'Ожидает потверждения',
+				number: 'Заказ № 321-43',
+				date: 'от 4 сентября 2018г.',
+				link: 'Посмотреть заказ',
+				lineLabel_1: 'Количество товаров',
+				value_1: '24 шт.',
+				lineLabel_2: 'Контактное лицо',
+				value_2: 'Вениамин Константинопольский',
+				lineLabel_3: 'Адрес доставки',
+				value_3: 'Россия, Москва, Введенский канал, 14',
+				descr_3: 'Доставка по Москве 21-23 августа',
+				lineLabel_4: 'Стоимость товаров',
+				value_4: '10 920 руб.',
+				lineLabel_4: 'Доставка',
+				value_4: '5 000 руб.',
+				price: '15 920 руб.'
+			})
+			+my-order({
+				status: 'prepare',
+				statustext: 'Готовится к отправке',
+				number: 'Заказ № 321-43',
+				date: 'от 4 сентября 2018г.',
+				link: 'Посмотреть заказ',
+				lineLabel_1: 'Количество товаров',
+				value_1: '24 шт.',
+				lineLabel_2: 'Контактное лицо',
+				value_2: 'Вениамин Константинопольский',
+				lineLabel_3: 'Адрес доставки',
+				value_3: 'Россия, Москва, Введенский канал, 14',
+				descr_3: 'Доставка по Москве 21-23 августа',
+				lineLabel_4: 'Стоимость товаров',
+				value_4: '10 920 руб.',
+				lineLabel_4: 'Доставка',
+				value_4: '5 000 руб.',
+				price: '15 920 руб.'
+			})
+			+my-order({
+				status: 'reject',
+				statustext: 'Отклонен',
+				number: 'Заказ № 321-43',
+				date: 'от 4 сентября 2018г.',
+				link: 'Посмотреть заказ',
+				lineLabel_1: 'Количество товаров',
+				value_1: '24 шт.',
+				lineLabel_2: 'Контактное лицо',
+				value_2: 'Вениамин Константинопольский',
+				lineLabel_3: 'Адрес доставки',
+				value_3: 'Россия, Москва, Введенский канал, 14',
+				descr_3: 'Доставка по Москве 21-23 августа',
+				lineLabel_4: 'Стоимость товаров',
+				value_4: '10 920 руб.',
+				lineLabel_4: 'Доставка',
+				value_4: '5 000 руб.',
+				price: '15 920 руб.'
+			})
+			+my-order({
+				status: 'applied',
+				statustext: 'Потвержден',
+				number: 'Заказ № 321-43',
+				date: 'от 4 сентября 2018г.',
+				link: 'Посмотреть заказ',
+				lineLabel_1: 'Количество товаров',
+				value_1: '24 шт.',
+				lineLabel_2: 'Контактное лицо',
+				value_2: 'Вениамин Константинопольский',
+				lineLabel_3: 'Адрес доставки',
+				value_3: 'Россия, Москва, Введенский канал, 14',
+				descr_3: 'Доставка по Москве 21-23 августа',
+				lineLabel_4: 'Стоимость товаров',
+				value_4: '10 920 руб.',
+				lineLabel_4: 'Доставка',
+				value_4: '5 000 руб.',
+				price: '15 920 руб.'
+			})
+			
+		.my-orders__footer
+			+pagination({
+				mods: ''
+			})
+				+pagination-item({
+					text: '1',
+					href: 'href',
+					active: true,
+					mods: ''
+				})
+				+pagination-item({
+					text: '2',
+					href: 'href',
+					mods: ''
+				})
+				+pagination-item({
+					text: '3',
+					href: 'href',
+					mods: ''
+				})
+				+pagination-item({
+					text: '4',
+					href: 'href',
+					mods: ''
+				})
+				+pagination-item({
+					text: '5',
+					href: 'href',
+					mods: ''
+				})

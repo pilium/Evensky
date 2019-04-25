@@ -40,6 +40,10 @@
 				color: $color-warning;
 			}
 		}
+
+		&.valid {
+			border-color: $color-link;
+		}
 	}
 
 	&__forgot { color: $color-link; }

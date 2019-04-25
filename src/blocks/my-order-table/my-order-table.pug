@@ -1,0 +1,90 @@
+mixin my-order-table()
+	.my-order-table
+		.my-order-table__header
+			.my-order-table__row
+				.my-order-table__cell.my-order-table__cell--product
+					span.my-order-table__cell-name Название товара
+				.my-order-table__cell.my-order-table__cell--count
+					span.my-order-table__cell-name Количество
+				.my-order-table__cell.my-order-table__cell--price
+					span.my-order-table__cell-name Цена за единицу
+				.my-order-table__cell.my-order-table__cell--total
+					span.my-order-table__cell-name Стоимость
+		.my-order-table__body
+			.my-order-table__block
+				span.my-order-table__block-title Доборные элементы кровли
+				+my-order-product({
+					title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90 &#8451;',
+					articul: '13763515',
+					count: '10шт.',
+					priceOld: '60000',
+					priceCurrent: '60 000',
+					mark: true,
+					markText: 'Изменен',
+					markMods: 'changed',
+					total: '78'
+				})
+				+my-order-product({
+					title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90 &#8451;',
+					articul: '13763515',
+					count: '1шт.',
+					priceOld: '66',
+					priceCurrent: '78',
+					total: '780',
+					message: true,
+				})
+				+my-order-product({
+					title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90 &#8451;',
+					articul: '13763515',
+					count: '1шт.',
+					priceOld: '',
+					priceCurrent: 'Под заказ',
+					total: '',
+				})
+			.my-order-table__block
+				span.my-order-table__block-title Металлочерепица
+				+my-order-product({
+					title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90 &#8451;',
+					articul: '13763515',
+					count: '10шт.',
+					priceOld: '60000',
+					priceCurrent: '60 000',
+					mark: true,
+					markText: 'Удален',
+					markMods: 'removed',
+					total: '78',
+					mods: 'removed',
+				})
+				+my-order-product({
+					title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90 &#8451;',
+					articul: '13763515',
+					count: '1шт.',
+					priceOld: '66',
+					priceCurrent: '78',
+					total: '780'
+				})
+				.my-order-table__block
+					span.my-order-table__block-title Металлочерепица
+					+my-order-product({
+						title: 'Планка стыковочная 30х30х2000 мм, толщина 0ю4 мм, цвет RAL 3016, полимерное покрытие с 1 стороны, сгиб 90',
+						articul: '13763515',
+						count: '10шт.',
+						priceOld: '60000',
+						priceCurrent: '60 000',
+						mark: true,
+						markText: 'Изменен',
+						markMods: 'changed',
+						total: '78',
+						kit: true,
+						mods: 'removed',
+					})
+			+order-price({
+				label1: 'Стоимость товаров',
+				value1: '8 920 руб',
+				label2: 'Стоимость доставки',
+				value2: '2 000 руб',
+				label3: 'Итого',
+				value3: '10 920 руб',
+			})
+		.my-order-table__footer
+			+my-order-info()

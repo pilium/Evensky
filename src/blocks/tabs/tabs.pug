@@ -1,9 +1,16 @@
-mixin tabs()
+mixin tabs-sub()
 	.tabs
-		ul.tabs__list(role='tablist')
+		ul.tabs__list(role="tablist")
 			+tabs__item({text: 'Подразделы', dataTab: 'tab--category',mods: 'aside'})
 			+tabs__item({text: 'Фильтр', dataTab: 'tab--filter',mods: 'aside'})
 			+tabs__item({text: 'Часто ищут', dataTab: 'tab--often',mods: 'aside'})
+		block
+
+mixin tabs-cabinet()
+	.tabs
+		ul.tabs-cabinet__list(role="tablist")
+			+tabs__item({text: 'Заказы', dataTab: 'tab--orders', count: '12', active: true})
+			+tabs__item({text: 'Купленные товары', dataTab: 'tab--goods', count: '25'})
 		block
 
 mixin tabs__item(props)
@@ -15,6 +22,13 @@ mixin tabs__item(props)
 				allMods = allMods + ' tabs__item--' + modsList[i].trim();
 			}
 		}
-
-	li.tabs__item(role='presentation' show-tab= props.dataTab class= allMods)
-		span.tabs__link(role='tab')= props.text
+	if(props.active)
+		li.tabs__item.tabs__item--active(role="presentation" show-tab= props.dataTab class= allMods)
+			span.tabs__link(role="tab")= props.text
+			if(props.count)
+				span.text-count= props.count
+	else
+		li.tabs__item(role="presentation" show-tab= props.dataTab class= allMods)
+			span.tabs__link(role="tab")= props.text
+			if(props.count)
+				span.text-count= props.count

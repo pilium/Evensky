@@ -1,0 +1,29 @@
+mixin nav-v(props)
+	.nav-v
+		nav.nav-v__wrapper
+			ul.nav-v__list
+				+nav-v-nav__item({
+					link: 'cabinet.html',
+					text: 'Мой профиль',
+					page: 'main'
+				})
+				+nav-v-nav__item({
+					link: 'cabinet-orders.html',
+					text: 'Мои заказы',
+					page: 'orders'
+				})
+				+nav-v-nav__item({
+					link: 'cabinet-settings.html',
+					text: 'Мои настройки',
+					page: 'settings'
+				})
+		.nav-v__content
+			block
+
+mixin nav-v-nav__item(props)
+	if(props.page === cabinetPage)
+		li.nav-v__item.nav-v__item--active
+			a.nav-v__link(href= props.link)= props.text
+	else
+		li.nav-v__item
+			a.nav-v__link(href= props.link)= props.text

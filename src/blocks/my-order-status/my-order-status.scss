@@ -1,0 +1,13 @@
+.my-order-status {
+	border-radius: 4px;
+	padding: 8px 16px;
+	font-size: 14px;
+	line-height: 18px;
+	text-align: center;
+	opacity: 1;
+
+	&--waiting { background-color: #cebe00; }
+	&--reject { background-color: #d0021b; }
+	&--prepare { background-color: #f5a623; }
+	&--applied { background-color: #10ae42; }
+}
