@@ -355,6 +355,12 @@ $(document).ready(() => {
 		$(document).on('click', '.close--map', () => {
 			$(`.tooltip--map-${pos}`).removeClass('tooltip-map--active');
 		});
+
+		$('body').click(function (e) {
+			if ($(e.target).closest('.tooltip-map--active').length === 0 && $('.tooltip-map--active').length) {
+				$(`.tooltip--map-${pos}`).removeClass('tooltip-map--active');
+			}
+		});
 	};
 
 	let simpleBar = () => {
