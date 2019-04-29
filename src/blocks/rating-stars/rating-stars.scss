@@ -1,0 +1,46 @@
+.rating-stars {
+	display: flex;
+
+	> * {
+		&:not(:last-child) { margin-right: 8px; }
+	}
+
+	&__body {
+		display: flex;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&__star {
+		position: relative;
+
+		&::after {
+			content: "\2605";
+			color: #dedede;
+		}
+
+		&--full {
+			&::after { color: $color-main-action; }
+		}
+
+		&--part {
+			position: absolute;
+			z-index: 1;
+			overflow: hidden;
+
+			&::after {
+				content: "\2605";
+				color: $color-main-action;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		color: $color-text-info;
+
+		b { color: $color-base-text; }
+	}
+}

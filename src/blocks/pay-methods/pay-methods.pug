@@ -1,0 +1,33 @@
+mixin pay-methods()
+	.pay-methods
+		+title({
+			mods: 'small-section',
+			text: 'Способы оплаты порошковой краски',
+		}, 'h2')
+		.pay-methods__type
+			.pay-methods__type-item
+				.pay-methods__line
+					+icon('document', 'pay-methods__icon')
+					span.pay-methods__line-text Выставление счета
+				.pay-methods__line
+					+icon('credit-card', 'pay-methods__icon')
+					span.pay-methods__line-text Банковская карта (для заказов меньше 20 000 рублей)
+			.pay-methods__type-item
+				.pay-methods__steps
+					.pay-methods__step
+						.pay-methods__step-number-wrapper
+							span.pay-methods__step-number 1
+						span.pay-methods__step-text Уточните цену по телефону или сделайте предварительный расчет стоимости заказа на сайте
+					.pay-methods__step
+						.pay-methods__step-number-wrapper
+							span.pay-methods__step-number 2
+						span.pay-methods__step-text Сделацте заказ.
+					.pay-methods__step
+						.pay-methods__step-number-wrapper
+							span.pay-methods__step-number 3
+						span.pay-methods__step-text Менеджер по электронной почте пришлет вам счет или квитанцию для оплаты.
+		+helper-consult({
+			descr: 'Возникли сложности при оплате?',
+			btnText: 'Заказать звонок',
+			info: 'Перезвоним в течение 10 минут',
+		})

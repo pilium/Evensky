@@ -1,0 +1,14 @@
+mixin product-body-slider(props)
+	.product-body-slider
+		.product-body-slider__aside
+			.product-body-slider__aside-nav.product-body-slider__aside-nav--prev
+			.js-product-body-slider__aside
+				each val in [1,2,3,4,5,6,7,8]
+					.product-body-slider__aside-item
+						img(src="images/category-preview/images/pop-cat-1.png" alt="Продукт")
+			.product-body-slider__aside-nav.product-body-slider__aside-nav--next
+		.product-body-slider__main
+			.js-product-body-slider__main
+				each val in [1,2,3,4,5,6,7,8]
+					.product-body-slider__main-item
+						img.product-body-slider__main-img(src="images/promo-preview/images/prof.jpg" alt="Продукт")

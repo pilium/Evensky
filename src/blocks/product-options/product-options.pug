@@ -1,0 +1,71 @@
+mixin product-options(props)
+	.product-options
+		.product-options__toggle
+			span.product-options__toogle-text Выбрать параметры
+				span.text-count 6
+		.product-options__body
+			.product-options__item.product-options__item--width-l
+				+fieldset('Изделия')
+					+field-select(
+						'Тип изделия',
+						{
+							name: 'product-options-item',
+							id: 'product-options-item'
+						},
+						[
+							{
+								title: 'Плоские металлические изделия габаритами 70х20х100',
+								attrs: {
+									value: '1',
+								}
+							},
+							{
+								title: 'Плоские деревяные',
+								attrs: {
+									value: '2',
+								}
+							},
+							{
+								title: 'Плоские стальные',
+								attrs: {
+									value: '2',
+								}
+							},
+						],
+						'',
+						'width-xl,product-options'
+					)
+			.product-options__item.product-options__item--width-s
+				+fieldset('Краска')
+					+field-select(
+						'Тип краски',
+						{
+							name: 'product-options-paint',
+							id: 'product-options-paint'
+						},
+						[
+							{
+								title: '0.45 мм',
+								attrs: {
+									value: '1',
+								}
+							},
+							{
+								title: '0.35 мм',
+								attrs: {
+									value: '2',
+								}
+							},
+							{
+								title: '0.25 мм',
+								attrs: {
+									value: '2',
+								}
+							},
+						],
+						'',
+						'width-sm,product-options'
+					)
+			.product-options__item.product-options__item--fill
+				if (props.colors)
+					+product-colors()

@@ -1,0 +1,38 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Услуга'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Каталог металлопродукции',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Все для кровли',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Доборные элементы кровли',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Планка стыковочная',
+		})
+		+breadcrumbs-item({
+			text: 'Планка стыковочная 30х30х2000 мм , толщина 0.4 мм, цвет графитовый серый RAL 7024 со склада в Москве',
+		})
+	+service()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-colors1',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
+	+overlay()

@@ -1,0 +1,58 @@
+.service {
+	&__advice {
+		max-width: 808px;
+	}
+
+	&__faq {
+		margin-bottom: 32px;
+
+		.fieldset {
+			margin-bottom: 16px;
+			max-width: 808px;
+		}
+
+		.accordion {
+			width: 100%;
+			max-width: 808px;
+		}
+	}
+
+	&__fag-wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+
+	&__reviews-wrapper {
+		display: flex;
+		align-items: flex-start;
+
+		> * {
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 16px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+
+	.helper-consult__row {
+		> * {
+			&:not(:last-child) {
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 16px;
+				}
+			}
+		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+}

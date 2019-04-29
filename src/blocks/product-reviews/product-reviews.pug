@@ -1,0 +1,33 @@
+mixin product-reviews()
+	.product-reviews
+		.product-reviews__header
+			+sort-item({
+				title: 'Упорядочить',
+				current: 'по дате публикации',
+				mods: 'border-none'
+			})
+				+sort-item__link('по дате публикации')
+				+sort-item__link('по порулярности')
+			+page-counter({
+				str: true,
+			})
+		.product-reviews__wrapper
+			+product-review({
+				author: 'Пантеоеймон Константинопольский',
+				icon: 'vk',
+				text: true,
+				gallery: true,
+				date: '29 июля 2018 года',
+			})
+			+product-review({
+				author: 'Иванова Мария',
+				icon: 'vk',
+				date: '29 июля 2018 года',
+			})
+			+product-review({
+				author: 'Пантеоеймон Константинопольский',
+				icon: 'vk',
+				text: true,
+				gallery: true,
+				date: '29 июля 2018 года',
+			})

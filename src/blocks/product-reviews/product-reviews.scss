@@ -1,0 +1,13 @@
+.product-reviews {
+	flex: 1;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__wrapper {
+		border-radius: 4px;
+		background-color: #fff;
+	}
+}

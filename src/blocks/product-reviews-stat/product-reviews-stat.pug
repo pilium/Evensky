@@ -1,0 +1,43 @@
+mixin product-reviews-stat()
+	.product-reviews-stat
+		span.product-reviews-stat__title Статистика оценок
+		.product-reviews-stat__lines
+			+product-reviews-stat__line({
+				number: 5,
+				count: 12,
+				width: 60
+			})
+			+product-reviews-stat__line({
+				number: 4,
+				count: 16,
+				width: 40
+			})
+			+product-reviews-stat__line({
+				number: 3,
+				count: 13,
+				width: 10
+			})
+			+product-reviews-stat__line({
+				number: 2,
+				count: 6,
+				width: 0
+			})
+			+product-reviews-stat__line({
+				number: 1,
+				count: 26,
+				width: 0
+			})
+		+btn({
+			tag: 'a',
+			href: '#',
+			text: 'Добавить отзыв',
+			mods: 'transparent,border-green',
+		})
+
+mixin product-reviews-stat__line(props)
+	.product-reviews-stat__line
+		.product-reviews-stat__star
+		span.product-reviews-stat__line-number= props.number
+		.product-reviews-stat__way
+			.product-reviews-stat__way-current(style=`width: ${props.width}%;`)
+		span.product-reviews-stat__count= props.count

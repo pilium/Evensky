@@ -1,0 +1,49 @@
+mixin service()
+	+section({
+		mods: 'service',
+		mainClass: 'service'
+	})
+		+section-header-testimonials({
+			text: 'Порошковая покраска плоских металлических изделий габаритами 710х2400х1800 мм в глянцевой графитовый серый RAL 7024',
+		})
+		.service__wrapper
+			+product-options({ colors: true})
+			+product-body()
+			+product-nav()
+			+product-description({})
+			+product-parameters({
+				text: 'Характеристики порошковой краски'
+			})
+			.service__advice
+				+title({
+					mods: 'small-section',
+					text: 'Советы по порошковой покраске',
+				}, 'h2')
+				+accordion({})
+			.service__faq
+				+title({
+					mods: 'small-section',
+					text: 'Вопросы и ответы по порошковой покраске',
+				}, 'h2')
+				+fieldset('Введите вопрос')
+					+field-text({
+						mods: '',
+						id: 'faq',
+						attrs: {
+							type: 'text',
+							name: 'faq',
+							placeholder: "Начните вводить свой вопрос"
+						}
+					})
+				.service__fag-wrapper
+					+accordion({})
+					+product-question-add()
+			+pay-methods()
+			.service__reviews
+				+title({
+					mods: 'small-section',
+					text: 'Отзывы о порошковой покраске',
+				}, 'h2')
+				.service__reviews-wrapper
+					+product-reviews()
+					+product-reviews-stat()

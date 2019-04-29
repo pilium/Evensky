@@ -1,0 +1,55 @@
+mixin product-body(props)
+	.product-body
+		+product-body-slider()
+		.product-body__info
+			.product-body__details
+				.product-body__item
+					span.product-body__item-title Цена
+					+product-body__price({
+						number: '190руб. за квм',
+						count: '25-100 квм',
+					})
+					+product-body__price({
+						number: '174руб. за квм',
+						count: '101-500 квм',
+					})
+					+product-body__price({
+						number: '167руб. за квм',
+						count: '501-2000 квм',
+					})
+				.product-body__item
+					span.product-body__item-title Срок выполнения
+					.product-body__text от 3 дней
+				.product-body__item
+					+order-callback({
+						descr: 'Получить консультацию',
+						position: 'form',
+						icon: 'phone',
+						mail: 'Ответим в течение 10 минут'
+					})
+			.product-body__count
+				.product-body__count-title Количество
+				+product-counter()
+				.product-body__count-price
+					span.product-body__count-text Итого
+					span.product-body__count-number 4750 руб.
+				.product-body__count-buttons
+					+btn({
+						tag: 'button',
+						href: '#',
+						text: 'Купить в 1 клик',
+						mods: 'fill',
+					})
+					+btn({
+						tag: 'button',
+						href: '#',
+						text: 'В корзину',
+						mods: 'transparent,border-yellow',
+						icon: 'cart',
+						iconClass: 'product-prev__icon'
+					})
+
+mixin product-body__price(props)
+	.product-body__price
+		span.product-body__price-number= props.number
+		span.text-count= props.count

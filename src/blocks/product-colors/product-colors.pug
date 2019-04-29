@@ -1,0 +1,36 @@
+mixin product-colors(props)
+	.product-colors
+		+product-color({
+			color: '#417505',
+			code: '3016',
+			price: '45 руб',
+		})
+		+product-color({
+			color: '#a31123',
+			code: '3416',
+			price: '82 руб',
+		})
+		+product-color({
+			color: '#f8e71c',
+			code: '2222',
+			price: '45 руб',
+		})
+		+product-color({
+			color: '#f5a623',
+			code: '8256',
+			price: '78 руб',
+		})
+		+product-color({
+			color: 'blue',
+			code: '7634',
+			price: '90 руб',
+		})
+		.product-colors__item.product-colors__item--all
+			a.js-modal-link.product-colors__item-link(href="#popup-colors1") Все цвета
+			span.text-count 299
+
+mixin product-color(props)
+	.product-colors__item
+		.product-colors__item-prev(style=`background-color: ${props.color};`)
+		span.product-colors__item-code= props.code
+		span.product-colors__item-price= props.price

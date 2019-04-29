@@ -19,7 +19,15 @@
 	}
 
 	&--small-section {
-		font-size: 30px;
+		font-size: 26px;
+		line-height: 1.25;
+
+		@media screen and (max-width: $phone-size) { font-size: 26px; }
+	}
+
+	&--very-small-section {
+		font-family: $font-family-semibold;
+		font-size: 20px;
 		line-height: 1.25;
 
 		@media screen and (max-width: $phone-size) { font-size: 26px; }

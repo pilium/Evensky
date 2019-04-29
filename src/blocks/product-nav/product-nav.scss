@@ -1,0 +1,35 @@
+.product-nav {
+	border-top: 1px solid $color-input-border;
+
+	&__list {
+		display: flex;
+
+		> * {
+			&:not(:last-child) { margin-right: 32px; }
+		}
+
+		@media screen and (max-width: $phone-size) { overflow: auto; }
+	}
+
+	&__item { padding: 8px 0; }
+
+	&__link {
+		display: flex;
+		align-items: baseline;
+		border-bottom: 1px dashed $color-link;
+		white-space: nowrap;
+	}
+
+	&__text {
+		font-size: 12px;
+		letter-spacing: 0.6px;
+		text-transform: uppercase;
+		color: $color-link;
+	}
+
+	@media screen and (max-width: $tablet-size) {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+	}
+}

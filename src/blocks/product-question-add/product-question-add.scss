@@ -1,0 +1,19 @@
+.product-question-add {
+	flex: 0 0 255px;
+	border: 2px solid $color-input-border;
+	border-radius: 4px;
+	padding: 16px;
+	background-color: #fff;
+
+	.helper-consult__info {
+		display: block;
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 22px;
+		line-height: 1.44;
+	}
+}

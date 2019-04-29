@@ -1,0 +1,159 @@
+.product-body {
+	display: flex;
+	align-items: flex-start;
+
+	.product-counter {
+		margin-bottom: 16px;
+
+		&__current {
+			flex: 1;
+			justify-content: center;
+			width: auto;
+		}
+	}
+
+	.product-counter__btn { background-color: transparent; }
+
+	.order-callback__description {
+		text-decoration: underline;
+		color: $color-link;
+	}
+
+	.order-callback__link {
+		font-size: 12px;
+		color: $color-text-info;
+		pointer-events: none;
+	}
+
+	.order-callback__icon {
+		width: 20px;
+		height: 20px;
+		fill: $color-link;
+	}
+
+	&__details {
+		padding-top: 16px;
+		padding-left: 16px;
+
+		> * {
+			margin: 16px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+
+		@media screen and (max-width: $tablet-size) { padding-left: 0; }
+	}
+
+	&__item-title {
+		display: block;
+		margin-bottom: 8px;
+		font-family: $font-family-semibold;
+		font-size: 22px;
+	}
+
+	&__price {
+		display: flex;
+		margin-bottom: 2px;
+		font-size: 14px;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+		&:last-child { margin-bottom: 0; }
+	}
+
+	&__price-number { font-family: $font-family-semibold; }
+
+	&__info {
+		display: flex;
+
+		> * {
+			flex: 1;
+			max-width: 256px;
+
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 16px;
+				}
+			}
+
+			@media screen and (max-width: $phone-size) {
+				width: 288px;
+				max-width: 100%;
+			}
+		}
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+
+	&__text { margin-bottom: 16px; }
+
+	&__count {
+		border: 2px solid $color-main-action;
+		padding: 16px 24px 40px;
+		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+		font-family: $font-family-semibold;
+		font-size: 14px;
+		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) {
+			box-shadow: none;
+		}
+	}
+
+	&__count-title {
+		margin-bottom: 8px;
+		font-family: $font-family-boldest;
+		font-weight: bold;
+	}
+
+	&__count-price {
+		display: flex;
+		align-items: baseline;
+		margin-bottom: 24px;
+
+		> * {
+			&:not(:last-child) { margin-right: 8px; }
+		}
+	}
+
+	&__count-buttons {
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			&:not(:last-child) { margin-bottom: 24px; }
+		}
+	}
+
+	&__count-number {
+		font-family: $font-family-boldest;
+		font-size: 22px;
+	}
+
+	> * {
+		flex: 1;
+
+		&:not(:last-child) {
+			margin-right: 16px;
+
+			@media screen and (max-width: $phone-size) {
+				margin-right: 0;
+				margin-bottom: 16px;
+			}
+		}
+
+		@media screen and (max-width: $tablet-size) { flex: 0; }
+	}
+
+	.order-callback {
+		@media screen and (max-width: $tablet-size) { display: none; }
+	}
+
+	@media screen and (max-width: $phone-size) {
+		flex-direction: column;
+	}
+}

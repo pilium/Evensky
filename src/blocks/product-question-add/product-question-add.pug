@@ -1,0 +1,13 @@
+mixin product-question-add()
+	.product-question-add
+		span.product-question-add__title Не нашли ответ на свой вопрос?
+		+btn({
+			tag: 'a',
+			href: '#',
+			text: 'Задать вопрос',
+			mods: 'transparent,border-green',
+		})
+		span.helper-consult__info Ответим в течение 10 минут
+		p.helper-consult__text  Также получить ответы на вопросы можно по телефону #[br]
+			a.helper-consult__link(href="#") 7 499 334-88-88 
+			|  (круглосуточно)

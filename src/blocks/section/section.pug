@@ -44,3 +44,12 @@ mixin section-header(text, count, mods)
 				text: (text) ? text : null
 			}, 'h2')
 		block
+
+mixin section-header-testimonials(props)
+	.section-header-testimonials
+		+title({
+			mods: 'small-section',
+			text: (props.text) ? props.text : null
+		}, 'h2')
+		+rating-stars()
+		a.section-header-testimonials__link(href="#") 25 отзывов

@@ -1,0 +1,24 @@
+mixin product-review(props)
+	.product-review
+		.product-review__header
+			+rating-stars()
+			.product-review__author
+				span.product-review__author-text= props.author
+				a.product-review__author-link(href="#")
+					+icon(props.icon, 'product-review__icon')
+		.product-review__body
+			if(props.text)
+				p.product-review__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Est qui consectetur quibusdam accusantium vero aperiam voluptate voluptatibus possimus. Similique repudiandae vero cum? Expedita, dolor dolores ex tempora, harum ullam delectus dignissimos mollitia aspernatur magnam dolorem a architecto, beatae est id recusandae voluptatum ratione temporibus tempore autem. Vero ab sit laborum mollitia sunt molestias aliquid iusto modi, maiores alias doloribus unde voluptatem impedit corrupti quae dolorem beatae accusamus. Praesentium doloribus, id, accusantium earum cum ipsum sapiente commodi iure natus molestias expedita quaerat obcaecati veniam, ipsam ut corrupti. Molestiae sunt numquam ipsum omnis? Doloribus, est. Laboriosam, non! Repellendus nobis totam tenetur autem?
+			else
+				a.product-review__video-content.js-modal-link(href="#popup-video" style="background-image: url('images/promo-preview/images/prof.jpg')")
+					+icon('eye', 'about__video-icon')
+			if(props.gallery)
+				.popup-gallery.js-popup-gallery
+					a.popup-gallery__item(href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner")
+						img.popup-gallery__img(src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" alt="Фото галереи")
+					a.popup-gallery__item(href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake")
+						img.popup-gallery__img(src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" alt="Фото галереи")
+					a.popup-gallery__item(href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?")
+						img.popup-gallery__img(src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" alt="Фото галереи")
+		.product-review__footer
+			span.product-review__date.text-count= props.date

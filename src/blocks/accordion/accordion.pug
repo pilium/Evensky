@@ -1,0 +1,30 @@
+mixin accordion(props)
+	.accordion
+		.accordion__wrapper
+			+accordion_item({
+				title: 'Как правильно установить планку стыковочную?',
+				text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam totam vitae eaque illo, fugiat nam, provident libero quos velit magni dolor incidunt nemo voluptas dolore quas eligendi quod animi dicta soluta! Quae expedita molestiae aspernatur vero iste voluptates, eveniet sunt quaerat hic velit asperiores tempora ipsam consequatur deserunt sed. Saepe ea quam tenetur adipisci iste odit modi repudiandae repellendus asperiores nostrum nam ad aspernatur possimus itaque tempore, nulla incidunt pariatur molestiae labore nisi harum repellat? Quo labore quae totam omnis qui, veniam nemo. Magni ipsum quaerat perspiciatis at minus illum quas, saepe vel repellendus explicabo rem nostrum a nam exercitationem dignissimos animi aut eius neque provident dolorum ipsa voluptatem quod ex accusamus. Iste autem necessitatibus ipsum quasi vitae consequatur!',
+			})
+			+accordion_item({
+				title: 'Где можно применять планку стыковочную?',
+				text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam totam vitae eaque illo, fugiat nam, provident libero quos velit magni dolor incidunt nemo voluptas dolore quas eligendi quod animi dicta soluta! Quae expedita molestiae aspernatur vero iste voluptates, eveniet sunt quaerat hic velit asperiores tempora ipsam consequatur deserunt sed. Saepe ea quam tenetur adipisci iste odit modi repudiandae repellendus asperiores nostrum nam ad aspernatur possimus itaque tempore, nulla incidunt pariatur molestiae labore nisi harum repellat? Quo labore quae totam omnis qui, veniam nemo. Magni ipsum quaerat perspiciatis at minus illum quas, saepe vel repellendus explicabo rem nostrum a nam exercitationem dignissimos animi aut eius neque provident dolorum ipsa voluptatem quod ex accusamus. Iste autem necessitatibus ipsum quasi vitae consequatur!',
+			})
+			+accordion_item({
+				title: 'Где можно применять планку стыковочную?',
+				text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam totam vitae eaque illo, fugiat nam, provident libero quos velit magni dolor incidunt nemo voluptas dolore quas eligendi quod animi dicta soluta! Quae expedita molestiae aspernatur vero iste voluptates, eveniet sunt quaerat hic velit asperiores tempora ipsam consequatur deserunt sed. Saepe ea quam tenetur adipisci iste odit modi repudiandae repellendus asperiores nostrum nam ad aspernatur possimus itaque tempore, nulla incidunt pariatur molestiae labore nisi harum repellat? Quo labore quae totam omnis qui, veniam nemo. Magni ipsum quaerat perspiciatis at minus illum quas, saepe vel repellendus explicabo rem nostrum a nam exercitationem dignissimos animi aut eius neque provident dolorum ipsa voluptatem quod ex accusamus. Iste autem necessitatibus ipsum quasi vitae consequatur!',
+			})
+			+accordion_item({
+				title: 'Где можно применять планку стыковочную?',
+				text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam totam vitae eaque illo, fugiat nam, provident libero quos velit magni dolor incidunt nemo voluptas dolore quas eligendi quod animi dicta soluta! Quae expedita molestiae aspernatur vero iste voluptates, eveniet sunt quaerat hic velit asperiores tempora ipsam consequatur deserunt sed. Saepe ea quam tenetur adipisci iste odit modi repudiandae repellendus asperiores nostrum nam ad aspernatur possimus itaque tempore, nulla incidunt pariatur molestiae labore nisi harum repellat? Quo labore quae totam omnis qui, veniam nemo. Magni ipsum quaerat perspiciatis at minus illum quas, saepe vel repellendus explicabo rem nostrum a nam exercitationem dignissimos animi aut eius neque provident dolorum ipsa voluptatem quod ex accusamus. Iste autem necessitatibus ipsum quasi vitae consequatur!',
+			})
+			+accordion_item({
+				title: 'Где можно применять планку стыковочную?',
+				text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam totam vitae eaque illo, fugiat nam, provident libero quos velit magni dolor incidunt nemo voluptas dolore quas eligendi quod animi dicta soluta! Quae expedita molestiae aspernatur vero iste voluptates, eveniet sunt quaerat hic velit asperiores tempora ipsam consequatur deserunt sed. Saepe ea quam tenetur adipisci iste odit modi repudiandae repellendus asperiores nostrum nam ad aspernatur possimus itaque tempore, nulla incidunt pariatur molestiae labore nisi harum repellat? Quo labore quae totam omnis qui, veniam nemo. Magni ipsum quaerat perspiciatis at minus illum quas, saepe vel repellendus explicabo rem nostrum a nam exercitationem dignissimos animi aut eius neque provident dolorum ipsa voluptatem quod ex accusamus. Iste autem necessitatibus ipsum quasi vitae consequatur!',
+			})
+
+mixin accordion_item(props)
+	.accordion__item
+		.accordion__item-header.js-accordion__item-header
+			span.accordion__item-name= props.title
+		.accordion__item-body
+			p.accordion__item-text= props.text

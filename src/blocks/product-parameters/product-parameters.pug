@@ -1,0 +1,55 @@
+mixin product-parameters(props)
+	.product-parameters
+		+title({
+			mods: 'small-section',
+			text: props.text,
+		}, 'h2')
+		.product-parameters__item
+			+title({
+				mods: 'very-small-section',
+				text: 'Основные',
+			}, 'h3')
+			+product-parametrs__item('Материал', 'Оцинкованная сталь с полимерным покрытием')
+			+product-parametrs__item('Толщина металла', '0.4 мм')
+			+product-parametrs__item('Высота', '30 мм')
+			+product-parametrs__item('Длина', '2000 мм')
+			+product-parametrs__item('Угол сгиба', '45')
+			+product-parametrs__item('Вес', '0.2 кг')
+			+product-parametrs__item('Применение', 'Для кровли из металлочерепицы, для профнастилда, для фальца, для мягкой (гибкой, битумной) черепицы')
+		.product-parameters__item
+			+title({
+				mods: 'very-small-section',
+				text: 'Дополнительные',
+			}, 'h3')
+			.product-parameters__line
+				span.product-parameters__label Цвет
+				.product-parameters__value
+					.product-parameters__color
+					span.product-parameters__value-text Голубой
+			+product-parametrs__item('Расцветка', 'Графитовый серый')
+			+product-parametrs__item('Оттенок', 'RAL 7024')
+			+product-parametrs__item('Изготовление', 'от 2 до 5 дней')
+			+product-parametrs__item('Срок службы', '25 лет')
+			+product-parametrs__item('Гарантия', '5 лет')
+		.product-parameters__item
+			+title({
+				mods: 'very-small-section',
+				text: 'Дополнительные',
+			}, 'h3')
+			.product-parameters__line
+				span.product-parameters__label Цвет
+				.product-parameters__value
+					.product-parameters__color
+					span.product-parameters__value-text Голубой
+			+product-parametrs__item('Расцветка', 'Графитовый серый')
+			+product-parametrs__item('Оттенок', 'RAL 7024')
+			+product-parametrs__item('Изготовление', 'от 2 до 5 дней')
+			+product-parametrs__item('Срок службы', '25 лет')
+			+product-parametrs__item('Гарантия', '5 лет')
+
+mixin product-parametrs__item(label, value)
+	.product-parameters__line
+		.product-parameters__label
+			span.product-parameters__label-text= label
+		.product-parameters__value
+			span.product-parameters__value-text= value

@@ -5,6 +5,44 @@
 
 	.my-order-status { margin-left: 16px; }
 
+	.section-header-testimonials {
+		display: flex;
+		align-items: center;
+
+		> * {
+			&:not(:last-child) {
+				margin-right: 16px;
+
+				@media screen and (max-width: $tablet-size) {
+					margin-right: 8px;
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		.title {
+			max-width: 720px;
+
+			@media screen and (max-width: $tablet-size) { max-width: calc(100% - 8px); }
+		}
+
+		&__link {
+			margin-left: 16px;
+			font-family: $font-family-boldest;
+			font-weight: bold;
+			text-decoration: underline;
+			color: $color-link;
+		}
+
+		@media screen and (max-width: $tablet-size) {
+			align-items: baseline;
+			flex-wrap: wrap;
+			margin-bottom: 16px;
+		}
+
+		@media screen and (max-width: $phone-size) { justify-content: space-between; }
+	}
+
 	&-header {
 		display: flex;
 		align-items: center;
@@ -31,10 +69,6 @@
 		padding-top: 16px;
 		+ section { padding-top: 8px; }
 	}
-
-	// &--bg-white {
-	// 	.container { background-color: #fff; }
-	// }
 
 	&--s-small { padding: 8px 0; }
 }

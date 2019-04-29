@@ -1,0 +1,27 @@
+.helper-consult {
+	display: flex;
+	flex-direction: column;
+
+	> * {
+		&:not(:last-child) { margin-bottom: 16px; }
+	}
+
+	&__row {
+		display: flex;
+		align-items: flex-start;
+
+		> * {
+			&:not(:last-child) { margin-right: 16px; }
+		}
+	}
+
+	&__info {
+		font-size: 12px;
+		color: $color-text-info;
+	}
+
+	&__link {
+		font-weight: bold;
+		color: $color-link;
+	}
+}

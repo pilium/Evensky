@@ -1,6 +1,7 @@
 .breadcrumbs {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 
 	.tooltip {
 		top: calc(100% + 8px);
@@ -14,6 +15,7 @@
 		position: relative;
 		display: flex;
 		align-items: center;
+		margin-bottom: 8px;
 
 		/* stylelint-disable-next-line a11y/content-property-no-static-value */
 		&::after {
@@ -28,6 +30,8 @@
 		}
 
 		&:last-child {
+			margin-bottom: 0;
+
 			&::after { display: none; }
 
 			.breadcrumbs__label {
@@ -40,6 +44,8 @@
 		&--nav-active {
 			.breadcrumbs-nav { display: block; }
 		}
+
+		@media screen and (max-width: $tablet-size) { margin-bottom: 0; }
 
 		@media screen and (max-width: $phone-size) { white-space: nowrap; }
 	}
@@ -104,6 +110,7 @@
 	}
 
 	@media screen and (max-width: $phone-size) {
+		flex-wrap: nowrap;
 		overflow: auto;
 		padding: 8px 0;
 	}

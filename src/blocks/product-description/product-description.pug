@@ -1,0 +1,33 @@
+mixin product-description(props)
+	.product-description
+		.product-description__main
+			p.product-description__text Планка стыковочная (соединительная) из оцинкованной стали с полимерным покрытием от производителя. Подходит для кровли из металлочерепицы, мягкой (гибкой, битумной) черепицы, профнастила, фальца. Стыковочной планкой изолируют стыки в местах соединения крыши с вертикальными стенами. Стандартные размеры на складе - 30х30х2000, 45х45х2000, толщина - 0.4, 0.45, 0.5, 0.7 мм.
+			p.product-description__text За 2-5 дней на заказ изготовим планки длиной от 50 до 6200 мм, толщиной от 0.4 до 3.0 мм, с углом сгиба от 45 до 179 градусов. Покрасим на выбор в 213 цветов RAL, RR. Срок службы 25 лет. Гарантия 5 лет. Доставим по Москве на следующий день после заказа, отправим в регионы России. Самовывоз со склада Московская область, ленинский р-н, г.Видное, Северная Видновская промзона, ФГУП "Комплекс".
+			+helper-consult({
+				btnText: 'Получить консультацию',
+				descr: 'По запросу, который вы ввели ничего не нашлось. Попробуйте изменить запрос или обратитесь к нашему специалисту.',
+				info: 'Ответим в течение 10 минут',
+			})
+		.product-description__property
+			+product-description__item('Материал', 'Оцинкованная сталь с полимерным покрытием')
+			+product-description__item('Толщина металла', '0.4 мм')
+			+product-description__item('Высота', '30 мм')
+			+product-description__item('Длина', '2000 мм')
+			+product-description__item('Угол сгиба', '45')
+			+product-description__item('Вес', '0.2 кг')
+			.product-description__line
+				span.product-description__label Цвет
+				.product-description__value
+					.product-description__color
+					span.product-description__value-text Серый
+			+product-description__item('Применение', 'Для кровли из металлочерепицы, для профнастилда, для фальца, для мягкой (гибкой, битумной) черепицы')
+			.product-description__all
+				a.product-description__all-link(href="#")
+					span.product-description__all-text Все характеристики
+					span.text-count 17
+			
+mixin product-description__item(label, value)
+	.product-description__line
+		span.product-description__label= label
+		.product-description__value
+			span.product-description__value-text= value
