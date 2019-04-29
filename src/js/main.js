@@ -56,7 +56,7 @@ $(document).ready(() => {
 			if (slick.slideCount > 4) {
 				let i = (currentSlide ? currentSlide : 0) + 1;
 
-				sliderCount.text(`Товар ${i} из ${slick.slideCount}`);
+				sliderCount.text(`${Math.ceil(i / slick.options.slidesToShow)} из ${Math.ceil(slick.slideCount / slick.options.slidesToShow)}`);
 			}
 		});
 
