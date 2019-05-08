@@ -1,0 +1,52 @@
+.manager-review {
+	border-radius: 4px;
+	padding: 32px;
+	max-width: 592px;
+	background-color: #fff;
+
+	&__body {
+		> * {
+			margin: 16px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&__block {
+		> * {
+			margin: 8px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	&__link {
+		font-size: 16px;
+		text-decoration: underline;
+		color: $color-link;
+	}
+
+	.form {
+		padding: 0;
+
+		> * {
+			margin: 16px 0;
+			&:first-child { margin-top: 0; }
+			&:last-child { margin-bottom: 0; }
+		}
+	}
+
+	.hide-success {
+		display: block;
+
+		&--off { display: none; }
+	}
+
+	.show-success {
+		display: none;
+
+		&--on { display: block; }
+	}
+
+	@media screen and (max-width: $phone-size) { padding: 0; }
+}

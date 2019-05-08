@@ -1,0 +1,32 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Оценка менеджера'
+	- var description = 'Оценка менеджера'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item({
+			text: 'Оценка менеджера',
+		})
+	+section({
+		mods: 'manager',
+		mainClass: 'manager'
+	})
+		+section-header('Оценка менеджера по заказу № 321-432')
+		+manager-review()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-colors1',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
+	+overlay()

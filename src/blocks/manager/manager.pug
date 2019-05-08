@@ -1,0 +1,39 @@
+mixin manager-review(props)
+	.manager-review
+		.hide-success
+			.manager-review__body
+				.manager-review__block
+					p.manager-review__title Заказ создан #[b 4 июля 2018] года в #[b 12:45] и выполнен #[b 9 июля 2018] года в #[b 14:34]
+					p.manager-review__text Вашим менеджером был #[b Михаил]
+				.manager-review__block
+					p.manager-review__text Вы заказали товара на #[b сумму 15 340 руб] из категорий "Металлочерепица", "Доборные элементы кровли" и др.
+					a.manager-review__link(href="#") Подробности заказа
+				.manager-review__block
+					+form('manager')
+						+rating-stars()
+						+fieldset('Отзыв о менеджере')
+							+field-text({
+								mods: 'textarea',
+								id: 'manager-review',
+								labelText: "Комментарий",
+								placeholder: "Напишите что вам понравилось или не понравилось",
+								attrs: {
+									type: 'textarea',
+									name: 'textarea',
+									rows: 10,
+									cols: 5
+								}
+							})
+						+form-footer()
+		.show-success
+			.manager-review__body
+				.manager-review__block
+					p.manager-review__title Спасибо, мы получили ваш отзыв о работе менеджера!
+				.manager-review__block
+					p.manager-review__text Благодаря вашей обратной связи мы можем улучшить наш сервис.
+				.manager-review__block
+					+btn({
+						mods: 'size-l',
+						tag: 'input',
+						text: 'Посмотреть что еще есть в каталоге',
+					})

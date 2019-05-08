@@ -746,6 +746,13 @@ $(document).ready(() => {
 		});
 	};
 
+	let managerSuccess = () => {
+		$(document).on('click', '.manager-review__block .btn', function () {
+			$('.manager-review .hide-success').toggleClass('hide-success--off');
+			$('.manager-review .show-success').toggleClass('show-success--on');
+		});
+	};
+
 	// map1
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -925,6 +932,7 @@ $(document).ready(() => {
 	prodctDetailsTablet();
 	productOptionsMobile();
 	productDeliveryToggleInfo();
+	managerSuccess();
 });
 
 let popularCategoriesSlider = () => {

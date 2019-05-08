@@ -93,7 +93,10 @@
 			padding: 16px 32px;
 			width: 50%;
 
-			@media screen and (max-width: $phone-size) { width: 100%; }
+			@media screen and (max-width: $phone-size) {
+				padding: 8px;
+				width: 100%;
+			}
 		}
 	}
 
