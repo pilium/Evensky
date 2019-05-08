@@ -1,10 +1,17 @@
 mixin product-options(props)
-	.product-options
+	-
+		var allMods = "";
+		if(typeof(props.mods) !== "undefined" && props.mods)
+			var modsList = props.mods.split(",");
+			for (var i = 0; i < modsList.length; i++) {
+				allMods = allMods + " product-options--" + modsList[i].trim();
+			}
+	.product-options(class= allMods)
 		.product-options__toggle
 			span.product-options__toogle-text Выбрать параметры
 				span.text-count 6
 		.product-options__body
-			.product-options__item.product-options__item--width-l
+			.product-options__item.product-options__item--width-s
 				+fieldset('Изделия')
 					+field-select(
 						'Тип изделия',
@@ -14,7 +21,7 @@ mixin product-options(props)
 						},
 						[
 							{
-								title: 'Плоские металлические изделия габаритами 70х20х100',
+								title: 'Холоднокатанная сталь',
 								attrs: {
 									value: '1',
 								}
@@ -33,12 +40,12 @@ mixin product-options(props)
 							},
 						],
 						'',
-						'width-xl,product-options'
+						'width-s,product-options'
 					)
 			.product-options__item.product-options__item--width-s
-				+fieldset('Краска')
+				+fieldset('Толщина')
 					+field-select(
-						'Тип краски',
+						'Толщина',
 						{
 							name: 'product-options-paint',
 							id: 'product-options-paint'
@@ -66,6 +73,102 @@ mixin product-options(props)
 						'',
 						'width-sm,product-options'
 					)
+			if(props.multiline)
+				.product-options__item.product-options__item--width-s
+					+fieldset('Размеры')
+						+field-select(
+							'Размеры',
+							{
+								name: 'product-options-size',
+								id: 'product-options-size'
+							},
+							[
+								{
+									title: '30х30х2000 мм',
+									attrs: {
+										value: '1',
+									}
+								},
+								{
+									title: '20х20х2000 мм',
+									attrs: {
+										value: '2',
+									}
+								},
+								{
+									title: '35х35х4000 мм',
+									attrs: {
+										value: '2',
+									}
+								},
+							],
+							'',
+							'width-sm,product-options'
+						)
+				.product-options__item.product-options__item--width-s
+					+fieldset('Окраска')
+						+field-select(
+							'Окраска',
+							{
+								name: 'product-options-fill',
+								id: 'product-options-fill'
+							},
+							[
+								{
+									title: 'Полимерная с 1 стороны',
+									attrs: {
+										value: '1',
+									}
+								},
+								{
+									title: 'Полимерная с 2 сторон',
+									attrs: {
+										value: '2',
+									}
+								},
+								{
+									title: '0.25 мм',
+									attrs: {
+										value: '2',
+									}
+								},
+							],
+							'',
+							'width-s,product-options'
+						)
+				.product-options__item.product-options__item--width-s
+					+fieldset('Окраска')
+						+field-select(
+							'Окраска',
+							{
+								name: 'product-options-fill1',
+								id: 'product-options-fill1'
+							},
+							[
+								{
+									title: 'Полимерная с 1 стороны',
+									attrs: {
+										value: '1',
+									}
+								},
+								{
+									title: 'Полимерная с 2 сторон',
+									attrs: {
+										value: '2',
+									}
+								},
+								{
+									title: '0.25 мм',
+									attrs: {
+										value: '2',
+									}
+								},
+							],
+							'',
+							'width-l,product-options'
+						)
 			.product-options__item.product-options__item--fill
 				if (props.colors)
-					+product-colors()
+					+product-colors({
+						more: props.alot
+					})

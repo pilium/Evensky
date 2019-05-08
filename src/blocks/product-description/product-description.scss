@@ -34,6 +34,8 @@
 		border-radius: 4px;
 		width: 390px;
 		background-color: #fff;
+
+		@media screen and (max-width: $phone-size) { width: auto; }
 	}
 
 	&__line {

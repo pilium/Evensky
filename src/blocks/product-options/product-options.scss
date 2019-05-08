@@ -9,9 +9,7 @@
 		cursor: pointer;
 
 		&--active {
-			.product-options__body {
-				display: flex;
-			}
+			.product-options__body { display: flex; }
 		}
 
 		@media screen and (max-width: $phone-size) { display: block; }
@@ -59,5 +57,20 @@
 
 	.product-colors {
 		@media screen and (max-width: $phone-size) { display: none; }
+	}
+
+	&--multiline {
+		.product-options__body {
+			flex-wrap: wrap;
+
+			> * {
+				&:not(:last-child) { margin-bottom: 16px; }
+			}
+		}
+
+		.product-options__item--fill {
+			flex: 0 0 100%;
+			width: 100%;
+		}
 	}
 }

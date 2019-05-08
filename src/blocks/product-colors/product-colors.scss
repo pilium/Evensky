@@ -32,9 +32,8 @@
 		height: 24px;
 	}
 
-	&__item-price {
-		color: $color-text-info;
-	}
+	&__item-price { color: $color-text-info; }
+	&__item-code { white-space: nowrap; }
 
 	&__item-link {
 		white-space: nowrap;

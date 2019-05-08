@@ -1,0 +1,92 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Страница продукта'
+	- var description = 'Главная страница сайта компании Evensky'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Каталог металлопродукции',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Все для кровли',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Доборные элементы кровли',
+		})
+		+breadcrumbs-item-nav({
+			label: 'Планка стыковочная',
+		})
+		+breadcrumbs-item({
+			text: 'Планка стыковочная 30х30х2000 мм , толщина 0.4 мм, цвет графитовый серый RAL 7024 со склада в Москве',
+		})
+	+section({
+		mods: 'product-page',
+		mainClass: 'product-page'
+	})
+		+section-header-testimonials({
+			text: 'Планка стыковочная 30х30х2000 мм, толщина 0.4 мм, цвет графитовый серый RAL 7024 со склада в Москве',
+		})
+		.product-page__wrapper
+			+product-options({
+				colors: true,
+				mods: 'multiline',
+				alot: true,
+				multiline: true,
+			})
+			+product-body()
+			+product-nav()
+			+product-description({})
+			+product-parameters({
+				text: 'Характеристики планки стыковочной'
+			})
+			.product-page__advice
+				+title({
+					mods: 'small-section',
+					text: 'Советы по планки стыковочной',
+				}, 'h2')
+				+accordion({})
+			.product-page__faq
+				+title({
+					mods: 'small-section',
+					text: 'Вопросы и ответы по планки стыковочной',
+				}, 'h2')
+				+fieldset('Введите вопрос')
+					+field-text({
+						mods: '',
+						id: 'faq',
+						attrs: {
+							type: 'text',
+							name: 'faq',
+							placeholder: "Начните вводить свой вопрос"
+						}
+					})
+				.product-page__fag-wrapper
+					+accordion({})
+					+product-question-add()
+			+pay-methods()
+			+product-delivery()
+			.product-page__reviews
+				+title({
+					mods: 'small-section',
+					text: 'Отзывы о планки стыковочной',
+				}, 'h2')
+				.product-page__reviews-wrapper
+					+product-reviews()
+					+product-reviews-stat()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-colors1',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
+	+overlay()

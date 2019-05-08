@@ -136,6 +136,8 @@
 	&--width {
 		&-s {
 			select {
+				flex: 0 0 120px;
+				width: 120px;
 				max-width: 100%;
 			}
 		}

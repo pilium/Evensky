@@ -20,7 +20,7 @@
 
 	&__aside-item {
 		overflow: hidden;
-		border: 1px solid $color-input-border;
+		border: 1px solid transparent;
 		border-radius: 4px;
 
 		img {
@@ -28,7 +28,7 @@
 			height: 45px;
 		}
 
-		&.slick-current {
+		&.slick-active {
 			border-color: $color-main-action;
 		}
 	}
@@ -73,8 +73,6 @@
 	&__main {
 		flex: 1;
 		overflow: hidden;
-		border: 1px solid $color-main-action;
-		border-radius: 4px;
 		height: 318px;
 	}
 

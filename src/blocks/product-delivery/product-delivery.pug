@@ -1,0 +1,177 @@
+mixin product-delivery()
+	.product-delivery
+		+section-header('Способы получения заказа в Москве', '', 'small')
+		.product-delivery__wrapper
+			.product-delivery__block
+				.product-delivery__main
+					.product-delivery__item
+						span.product-delivery__main-title Доставка по Москве и области
+						.pay-methods__type-item
+							.pay-methods__line
+								+icon('document', 'pay-methods__icon')
+								span.pay-methods__line-text Экспресс доставка: вторник,  #[b 21 августа] - от 2000 руб.
+							.pay-methods__line
+								+icon('credit-card', 'pay-methods__icon')
+								span.pay-methods__line-text Обычная доставка: четверг,  #[b 23 августа] - от 1500 руб.
+						p.text Доставка осуществляется до дома и обычно производится в машине с открытым кузовом нашей собственно логистической группой.
+					.product-delivery__item
+						+btn({
+							tag: 'button',
+							text: 'Узнать стоимость доставки',
+							mods: 'transparent,arrow-down,width-s,delivery',
+						})
+						+form('product-deivery')
+							span.product-delivery__title Планки какого вида вам нужны ?
+							+fieldset('Изделия', 'flex')
+								+field-select(
+									'Материал',
+									{
+										name: 'product-delivery-type',
+										id: 'product-delivery-type'
+									},
+									[
+										{
+											title: 'Холоднокатанная сталь',
+											attrs: {
+												value: '1',
+											}
+										},
+										{
+											title: 'Плоские деревяные',
+											attrs: {
+												value: '2',
+											}
+										},
+										{
+											title: 'Плоские стальные',
+											attrs: {
+												value: '2',
+											}
+										},
+									],
+									'',
+									'width-m'
+								)
+								+field-select(
+									'Толщина',
+									{
+										name: 'product-delivery-width',
+										id: 'product-delivery-width'
+									},
+									[
+										{
+											title: '0.45 мм',
+											attrs: {
+												value: '1',
+											}
+										},
+										{
+											title: '0.50 мм',
+											attrs: {
+												value: '2',
+											}
+										},
+										{
+											title: '0.65 мм',
+											attrs: {
+												value: '2',
+											}
+										},
+									],
+									'',
+									'width-sm'
+								)
+								+field-select(
+									'Размеры',
+									{
+										name: 'product-delivery-size',
+										id: 'product-delivery-size'
+									},
+									[
+										{
+											title: '30х30х2000 мм',
+											attrs: {
+												value: '1',
+											}
+										},
+										{
+											title: '40х40х2000 мм',
+											attrs: {
+												value: '2',
+											}
+										},
+										{
+											title: '30х30х3000 мм',
+											attrs: {
+												value: '2',
+											}
+										},
+									],
+									'',
+									'width-m'
+								)
+							+fieldset('Изделия')
+								span.product-delivery__title Сколько планок стыковочных нужно доставить ?
+								+field-text({
+									mods: 'width-ss',
+									id: 'product-delivery__col',
+									labelText: 'Количество',
+									attrs: {
+										type: 'number',
+										name: 'product-delivery__col',
+										placeholder: "100 шт."
+									}
+								})
+							+fieldset('Изделия')
+								span.product-delivery__title.product-delivery__title--mt Напишите адрес или индекс доставки ?
+								+field-text({
+									mods: 'width-m',
+									id: 'product-delivery__address',
+									labelText: 'Адрес',
+									attrs: {
+										type: 'text',
+										name: 'product-delivery__address',
+										placeholder: "ул. Просветова (д.15-99), 2401026"
+									}
+								})
+							.product-delivery__footer
+								p.product-delivery__footer-text Планку стыковочную доставят 27 ноября #[br] с 9:00 до 20:00 за 1500 руб.
+								a.product-delivery__footer-link(href="#") Показать таблицу расчета доставки
+								.product-delivery__footer-buttons
+									+btn({
+										tag: 'button',
+										text: 'Купить в 1 клик',
+										mods: '',
+									})
+									+btn({
+										tag: 'button',
+										text: 'В корзину',
+										mods: 'transparent,border-yellow',
+									})
+				.product-delivery__aside
+					.product-delivery__aside-gray
+						span.product-delivery__aside-gray-title Важные особенности
+						p.text Клиент проверяет товар в автомобиле перед разгрузкой #[b визуально].
+						p.text После проверки и потверждения клиент производит #[b разгрузку].
+			.product-delivery__block
+				.product-delivery__main
+					span.product-delivery__main-title Разгрузка
+					.product-delivery__item
+						.pay-methods__type-item
+							.pay-methods__line
+								+icon('document', 'pay-methods__icon')
+								.pay-methods__info
+									span.pay-methods__line-text Самостоятельная разгрузка заказчиком
+									p.pay-methods__text В стоимость доставки включен 1 час ожидания автомобиля. Дополнительное время, помощь в разгрузке и заказ манипулятора оплачивается отдельно.Стоимость заказа манипулятора 1500-200 рублей.
+							.pay-methods__line
+								+icon('credit-card', 'pay-methods__icon')
+								.pay-methods__info
+									span.pay-methods__line-text Заказ разгрузки
+									p.pay-methods__text В стоимость включена работа бригады грузчиков и время ожидания автомобиля, неоходимое для разгрузки. Возможен заказ манипулятора. Для некоторых хаказов манипулятор может быть обязательным условием. Подъем на этаж возможен, стоимость и возможность необходимо уточнить после формирования списка товаров для заказа.
+					.product-delivery__item
+						span.helper-consult__title Возникли сложности или вопросы по доставке ?
+						+helper-consult({
+							btnText: 'Уточнить стоимость доставки и разгрузки',
+							descr: '',
+							info: 'Перезвоним в течение 10 минут',
+						})

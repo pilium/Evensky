@@ -6,7 +6,7 @@ block vars
 		var cabinetPage = cabinetPage || ''
 	-
 		var title = title  || ''
-		var description = description || ''
+		var description = description
 		var image = image || ''
 	-
 		var html = {
@@ -28,7 +28,6 @@ block vars
 			appleTouchFullscreen: '',
 			applicationName: '',
 			charset: 'utf-8',
-			description: description,
 			keywords: [],
 			msapplicationTileColor: '',
 			msapplicationTileImage: '',
@@ -37,7 +36,7 @@ block vars
 			msapplicationSquare150x150logo: '',
 			msapplicationSquare310x310logo: '',
 			msapplicationWide310x150logo: '',
-			ogDescription: description,
+			ogDescription: '',
 			ogImage: image,
 			ogLocale: 'ru_RU',
 			ogTitle: title,
@@ -47,7 +46,7 @@ block vars
 			twitterSite: '',
 			twitterCreator: '',
 			twitterTitle: title,
-			twitterDescription: description,
+			twitterDescription: '',
 			twitterImage: image,
 			viewport: 'width=device-width',
 			XUACompatible: 'IE=edge'
@@ -111,10 +110,9 @@ html(class=html.classList)&attributes(html.attrs)
 				meta(http-equiv="X-UA-Compatible" content=meta.XUACompatible)
 			if meta.viewport
 				meta(name="viewport" content=meta.viewport)
-			if meta.description
-				meta(name="description" content=meta.description)
 			if meta.keywords.length
 				meta(name="keywords" content=Array.isArray(meta.keywords) ? meta.keywords.join(', ') : meta.keywords)
+			meta(name="description" content=description)
 			if meta.ogType && (meta.ogUrl || meta.ogTitle || meta.ogDescription || meta.ogImage)
 				meta(name="og:type" content=meta.ogType)
 			if meta.ogUrl

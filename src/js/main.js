@@ -739,6 +739,13 @@ $(document).ready(() => {
 		});
 	};
 
+	let productDeliveryToggleInfo = () => {
+		$(document).on('click', '.btn--delivery', function () {
+			$(this).toggleClass('btn--delivery--active');
+			$('.form--product-deivery').toggleClass('form--product-deivery--active');
+		});
+	};
+
 	// map1
 	if ($('div').is('.tooltip-map__map')) {
 		ymaps.ready(() => {
@@ -917,6 +924,7 @@ $(document).ready(() => {
 	popupGallery();
 	prodctDetailsTablet();
 	productOptionsMobile();
+	productDeliveryToggleInfo();
 });
 
 let popularCategoriesSlider = () => {
