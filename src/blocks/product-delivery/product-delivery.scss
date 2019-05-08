@@ -162,8 +162,10 @@
 
 	.field-select,
 	.input-field {
-		flex: 0 0 100%;
-		width: 100%;
-		max-width: 100%;
+		@media screen and (max-width: $phone-size) {
+			flex: 0 0 100%;
+			width: 100%;
+			max-width: 100%;
+		}
 	}
 }
