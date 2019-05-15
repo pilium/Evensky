@@ -1,0 +1,39 @@
+mixin online-order()
+	.online-order
+		p.online-order__text Здесь вы можте оплатить электронным способом любой заказ, потвержденный менеджером.
+		+form('online-order')
+			+fieldset('Имя и фамилия', 'flex')
+				+field-text({
+					mods: 'width-m,require',
+					id: 'online-order',
+					labelText: "Номер заказа",
+					attrs: {
+						type: 'text',
+						name: 'online-order',
+						placeholder: "12345678"
+					}
+				})
+				+btn({
+					tag: 'a',
+					href: '#',
+					text: 'Перейти к оплате',
+					mods: '',
+				})
+			.online-order__info
+				p.online-order__info-text Заказ #[b № 123456] еще не потвержден менеджером
+				p.online-order__info-text Дождитесь потверждения или позвоните по телефону #[b +7 499 334-44-44] для уточнения деталей
+			
+		.online-order__pay
+			span.online-order__pay-text Принимаем к оплате
+			ul.footer-column-payment__list
+				li.footer-column-payment__item
+					+icon('visa', 'footer-column-payment__icon')
+				li.footer-column-payment__item
+					+icon('mastercard', 'footer-column-payment__icon')
+				li.footer-column-payment__item
+					+icon('mir', 'footer-column-payment__icon')
+		+helper-consult({
+			btnText: 'Получить консультацию',
+			descr: 'Возникли вопросы по оплате заказа',
+			info: 'Ответим в течение 10 минут',
+		})

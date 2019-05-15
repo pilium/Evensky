@@ -1,0 +1,69 @@
+.online-order {
+	margin-bottom: 56px;
+	border-radius: 4px;
+	max-width: 576px;
+	background-color: #fff;
+
+	&__text {
+		margin-bottom: 16px;
+		font-size: 18px;
+		line-height: 1.44;
+
+		@media screen and (max-width: $phone-size) { font-size: 16px; }
+	}
+
+	&__pay {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 32px;
+
+		> * {
+			&:not(:last-child) { margin-right: 16px; }
+		}
+	}
+
+	&__info {
+		padding: 16px;
+		max-width: 336px;
+		background: #eee;
+
+		> * {
+			&:not(:last-child) { margin-bottom: 8px; }
+		}
+	}
+
+	&__info-text {
+		line-height: 1.2;
+	}
+
+	.form {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-bottom: 32px;
+		padding: 0 8px;
+
+		@media screen and (max-width: $phone-size) { flex-direction: column; }
+	}
+
+	.fieldset {
+		flex-shrink: 0;
+		max-width: 248px;
+
+		@media screen and (max-width: $phone-size) {
+			margin-bottom: 16px;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	.fieldset__inner {
+		flex-direction: column;
+
+		.input-field {
+			flex: 0 0 auto;
+			margin-bottom: 16px;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-inner')
+	- var title = 'Оплата Online'
+	- var description = 'Оплата товара Online'
+block header
+	+header()
+block content
+	+breadcrumbs({mods: 'category'})
+		+breadcrumbs-item-icon('home')
+		+breadcrumbs-item-nav({
+			label: 'Все элементы кровли',
+		})
+		+breadcrumbs-item({
+			text: 'Доборные элементы кровли',
+		})
+	+section({
+		mods: 'product-page',
+		mainClass: 'product-page'
+	})
+		+section-header('Оплата заказа онлайн')
+		+online-order()
+	+you-seen()
+	+questions('question')
+		+question-social()
+block footer
+	+footer()
+	+modal({
+		id: 'popup-colors1',
+		title: 'Каталог цветов',
+		mods: 'colors'
+	})
+		+color-choose()
+	+overlay()
